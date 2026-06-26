@@ -4,6 +4,49 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Pink House · Coffee & Food for the Heart</title>
+<meta name="description" content="Café-restaurante en Roma Norte, CDMX. Café de especialidad, desayunos, postres caseros y un espacio precioso para rentar para tus eventos. Habla con Alma 🌸 nuestra anfitriona virtual.">
+<meta name="keywords" content="café Roma Norte, cafetería CDMX, restaurante Roma Norte, brunch CDMX, eventos Roma Norte, The Pink House, café especialidad">
+<meta name="author" content="The Pink House">
+<!-- Open Graph -->
+<meta property="og:title" content="The Pink House · Coffee & Food for the Heart">
+<meta property="og:description" content="Café-restaurante en Roma Norte, CDMX. Café de especialidad, postres caseros y un espacio precioso. Habla con Alma 🌸">
+<meta property="og:image" content="https://juanchapo.github.io/thepinkhouse/og-image.png">
+<meta property="og:url" content="https://juanchapo.github.io/thepinkhouse/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="The Pink House">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Pink House · Coffee & Food for the Heart">
+<meta name="twitter:description" content="Café-restaurante en Roma Norte, CDMX. Habla con Alma 🌸">
+<meta name="twitter:image" content="https://juanchapo.github.io/thepinkhouse/og-image.png">
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "The Pink House",
+  "image": "https://juanchapo.github.io/thepinkhouse/og-image.png",
+  "url": "https://juanchapo.github.io/thepinkhouse/",
+  "telephone": "+525534745455",
+  "priceRange": "$$",
+  "servesCuisine": ["Café", "Brunch", "Italian", "Mexican"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Colima 323",
+    "addressLocality": "Roma Norte, Cuauhtémoc",
+    "addressRegion": "CDMX",
+    "postalCode": "06700",
+    "addressCountry": "MX"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "26"
+  },
+  "openingHours": "Mo-Su 08:00-21:00"
+}
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <style>
@@ -170,7 +213,105 @@ footer a{color:#F2D5DA;text-decoration:none}
   .location-inner{flex-direction:column;gap:32px}
   .info-item{padding:4px 14px;font-size:12px}
   .splash-welcome{font-size:24px}
+  .gallery-grid{grid-template-columns:1fr 1fr!important}
+  .testi-grid{grid-template-columns:1fr!important}
+  .cart-drawer{width:92vw!important}
+  .alma-float{width:56px!important;height:56px!important;bottom:16px!important;right:16px!important;font-size:24px!important}
+  .cart-float{width:50px!important;height:50px!important;bottom:16px!important;left:16px!important;font-size:20px!important}
 }
+
+/* === FLOATING ALMA === */
+.alma-float{position:fixed;bottom:24px;right:24px;width:64px;height:64px;border-radius:50%;background:var(--pink);color:#fff;border:none;cursor:pointer;z-index:150;display:flex;align-items:center;justify-content:center;font-size:28px;transition:all .25s;box-shadow:0 8px 25px rgba(200,100,122,.4);animation:pulseRing 3s infinite}
+.alma-float:hover{transform:scale(1.1);background:var(--pink-dark)}
+.alma-float-label{position:absolute;right:74px;background:#fff;color:var(--pink);padding:8px 14px;border-radius:50px;font-size:12px;font-weight:700;white-space:nowrap;box-shadow:0 4px 15px rgba(200,100,122,.2);opacity:0;pointer-events:none;transition:all .25s}
+.alma-float:hover .alma-float-label{opacity:1;right:80px}
+@keyframes pulseRing{0%{box-shadow:0 8px 25px rgba(200,100,122,.4),0 0 0 0 rgba(200,100,122,.5)}70%{box-shadow:0 8px 25px rgba(200,100,122,.4),0 0 0 18px rgba(200,100,122,0)}100%{box-shadow:0 8px 25px rgba(200,100,122,.4),0 0 0 0 rgba(200,100,122,0)}}
+
+/* === FLOATING CART === */
+.cart-float{position:fixed;bottom:24px;left:24px;width:56px;height:56px;border-radius:50%;background:#fff;border:2px solid var(--pink);cursor:pointer;z-index:150;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 8px 25px rgba(200,100,122,.2);transition:all .2s}
+.cart-float:hover{transform:scale(1.1);background:var(--pink-pale)}
+.cart-float.flash{animation:cartFlash .5s}
+@keyframes cartFlash{0%,100%{transform:scale(1)}50%{transform:scale(1.25);background:var(--pink-light)}}
+.cart-badge{position:absolute;top:-4px;right:-4px;background:var(--pink);color:#fff;border-radius:50px;min-width:22px;height:22px;font-size:11px;font-weight:700;display:none;align-items:center;justify-content:center;padding:0 6px;border:2px solid #fff}
+.cart-badge.visible{display:flex}
+
+/* === CART DRAWER === */
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:249;opacity:0;visibility:hidden;transition:opacity .25s}
+.cart-overlay.open{opacity:1;visibility:visible}
+.cart-drawer{position:fixed;top:0;right:-420px;width:400px;max-width:90vw;height:100vh;background:#fff;z-index:250;box-shadow:-10px 0 40px rgba(0,0,0,.15);transition:right .35s ease;display:flex;flex-direction:column}
+.cart-drawer.open{right:0}
+.cart-header{padding:24px;border-bottom:1px solid var(--pink-light);display:flex;align-items:center;justify-content:space-between;background:var(--pink-pale)}
+.cart-header h3{font-family:'Playfair Display',serif;font-size:22px;color:var(--dark)}
+.cart-close{background:#fff;border:1px solid var(--pink-light);border-radius:50%;width:34px;height:34px;cursor:pointer;font-size:14px;color:var(--pink);transition:all .2s}
+.cart-close:hover{background:var(--pink);color:#fff}
+.cart-items-list{flex:1;overflow-y:auto;padding:16px 24px}
+.cart-empty{text-align:center;color:var(--gray);padding:60px 20px;font-size:14px;line-height:1.6}
+.cart-empty-icon{font-size:48px;margin-bottom:16px;display:block;opacity:.4}
+.cart-item{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--pink-light);align-items:center}
+.cart-item-info{flex:1;min-width:0}
+.cart-item-info h5{font-family:'Playfair Display',serif;font-size:14px;margin-bottom:2px;color:var(--dark)}
+.cart-item-info span{font-size:11px;color:var(--gray)}
+.cart-qty{display:flex;align-items:center;gap:6px}
+.cart-qty button{width:26px;height:26px;border-radius:50%;border:1px solid var(--pink);background:#fff;color:var(--pink);cursor:pointer;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+.cart-qty button:hover{background:var(--pink);color:#fff}
+.cart-qty .qty-val{font-weight:700;min-width:20px;text-align:center;font-size:14px}
+.cart-item-total{font-weight:700;color:var(--pink);font-size:14px;min-width:50px;text-align:right}
+.cart-footer{padding:20px 24px;border-top:1px solid var(--pink-light);background:var(--cream)}
+.cart-total-row{display:flex;justify-content:space-between;margin-bottom:16px;font-size:18px;font-weight:700;color:var(--dark)}
+.cart-total-row span:last-child{color:var(--pink);font-size:22px}
+.cart-send-btn{width:100%;background:var(--pink);color:#fff;border:none;padding:14px;border-radius:50px;font-weight:700;font-size:14px;cursor:pointer;transition:background .2s;font-family:'Lato',sans-serif}
+.cart-send-btn:hover{background:var(--pink-dark)}
+.cart-send-btn:disabled{background:var(--pink-light);color:#fff;cursor:not-allowed}
+.cart-clear{background:none;border:none;color:var(--gray);font-size:11px;cursor:pointer;width:100%;margin-top:10px;text-decoration:underline;font-family:'Lato',sans-serif}
+.cart-toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--dark);color:#fff;padding:12px 22px;border-radius:50px;font-size:13px;z-index:200;opacity:0;transition:all .3s;box-shadow:0 8px 25px rgba(0,0,0,.2);pointer-events:none;font-weight:700}
+.cart-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* === GALLERY === */
+.gallery-section{padding:90px 5%;background:#fff}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:1100px;margin:48px auto 0}
+.gallery-item{aspect-ratio:1;border-radius:18px;overflow:hidden;position:relative;cursor:pointer;transition:all .3s;border:1px solid var(--pink-light)}
+.gallery-item:hover{transform:translateY(-4px);box-shadow:0 16px 50px rgba(200,100,122,.18)}
+.gallery-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:48px;color:var(--pink);gap:8px}
+.gallery-item-1{background:linear-gradient(135deg,#FBF0F2 0%,#F2D5DA 100%)}
+.gallery-item-2{background:linear-gradient(135deg,#F2D5DA 0%,#C8647A 100%);color:#fff}
+.gallery-item-3{background:linear-gradient(135deg,#FAF7F2 0%,#F2D5DA 100%)}
+.gallery-item-4{background:linear-gradient(135deg,#C8647A 0%,#a8505f 100%);color:#fff}
+.gallery-item-5{background:linear-gradient(135deg,#FBF0F2 0%,#B8926A 50%,#F2D5DA 100%)}
+.gallery-item-6{background:linear-gradient(135deg,#F2D5DA 0%,#FAF7F2 100%)}
+.gallery-label{position:absolute;bottom:14px;left:14px;background:rgba(255,255,255,.95);padding:6px 14px;border-radius:50px;font-size:11px;color:var(--pink);font-weight:700;letter-spacing:.5px}
+.gallery-img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* === TESTIMONIALS === */
+.testi-section{padding:90px 5%;background:var(--pink-pale)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:48px auto 0}
+.testi-card{background:#fff;padding:32px;border-radius:20px;border:1px solid var(--pink-light);display:flex;flex-direction:column;gap:14px;transition:all .25s;position:relative}
+.testi-card:hover{transform:translateY(-3px);box-shadow:0 16px 50px rgba(200,100,122,.13)}
+.testi-quote{position:absolute;top:14px;right:24px;font-size:60px;color:var(--pink-light);font-family:'Playfair Display',serif;line-height:1}
+.testi-stars{color:var(--gold);font-size:16px;letter-spacing:2px;z-index:1;position:relative}
+.testi-text{font-size:14px;color:var(--dark);line-height:1.7;font-style:italic;flex:1;z-index:1;position:relative}
+.testi-author{display:flex;align-items:center;gap:10px;z-index:1;position:relative}
+.testi-avatar{width:36px;height:36px;border-radius:50%;background:var(--pink-pale);color:var(--pink);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+.testi-name{font-weight:700;color:var(--dark);font-size:13px}
+.testi-source{font-size:10px;color:var(--gray);letter-spacing:.5px}
+
+/* === MENU FILTERS === */
+.menu-filters{display:flex;gap:8px;justify-content:center;margin-bottom:24px;flex-wrap:wrap}
+.filter-btn{padding:8px 16px;border-radius:50px;border:1.5px solid var(--pink-light);background:#fff;color:var(--gray);font-size:12px;cursor:pointer;font-family:'Lato',sans-serif;font-weight:700;transition:all .2s}
+.filter-btn.active{background:var(--pink-light);color:var(--pink);border-color:var(--pink)}
+.filter-btn:hover{border-color:var(--pink)}
+.menu-card.filtered-out{display:none!important}
+.menu-card-tags{display:flex;gap:4px;margin-bottom:8px;flex-wrap:wrap}
+.menu-tag{background:var(--pink-pale);color:var(--pink);padding:2px 8px;border-radius:50px;font-size:9px;font-weight:700;letter-spacing:.3px}
+.menu-tag-pop{background:var(--gold);color:#fff}
+.menu-tag-veg{background:#A8D5BA;color:#fff}
+.menu-tag-spicy{background:#e07a5f;color:#fff}
+
+/* === MAP EMBED === */
+.map-embed{width:100%;height:340px;border-radius:24px;border:0;margin-top:28px;box-shadow:0 16px 50px rgba(0,0,0,.15)}
+.location-section{padding:70px 5%}
+.location-section .location-inner{display:block}
+.location-top{display:flex;gap:60px;align-items:flex-start;margin-bottom:24px}
+@media(max-width:768px){.location-top{flex-direction:column;gap:24px}}
 </style>
 </head>
 <body>
@@ -313,6 +454,39 @@ footer a{color:#F2D5DA;text-decoration:none}
   <div class="info-item" data-i18n="info_pay">💳 Mercado Pago · Apple Pay · Efectivo</div>
 </div>
 
+<section class="gallery-section" id="galeria">
+  <div class="section-header">
+    <p class="section-eyebrow" data-i18n="gal_eyebrow">El lugar</p>
+    <h2 class="section-title" data-i18n="gal_title">Conoce The Pink House</h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item gallery-item-1">
+      <div class="gallery-placeholder">☕</div>
+      <span class="gallery-label" data-i18n="gal_l1">Café de especialidad</span>
+    </div>
+    <div class="gallery-item gallery-item-2">
+      <div class="gallery-placeholder">🏡</div>
+      <span class="gallery-label" data-i18n="gal_l2">El espacio</span>
+    </div>
+    <div class="gallery-item gallery-item-3">
+      <div class="gallery-placeholder">🥞</div>
+      <span class="gallery-label" data-i18n="gal_l3">Postres caseros</span>
+    </div>
+    <div class="gallery-item gallery-item-4">
+      <div class="gallery-placeholder">🌿</div>
+      <span class="gallery-label" data-i18n="gal_l4">Terraza</span>
+    </div>
+    <div class="gallery-item gallery-item-5">
+      <div class="gallery-placeholder">🍕</div>
+      <span class="gallery-label" data-i18n="gal_l5">Cocina italiana</span>
+    </div>
+    <div class="gallery-item gallery-item-6">
+      <div class="gallery-placeholder">🥂</div>
+      <span class="gallery-label" data-i18n="gal_l6">Eventos privados</span>
+    </div>
+  </div>
+</section>
+
 <section class="ai-section" id="rosa-ia">
   <div class="ai-header">
     <p class="ai-eyebrow" data-i18n="ai_eyebrow">Inteligencia Artificial</p>
@@ -341,6 +515,12 @@ footer a{color:#F2D5DA;text-decoration:none}
   <div class="section-header">
     <p class="section-eyebrow" data-i18n="menu_eyebrow">Lo que ofrecemos</p>
     <h2 class="section-title" data-i18n="menu_title">Nuestro Menú</h2>
+  </div>
+  <div class="menu-filters">
+    <button class="filter-btn active" data-filter="all" onclick="applyFilter('all',this)" data-i18n="f_all">Todo</button>
+    <button class="filter-btn" data-filter="popular" onclick="applyFilter('popular',this)" data-i18n="f_pop">⭐ Más pedidos</button>
+    <button class="filter-btn" data-filter="vegetariano" onclick="applyFilter('vegetariano',this)" data-i18n="f_veg">🥬 Vegetariano</button>
+    <button class="filter-btn" data-filter="picante" onclick="applyFilter('picante',this)" data-i18n="f_spicy">🌶️ Picante</button>
   </div>
   <div class="menu-tabs">
     <button class="tab active" onclick="showTab('cafes',this)"><span>☕</span> <span data-i18n="cat_cafes">Cafés</span></button>
@@ -523,16 +703,64 @@ footer a{color:#F2D5DA;text-decoration:none}
 
 <section class="location-section" id="ubicacion">
   <div class="location-inner">
-    <div class="location-text">
-      <h2 data-i18n="loc_title">¿Cómo llegamos?</h2>
-      <p data-i18n="loc_desc">Estamos en el corazón de la Colonia Roma Norte, una de las zonas más vibrantes de la Ciudad de México.</p>
-      <div class="loc-item" data-i18n="loc_addr">📍 Colima #323, Col. Roma Norte, Cuauhtémoc 06700, CDMX</div>
-      <div class="loc-item" data-i18n="loc_hours">🕐 Abierto todos los días · Cierra a las 9pm</div>
-      <div class="loc-item">📲 WA 5534-745455 · @pinkhousemx</div>
-      <div class="loc-item" data-i18n="loc_pay">💳 Terminal Mercado Pago · Apple Pay · Efectivo</div>
+    <div class="location-top">
+      <div class="location-text">
+        <h2 data-i18n="loc_title">¿Cómo llegamos?</h2>
+        <p data-i18n="loc_desc">Estamos en el corazón de la Colonia Roma Norte, una de las zonas más vibrantes de la Ciudad de México.</p>
+        <div class="loc-item" data-i18n="loc_addr">📍 Colima #323, Col. Roma Norte, Cuauhtémoc 06700, CDMX</div>
+        <div class="loc-item" data-i18n="loc_hours">🕐 Abierto todos los días · Cierra a las 9pm</div>
+        <div class="loc-item">📲 WA 5534-745455 · @pinkhousemx</div>
+        <div class="loc-item" data-i18n="loc_pay">💳 Terminal Mercado Pago · Apple Pay · Efectivo</div>
+      </div>
+      <div>
+        <a href="https://maps.google.com/?q=Colima+323+Roma+Norte+CDMX" target="_blank" class="maps-btn" data-i18n="loc_maps">Ver en Google Maps →</a>
+      </div>
     </div>
-    <div>
-      <a href="https://maps.google.com/?q=Colima+323+Roma+Norte+CDMX" target="_blank" class="maps-btn" data-i18n="loc_maps">Ver en Google Maps →</a>
+    <iframe class="map-embed" loading="lazy" src="https://maps.google.com/maps?q=Colima+323+Roma+Norte+CDMX&output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
+
+<section class="testi-section" id="testimonios">
+  <div class="section-header">
+    <p class="section-eyebrow" data-i18n="testi_eyebrow">Lo que dicen de nosotros</p>
+    <h2 class="section-title" data-i18n="testi_title">⭐ 4.9 en Google</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-quote">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text" data-i18n="testi_1_text">El lugar es hermoso, súper acogedor, perfecto para trabajar o ir con amigos. El café de especialidad está delicioso y los postres caseros me encantaron. 100% recomendado.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">M</div>
+        <div>
+          <div class="testi-name" data-i18n="testi_1_name">María G.</div>
+          <div class="testi-source">Google Reviews</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text" data-i18n="testi_2_text">Fui a celebrar el cumpleaños de mi mamá y todo salió perfecto. La atención increíble, decoraron bonito y la comida estuvo deliciosa. Definitivamente regresamos.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">A</div>
+        <div>
+          <div class="testi-name" data-i18n="testi_2_name">Alejandro R.</div>
+          <div class="testi-source">Google Reviews</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text" data-i18n="testi_3_text">El Pink House Crepe es de lo mejor que he probado en la Roma. El espacio es muy bonito, las chicas que atienden súper amables. Mi nuevo lugar favorito para desayunar.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">S</div>
+        <div>
+          <div class="testi-name" data-i18n="testi_3_name">Sofía L.</div>
+          <div class="testi-source">Google Reviews</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -542,8 +770,34 @@ footer a{color:#F2D5DA;text-decoration:none}
   <p style="margin-top:8px;opacity:.6;font-size:12px">Instagram: <a href="#">@pinkhousemx</a> · WhatsApp: <a href="https://wa.me/525534745455">5534-745455</a></p>
 </footer>
 
+<!-- Floating Alma -->
+<button class="alma-float" onclick="Rosa.openFloating()" title="Habla con Alma">
+  🌸
+  <span class="alma-float-label" data-i18n="alma_float_label">Habla con Alma</span>
+</button>
+
+<!-- Floating Cart -->
+<button class="cart-float" onclick="Cart.open()" title="Mi orden">
+  🛒
+  <span class="cart-badge" id="cartBadge">0</span>
+</button>
+
+<!-- Cart Drawer -->
+<div class="cart-overlay" id="cartOverlay" onclick="Cart.close()"></div>
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3 data-i18n="cart_title">🛒 Mi Orden</h3>
+    <button class="cart-close" onclick="Cart.close()">✕</button>
+  </div>
+  <div class="cart-items-list" id="cartItemsList"></div>
+  <div class="cart-footer">
+    <div class="cart-total-row"><span data-i18n="cart_total">Total:</span><span id="cartTotalAmount">$0</span></div>
+    <button class="cart-send-btn" id="cartSendBtn" onclick="Cart.sendWhatsApp()" data-i18n="cart_send">Enviar pedido por WhatsApp 📲</button>
+    <button class="cart-clear" onclick="Cart.confirmClear()" data-i18n="cart_clear">Vaciar carrito</button>
+  </div>
+</aside>
+
 <script>
-// ============ I18N — TRADUCCIONES ============
 const i18n = {
 es: {
   nav_rosa:"Alma Rosa", nav_menu:"Menú", nav_events:"Eventos", nav_location:"Ubicación",
@@ -637,7 +891,24 @@ es: {
   loc_hours:"🕐 Abierto todos los días · Cierra a las 9pm",
   loc_pay:"💳 Terminal Mercado Pago · Apple Pay · Efectivo",
   loc_maps:"Ver en Google Maps →",
-  foot_1:"© 2026 The Pink House · Coffee and Food for the Heart · Colima #323, Roma Norte, CDMX"
+  foot_1:"© 2026 The Pink House · Coffee and Food for the Heart · Colima #323, Roma Norte, CDMX",
+  gal_eyebrow:"El lugar", gal_title:"Conoce The Pink House",
+  gal_l1:"Café de especialidad", gal_l2:"El espacio", gal_l3:"Postres caseros",
+  gal_l4:"Terraza", gal_l5:"Cocina italiana", gal_l6:"Eventos privados",
+  testi_eyebrow:"Lo que dicen de nosotros", testi_title:"⭐ 4.9 en Google",
+  testi_1_text:"El lugar es hermoso, súper acogedor, perfecto para trabajar o ir con amigos. El café de especialidad está delicioso y los postres caseros me encantaron. 100% recomendado.",
+  testi_1_name:"María G.",
+  testi_2_text:"Fui a celebrar el cumpleaños de mi mamá y todo salió perfecto. La atención increíble, decoraron bonito y la comida estuvo deliciosa. Definitivamente regresamos.",
+  testi_2_name:"Alejandro R.",
+  testi_3_text:"El Pink House Crepe es de lo mejor que he probado en la Roma. El espacio es muy bonito, las chicas que atienden súper amables. Mi nuevo lugar favorito para desayunar.",
+  testi_3_name:"Sofía L.",
+  f_all:"Todo", f_pop:"⭐ Más pedidos", f_veg:"🥬 Vegetariano", f_spicy:"🌶️ Picante",
+  alma_float_label:"Habla con Alma",
+  cart_title:"🛒 Mi Orden", cart_total:"Total:",
+  cart_send:"Enviar pedido por WhatsApp 📲", cart_clear:"Vaciar carrito",
+  cart_empty:"Tu orden está vacía 🌸<br><br>Agrega items del menú haciendo click en \"Ordenar\"",
+  cart_added:"agregado a tu orden",
+  cart_confirm_clear:"¿Vaciar todo el carrito?"
 },
 en: {
   nav_rosa:"Alma Rosa", nav_menu:"Menu", nav_events:"Events", nav_location:"Location",
@@ -731,7 +1002,24 @@ en: {
   loc_hours:"🕐 Open every day · Closes at 9pm",
   loc_pay:"💳 Mercado Pago terminal · Apple Pay · Cash",
   loc_maps:"View on Google Maps →",
-  foot_1:"© 2026 The Pink House · Coffee and Food for the Heart · Colima #323, Roma Norte, Mexico City"
+  foot_1:"© 2026 The Pink House · Coffee and Food for the Heart · Colima #323, Roma Norte, Mexico City",
+  gal_eyebrow:"The space", gal_title:"Meet The Pink House",
+  gal_l1:"Specialty coffee", gal_l2:"The space", gal_l3:"Homemade desserts",
+  gal_l4:"Terrace", gal_l5:"Italian cuisine", gal_l6:"Private events",
+  testi_eyebrow:"What people say", testi_title:"⭐ 4.9 on Google",
+  testi_1_text:"Beautiful place, super cozy, perfect for working or going with friends. The specialty coffee is delicious and the homemade desserts blew me away. 100% recommended.",
+  testi_1_name:"María G.",
+  testi_2_text:"I went to celebrate my mom's birthday and everything was perfect. Incredible service, beautiful decoration, and the food was delicious. We'll definitely be back.",
+  testi_2_name:"Alejandro R.",
+  testi_3_text:"The Pink House Crepe is the best I've had in Roma. The space is very pretty, the staff super friendly. My new favorite breakfast spot.",
+  testi_3_name:"Sofía L.",
+  f_all:"All", f_pop:"⭐ Most ordered", f_veg:"🥬 Vegetarian", f_spicy:"🌶️ Spicy",
+  alma_float_label:"Talk to Alma",
+  cart_title:"🛒 My Order", cart_total:"Total:",
+  cart_send:"Send order via WhatsApp 📲", cart_clear:"Clear cart",
+  cart_empty:"Your order is empty 🌸<br><br>Add items from the menu by clicking \"Order\"",
+  cart_added:"added to your order",
+  cart_confirm_clear:"Clear the entire cart?"
 },
 fr: {
   nav_rosa:"Alma Rosa", nav_menu:"Menu", nav_events:"Événements", nav_location:"Adresse",
@@ -825,7 +1113,24 @@ fr: {
   loc_hours:"🕐 Ouvert tous les jours · Ferme à 21h",
   loc_pay:"💳 Terminal Mercado Pago · Apple Pay · Espèces",
   loc_maps:"Voir sur Google Maps →",
-  foot_1:"© 2026 The Pink House · Coffee and Food for the Heart · Colima #323, Roma Norte, Mexico"
+  foot_1:"© 2026 The Pink House · Coffee and Food for the Heart · Colima #323, Roma Norte, Mexico",
+  gal_eyebrow:"L'endroit", gal_title:"Découvrez The Pink House",
+  gal_l1:"Café de spécialité", gal_l2:"L'espace", gal_l3:"Desserts maison",
+  gal_l4:"Terrasse", gal_l5:"Cuisine italienne", gal_l6:"Événements privés",
+  testi_eyebrow:"Ce qu'on dit de nous", testi_title:"⭐ 4.9 sur Google",
+  testi_1_text:"Bel endroit, super chaleureux, parfait pour travailler ou aller avec des amis. Le café de spécialité est délicieux et les desserts maison m'ont émerveillée. Recommandé à 100%.",
+  testi_1_name:"María G.",
+  testi_2_text:"J'y suis allé pour célébrer l'anniversaire de ma maman et tout était parfait. Service incroyable, belle décoration, et la nourriture était délicieuse. On reviendra.",
+  testi_2_name:"Alejandro R.",
+  testi_3_text:"Le Pink House Crepe est le meilleur que j'ai goûté à Roma. L'espace est très joli, le personnel super sympa. Mon nouveau spot favori pour le petit-déj.",
+  testi_3_name:"Sofía L.",
+  f_all:"Tout", f_pop:"⭐ Les plus demandés", f_veg:"🥬 Végétarien", f_spicy:"🌶️ Épicé",
+  alma_float_label:"Parler à Alma",
+  cart_title:"🛒 Ma Commande", cart_total:"Total:",
+  cart_send:"Envoyer la commande par WhatsApp 📲", cart_clear:"Vider le panier",
+  cart_empty:"Votre commande est vide 🌸<br><br>Ajoutez des articles du menu en cliquant sur \"Commander\"",
+  cart_added:"ajouté à votre commande",
+  cart_confirm_clear:"Vider tout le panier?"
 }
 };
 
@@ -862,6 +1167,8 @@ function setLang(lang) {
   
   // Reiniciar Alma Rosa con el nuevo idioma
   if(window.Rosa) Rosa.restart();
+  // Re-renderizar carrito con nuevo idioma
+  if(window.Cart) Cart.render();
 }
 
 function showTab(name,el){
@@ -890,8 +1197,233 @@ window.addEventListener('load',function(){
   if(currentLang) {
     setLang(currentLang);
     Rosa.init();
+  } else {
+    // Si no hay idioma, default a español visualmente pero esperar selección
+    setLang('es');
+    // Re-mostrar splash (setLang lo ocultó)
+    const splash = document.getElementById('splash');
+    if(splash){ splash.classList.remove('hidden'); splash.style.display='flex'; }
   }
+  
+  // Inicializar carrito y filtros después de un breve delay
+  setTimeout(() => { Cart.init(); MenuFilters.tagItems(); }, 200);
 });
+
+// ============ MENU FILTERS ============
+const ITEM_TAGS = {
+  // Cafés
+  "Latte Matcha":["popular","vegetariano"],"Latte Taro":["popular","vegetariano"],
+  "Latte":["popular","vegetariano"],"Capuchino":["vegetariano"],
+  "Chocolate Caliente":["vegetariano"],"Moka":["vegetariano"],
+  "Espresso":["vegetariano"],"Americano":["vegetariano"],
+  // Tés
+  "Tisanas":["vegetariano"],"Chef Latte":["vegetariano"],"Té Nacional":["vegetariano"],
+  // Frappés
+  "Frappé Cookies & Cream":["popular","vegetariano"],"Frappé Taro":["popular","vegetariano"],
+  "Frappé Matcha":["vegetariano"],"Frappé Moka":["vegetariano"],
+  "Smoothie Frutas Rojas":["vegetariano"],"Limonada":["vegetariano"],
+  "Soda Italiana":["vegetariano"],
+  // Desayunos
+  "Huevos al Gusto":["popular","vegetariano"],"Omelette al Gusto":["vegetariano"],
+  "Chilaquiles Verdes/Rojos":["popular","picante"],"Enchiladas Verdes/Rojas":["picante"],
+  "Molletes Tradicionales":["vegetariano"],"Sincronizadas":["vegetariano"],
+  // Ensaladas
+  "Salad 323":["vegetariano"],"Spinach Salad":["popular","vegetariano"],
+  "Caesar Salad":["vegetariano"],
+  // Ciabattas
+  "Ciabatta Mushrooms":["vegetariano"],"Ciabatta Original":["vegetariano"],
+  "Ciabatta Chicken BBQ":["popular"],
+  // Crepes
+  "The Pink House Crepe ⭐":["popular","vegetariano"],"Nutella Crepe":["popular","vegetariano"],
+  "Red Fruits Crepe":["vegetariano"],"Apple Cinnamon Crepe":["vegetariano"],
+  "Blackberry Crepe":["vegetariano"],"Special Crepe":["vegetariano"],
+  // Pizzas
+  "Pizza Margarita":["popular","vegetariano"],"Pizza Pear & Nut":["vegetariano"],
+  "Pizza Hawaiana":["popular"],"Pizza Peperoni":["popular"],
+  // Pastas
+  "Pasta Alfredo":["popular","vegetariano"],"Pasta Boloñesa":["popular"],
+  "Pasta Diavola/Shrimp":["picante"],"Pasta All'arrabbiata":["picante","vegetariano"],
+  // A la carta
+  "Rib Eye":["popular"],
+  // Postres
+  "Neapolitan Flan":["vegetariano"],"Apple Strudel":["popular","vegetariano"],
+  "Baked Banana":["vegetariano"],"Bartoloes":["vegetariano"],
+  // Bebidas
+  "Vino Tinto":["vegetariano"],"Vino Blanco":["vegetariano"],
+  "Limonada":["vegetariano"],"Refrescos":["vegetariano"]
+};
+
+const TAG_ICONS = { popular:"⭐", vegetariano:"🥬", picante:"🌶️" };
+
+const MenuFilters = {
+  tagItems() {
+    document.querySelectorAll('.menu-card').forEach(card => {
+      const name = card.querySelector('h4').textContent.trim();
+      const tags = ITEM_TAGS[name] || [];
+      card.dataset.tags = tags.join(',');
+      if(tags.length === 0) return;
+      // Agregar tags visuales arriba del título
+      const tagsHtml = tags.map(t => `<span class="menu-tag menu-tag-${t==='popular'?'pop':t==='vegetariano'?'veg':'spicy'}">${TAG_ICONS[t]||''} ${t}</span>`).join('');
+      const h4 = card.querySelector('h4');
+      if(!card.querySelector('.menu-card-tags')) {
+        h4.insertAdjacentHTML('beforebegin', `<div class="menu-card-tags">${tagsHtml}</div>`);
+      }
+    });
+  }
+};
+
+function applyFilter(filter, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.menu-card').forEach(card => {
+    if(filter === 'all') {
+      card.classList.remove('filtered-out');
+    } else {
+      const tags = (card.dataset.tags || '').split(',');
+      card.classList.toggle('filtered-out', !tags.includes(filter));
+    }
+  });
+}
+
+// ============ CART ============
+const Cart = {
+  items: [],
+  
+  init() {
+    try { this.items = JSON.parse(localStorage.getItem('phCart') || '[]'); } catch(e){ this.items = []; }
+    
+    // Convertir cada add-btn de "ordenar a WhatsApp" a "agregar al carrito"
+    document.querySelectorAll('.menu-card').forEach((card, idx) => {
+      const name = card.querySelector('h4').textContent.trim();
+      const priceEl = card.querySelector('.price');
+      if(!priceEl) return;
+      const price = this.parsePrice(priceEl.textContent);
+      const btn = card.querySelector('.add-btn');
+      if(!btn) return;
+      const id = 'item_' + idx;
+      btn.dataset.id = id;
+      btn.dataset.name = name;
+      btn.dataset.price = price;
+      btn.onclick = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        this.add(id, name, price);
+      };
+    });
+    this.render();
+  },
+  
+  parsePrice(text) {
+    const m = text.match(/\$(\d+)/);
+    return m ? parseInt(m[1]) : 0;
+  },
+  
+  add(id, name, price) {
+    const existing = this.items.find(x => x.id === id);
+    if(existing) existing.qty++;
+    else this.items.push({id, name, price, qty: 1});
+    this.save();
+    this.render();
+    this.flash();
+    this.notify(name);
+  },
+  
+  changeQty(id, delta) {
+    const item = this.items.find(x => x.id === id);
+    if(!item) return;
+    item.qty += delta;
+    if(item.qty <= 0) this.items = this.items.filter(x => x.id !== id);
+    this.save();
+    this.render();
+  },
+  
+  confirmClear() {
+    const t = i18n[currentLang||'es'];
+    if(confirm(t.cart_confirm_clear)) {
+      this.items = [];
+      this.save();
+      this.render();
+    }
+  },
+  
+  total() { return this.items.reduce((s,x) => s + x.price * x.qty, 0); },
+  count() { return this.items.reduce((s,x) => s + x.qty, 0); },
+  save() { localStorage.setItem('phCart', JSON.stringify(this.items)); },
+  
+  open() {
+    document.getElementById('cartDrawer').classList.add('open');
+    document.getElementById('cartOverlay').classList.add('open');
+  },
+  
+  close() {
+    document.getElementById('cartDrawer').classList.remove('open');
+    document.getElementById('cartOverlay').classList.remove('open');
+  },
+  
+  render() {
+    const t = i18n[currentLang||'es'];
+    const badge = document.getElementById('cartBadge');
+    if(badge) {
+      badge.textContent = this.count();
+      badge.classList.toggle('visible', this.count() > 0);
+    }
+    const list = document.getElementById('cartItemsList');
+    if(!list) return;
+    if(this.items.length === 0) {
+      list.innerHTML = `<div class="cart-empty"><span class="cart-empty-icon">🛒</span>${t.cart_empty}</div>`;
+    } else {
+      list.innerHTML = this.items.map(item => `
+        <div class="cart-item">
+          <div class="cart-item-info">
+            <h5>${item.name}</h5>
+            <span>$${item.price} c/u</span>
+          </div>
+          <div class="cart-qty">
+            <button onclick="Cart.changeQty('${item.id}',-1)">−</button>
+            <span class="qty-val">${item.qty}</span>
+            <button onclick="Cart.changeQty('${item.id}',1)">+</button>
+          </div>
+          <div class="cart-item-total">$${item.price * item.qty}</div>
+        </div>
+      `).join('');
+    }
+    const totalEl = document.getElementById('cartTotalAmount');
+    if(totalEl) totalEl.textContent = '$' + this.total();
+    const sendBtn = document.getElementById('cartSendBtn');
+    if(sendBtn) sendBtn.disabled = this.items.length === 0;
+  },
+  
+  flash() {
+    const c = document.querySelector('.cart-float');
+    if(!c) return;
+    c.classList.add('flash');
+    setTimeout(() => c.classList.remove('flash'), 500);
+  },
+  
+  notify(name) {
+    const t = i18n[currentLang||'es'];
+    const toast = document.createElement('div');
+    toast.className = 'cart-toast';
+    toast.innerHTML = `✓ ${name} ${t.cart_added}`;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.classList.add('show'), 10);
+    setTimeout(() => {
+      toast.classList.remove('show');
+      setTimeout(() => toast.remove(), 300);
+    }, 2200);
+  },
+  
+  sendWhatsApp() {
+    if(this.items.length === 0) return;
+    const lang = currentLang || 'es';
+    const greeting = lang==='en'?"Hi The Pink House! I want to order":lang==='fr'?"Bonjour The Pink House! Je veux commander":"Hola The Pink House! Quiero ordenar";
+    const totalLabel = lang==='en'?"Total":lang==='fr'?"Total":"Total";
+    const help = lang==='en'?"Can you help me?":lang==='fr'?"Pouvez-vous m'aider?":"¿Pueden ayudarme?";
+    const lines = this.items.map(x => `• ${x.qty}x ${x.name} - $${x.price * x.qty}`);
+    const msg = encodeURIComponent(`🌸 ${greeting}:\n\n${lines.join('\n')}\n\n*${totalLabel}: $${this.total()}*\n\n${help}`);
+    window.open(`https://wa.me/525534745455?text=${msg}`, '_blank');
+  }
+};
 </script>
 
 <script>
@@ -1439,6 +1971,17 @@ const Rosa = {
 
 // Inicializar Rosa después del splash
 window.RosaInit = () => Rosa.init();
+
+// Botón flotante: scrollear a la sección de Alma con animación
+Rosa.openFloating = function() {
+  const section = document.getElementById('rosa-ia');
+  if(!section) return;
+  section.scrollIntoView({behavior:'smooth', block:'start'});
+  setTimeout(() => {
+    const input = document.getElementById('chatInput');
+    if(input) input.focus();
+  }, 800);
+};
 </script>
 </body>
 </html>
