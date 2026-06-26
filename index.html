@@ -8,7 +8,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--pink:#C8647A;--pink-dark:#a8505f;--pink-light:#F2D5DA;--pink-pale:#FBF0F2;--cream:#FAF7F2;--dark:#1A1A1A;--gold:#B8926A;--gray:#6B6B6B;--white:#fff}
+:root{--pink:#C8647A;--pink-dark:#a8505f;--pink-light:#F2D5DA;--pink-pale:#FBF0F2;--cream:#FAF7F2;--dark:#1A1A1A;--gold:#B8926A;--gray:#6B6B6B}
 html{scroll-behavior:smooth}
 body{font-family:'Lato',sans-serif;background:#fff;color:var(--dark);overflow-x:hidden}
 nav{background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--pink-light);padding:14px 5%;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200}
@@ -33,9 +33,7 @@ nav{background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1
 .btn-outline:hover{background:var(--pink-light)}
 .hero-visual{flex:0 0 400px}
 .hero-card{background:#fff;border-radius:28px;padding:36px;box-shadow:0 24px 70px rgba(200,100,122,.13);text-align:center;border:1px solid var(--pink-light)}
-.logo-circle-big{width:130px;height:130px;border:2px solid var(--pink);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
-.hero-card h3{font-family:'Playfair Display',serif;font-size:24px;color:var(--pink);margin-bottom:4px}
-.hero-card .tagline{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gray)}
+.logo-circle-big{width:240px;height:240px;margin:0 auto 8px}
 .stars{color:var(--gold);font-size:22px;margin:14px 0 4px;letter-spacing:3px}
 .rating-text{font-size:13px;color:var(--gray);margin-bottom:18px}
 .hero-tags{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
@@ -43,7 +41,6 @@ nav{background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1
 .info-bar{background:var(--pink);padding:18px 5%;display:flex;gap:0;justify-content:center;flex-wrap:wrap}
 .info-item{display:flex;align-items:center;gap:10px;color:#fff;font-size:13px;padding:6px 28px;border-right:1px solid rgba(255,255,255,.3)}
 .info-item:last-child{border-right:none}
-/* AI */
 .ai-section{padding:90px 5%;background:var(--dark);position:relative;overflow:hidden}
 .ai-section::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(200,100,122,.15) 0%,transparent 70%);pointer-events:none}
 .ai-header{text-align:center;margin-bottom:50px}
@@ -57,7 +54,7 @@ nav{background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1
 .chat-header-info p{color:rgba(255,255,255,.5);font-size:12px}
 .online-dot{width:8px;height:8px;background:#4CAF50;border-radius:50%;display:inline-block;margin-right:5px;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
-.chat-messages{height:420px;overflow-y:auto;padding:24px;display:flex;flex-direction:column;gap:16px;scroll-behavior:smooth}
+.chat-messages{height:440px;overflow-y:auto;padding:24px;display:flex;flex-direction:column;gap:16px;scroll-behavior:smooth}
 .chat-messages::-webkit-scrollbar{width:4px}
 .chat-messages::-webkit-scrollbar-thumb{background:rgba(200,100,122,.4);border-radius:2px}
 .msg{display:flex;gap:12px;max-width:88%;animation:fadeIn .35s ease}
@@ -83,15 +80,14 @@ nav{background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1
 .send-btn{background:var(--pink);border:none;border-radius:50%;width:44px;height:44px;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
 .send-btn:hover{background:var(--pink-dark);transform:scale(1.05)}
 .send-btn svg{width:18px;height:18px}
-.rec-card{background:rgba(200,100,122,.1);border:1px solid rgba(200,100,122,.3);border-radius:16px;padding:16px;margin-top:4px;margin-left:46px}
-.rec-card h5{color:#F2D5DA;font-size:12px;font-weight:700;margin-bottom:10px;letter-spacing:.5px;text-transform:uppercase}
-.rec-item{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.rec-card{background:rgba(200,100,122,.12);border:1px solid rgba(200,100,122,.35);border-radius:16px;padding:18px;margin-top:6px;margin-left:46px;max-width:420px}
+.rec-card h5{color:#F2D5DA;font-size:12px;font-weight:700;margin-bottom:12px;letter-spacing:.5px;text-transform:uppercase}
+.rec-item{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.07)}
 .rec-item:last-of-type{border-bottom:none}
-.rec-item span{color:rgba(255,255,255,.85);font-size:13px}
-.rec-price{color:#F2D5DA;font-weight:700;font-size:13px}
-.rec-wa-btn{display:block;background:var(--pink);color:#fff;text-align:center;padding:10px;border-radius:12px;text-decoration:none;font-size:13px;font-weight:700;margin-top:12px;transition:background .2s}
+.rec-item span{color:rgba(255,255,255,.9);font-size:13px}
+.rec-price{color:#F2D5DA;font-weight:700;font-size:13px;white-space:nowrap;margin-left:10px}
+.rec-wa-btn{display:block;background:var(--pink);color:#fff;text-align:center;padding:11px;border-radius:12px;text-decoration:none;font-size:13px;font-weight:700;margin-top:14px;transition:background .2s}
 .rec-wa-btn:hover{background:var(--pink-dark)}
-/* MENU */
 .menu-section{padding:90px 5%;background:var(--cream)}
 .section-header{text-align:center;margin-bottom:56px}
 .section-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--pink);font-weight:700;margin-bottom:10px}
@@ -105,12 +101,11 @@ nav{background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1
 .menu-card:hover{box-shadow:0 10px 35px rgba(200,100,122,.13);transform:translateY(-2px)}
 .menu-card h4{font-family:'Playfair Display',serif;font-size:16px;color:var(--dark);margin-bottom:5px}
 .menu-card p{font-size:12px;color:var(--gray);line-height:1.5;margin-bottom:14px}
-.menu-card-footer{display:flex;align-items:center;justify-content:space-between}
-.price{font-size:19px;font-weight:700;color:var(--pink)}
+.menu-card-footer{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.price{font-size:18px;font-weight:700;color:var(--pink)}
 .size-badge{font-size:10px;color:var(--gray);font-weight:400;margin-left:3px}
-.add-btn{background:var(--pink-pale);color:var(--pink);border:none;padding:8px 16px;border-radius:50px;font-size:12px;font-weight:700;cursor:pointer;transition:all .2s;font-family:'Lato',sans-serif}
+.add-btn{background:var(--pink-pale);color:var(--pink);border:none;padding:8px 14px;border-radius:50px;font-size:12px;font-weight:700;cursor:pointer;transition:all .2s;font-family:'Lato',sans-serif;white-space:nowrap}
 .add-btn:hover{background:var(--pink);color:#fff}
-/* EVENTOS */
 .events-section{padding:90px 5%;background:#fff}
 .events-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1000px;margin:48px auto 0}
 .event-card{border-radius:24px;padding:36px;border:1.5px solid var(--pink-light);transition:all .25s;position:relative;overflow:hidden}
@@ -126,13 +121,11 @@ nav{background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1
 .event-price strong{color:var(--pink);font-size:18px}
 .event-cta{display:block;background:var(--pink);color:#fff;text-align:center;padding:13px 24px;border-radius:50px;text-decoration:none;font-size:13px;font-weight:700;transition:all .2s}
 .event-cta:hover{background:var(--pink-dark)}
-/* QR */
 .qr-section{padding:80px 5%;background:var(--pink-pale);text-align:center}
 .qr-box{background:#fff;border-radius:24px;padding:40px;display:inline-block;box-shadow:0 16px 50px rgba(200,100,122,.12);margin-top:32px;border:1px solid var(--pink-light)}
 .qr-box p{font-size:13px;color:var(--gray);margin-top:16px}
 #qrcode{display:flex;justify-content:center}
 .qr-url{font-size:12px;color:var(--pink);font-weight:700;margin-top:8px;letter-spacing:1px}
-/* LOCATION */
 .location-section{padding:70px 5%;background:var(--pink)}
 .location-inner{max-width:900px;margin:0 auto;display:flex;gap:60px;align-items:center}
 .location-text{flex:1;color:#fff}
@@ -158,19 +151,28 @@ footer a{color:#F2D5DA;text-decoration:none}
 
 <nav>
   <a href="#" class="nav-logo">
-    <svg width="50" height="50" viewBox="0 0 100 100" fill="none">
-      <circle cx="50" cy="50" r="47" stroke="#C8647A" stroke-width="2"/>
-      <rect x="32" y="62" width="36" height="14" rx="3" stroke="#C8647A" stroke-width="1.5" fill="none"/>
-      <path d="M68 66 Q76 66 76 73 Q76 80 68 80" stroke="#C8647A" stroke-width="1.5" fill="none"/>
-      <line x1="32" y1="69" x2="68" y2="69" stroke="#C8647A" stroke-width="1"/>
-      <path d="M43 58 Q45 54 43 50" stroke="#C8647A" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-      <path d="M50 58 Q52 53 50 49" stroke="#C8647A" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-      <path d="M57 58 Q59 54 57 50" stroke="#C8647A" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-      <rect x="25" y="36" width="50" height="26" rx="1" stroke="#C8647A" stroke-width="1.5" fill="none"/>
-      <path d="M22 38 L50 22 L78 38" stroke="#C8647A" stroke-width="1.5" fill="none"/>
-      <path d="M33 62 Q33 55 39 55 Q45 55 45 62" stroke="#C8647A" stroke-width="1" fill="none"/>
-      <path d="M55 62 Q55 55 61 55 Q67 55 67 62" stroke="#C8647A" stroke-width="1" fill="none"/>
-      <rect x="46" y="40" width="8" height="10" rx="1" stroke="#C8647A" stroke-width="1" fill="none"/>
+    <svg width="56" height="56" viewBox="0 0 200 120" fill="none">
+      <path d="M38 60 Q40 55 38 50 Q36 45 38 40" stroke="#C8647A" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      <path d="M46 62 Q48 57 46 52 Q44 47 46 42" stroke="#C8647A" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      <path d="M28 78 L28 95 Q28 103 36 103 L55 103 Q63 103 63 95 L63 78 Z" stroke="#C8647A" stroke-width="2" fill="none"/>
+      <path d="M63 82 Q72 82 72 90 Q72 98 63 98" stroke="#C8647A" stroke-width="2" fill="none"/>
+      <line x1="22" y1="107" x2="69" y2="107" stroke="#C8647A" stroke-width="2" stroke-linecap="round"/>
+      <path d="M78 65 L88 50 L100 55 L108 48 L130 48 L140 55 L155 50 L165 65" stroke="#C8647A" stroke-width="1.8" fill="none"/>
+      <line x1="78" y1="65" x2="78" y2="105" stroke="#C8647A" stroke-width="2"/>
+      <line x1="165" y1="65" x2="165" y2="105" stroke="#C8647A" stroke-width="2"/>
+      <line x1="78" y1="83" x2="165" y2="83" stroke="#C8647A" stroke-width="1.5"/>
+      <rect x="85" y="68" width="6" height="12" stroke="#C8647A" stroke-width="1" fill="none"/>
+      <rect x="95" y="68" width="6" height="12" stroke="#C8647A" stroke-width="1" fill="none"/>
+      <rect x="113" y="68" width="6" height="12" stroke="#C8647A" stroke-width="1" fill="none"/>
+      <rect x="123" y="68" width="6" height="12" stroke="#C8647A" stroke-width="1" fill="none"/>
+      <rect x="141" y="68" width="6" height="12" stroke="#C8647A" stroke-width="1" fill="none"/>
+      <rect x="151" y="68" width="6" height="12" stroke="#C8647A" stroke-width="1" fill="none"/>
+      <path d="M83 105 L83 95 Q83 88 89 88 Q95 88 95 95 L95 105" stroke="#C8647A" stroke-width="1.5" fill="none"/>
+      <path d="M100 105 L100 95 Q100 88 106 88 Q112 88 112 95 L112 105" stroke="#C8647A" stroke-width="1.5" fill="none"/>
+      <path d="M117 105 L117 95 Q117 88 123 88 Q129 88 129 95 L129 105" stroke="#C8647A" stroke-width="1.5" fill="none"/>
+      <path d="M134 105 L134 95 Q134 88 140 88 Q146 88 146 95 L146 105" stroke="#C8647A" stroke-width="1.5" fill="none"/>
+      <path d="M151 105 L151 95 Q151 88 157 88 Q163 88 163 95 L163 105" stroke="#C8647A" stroke-width="1.5" fill="none"/>
+      <line x1="76" y1="106" x2="167" y2="106" stroke="#C8647A" stroke-width="2"/>
     </svg>
     <div class="nav-brand">The Pink House<small>Coffee & Food for the Heart</small></div>
   </a>
@@ -187,7 +189,7 @@ footer a{color:#F2D5DA;text-decoration:none}
   <div class="hero-text">
     <p class="hero-eyebrow">Roma Norte · Ciudad de México</p>
     <h1 class="hero-title">Coffee &amp; Food<br><em>for the Heart</em></h1>
-    <p class="hero-sub">Un lugar donde cada platillo cuenta una historia. Deja que nuestra IA te ayude a encontrar lo que tu corazón — y tu antojo — necesita hoy.</p>
+    <p class="hero-sub">Un lugar donde cada platillo cuenta una historia. Deja que Rosa te ayude a encontrar lo que tu corazón — y tu antojo — necesita hoy.</p>
     <div class="hero-btns">
       <a href="#rosa-ia" class="btn-primary">Habla con Rosa ✨</a>
       <a href="#menu" class="btn-outline">Ver menú completo</a>
@@ -195,24 +197,32 @@ footer a{color:#F2D5DA;text-decoration:none}
   </div>
   <div class="hero-visual">
     <div class="hero-card">
-      <div class="logo-circle-big">
-        <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-          <circle cx="50" cy="50" r="47" stroke="#C8647A" stroke-width="2"/>
-          <rect x="32" y="62" width="36" height="14" rx="3" stroke="#C8647A" stroke-width="1.5" fill="none"/>
-          <path d="M68 66 Q76 66 76 73 Q76 80 68 80" stroke="#C8647A" stroke-width="1.5" fill="none"/>
-          <line x1="32" y1="69" x2="68" y2="69" stroke="#C8647A" stroke-width="1"/>
-          <path d="M43 58 Q45 54 43 50" stroke="#C8647A" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-          <path d="M50 58 Q52 53 50 49" stroke="#C8647A" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-          <path d="M57 58 Q59 54 57 50" stroke="#C8647A" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-          <rect x="25" y="36" width="50" height="26" rx="1" stroke="#C8647A" stroke-width="1.5" fill="none"/>
-          <path d="M22 38 L50 22 L78 38" stroke="#C8647A" stroke-width="1.5" fill="none"/>
-          <path d="M33 62 Q33 55 39 55 Q45 55 45 62" stroke="#C8647A" stroke-width="1" fill="none"/>
-          <path d="M55 62 Q55 55 61 55 Q67 55 67 62" stroke="#C8647A" stroke-width="1" fill="none"/>
-          <rect x="46" y="40" width="8" height="10" rx="1" stroke="#C8647A" stroke-width="1" fill="none"/>
-        </svg>
-      </div>
-      <h3>The Pink House</h3>
-      <p class="tagline">Restaurante Café · Roma Norte</p>
+      <svg class="logo-circle-big" viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="95" stroke="#C8647A" stroke-width="2"/>
+        <path d="M38 60 Q40 55 38 50 Q36 45 38 40" stroke="#C8647A" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+        <path d="M46 62 Q48 57 46 52 Q44 47 46 42" stroke="#C8647A" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+        <path d="M28 78 L28 95 Q28 103 36 103 L55 103 Q63 103 63 95 L63 78 Z" stroke="#C8647A" stroke-width="2" fill="none"/>
+        <path d="M63 82 Q72 82 72 90 Q72 98 63 98" stroke="#C8647A" stroke-width="2" fill="none"/>
+        <line x1="22" y1="107" x2="69" y2="107" stroke="#C8647A" stroke-width="2" stroke-linecap="round"/>
+        <path d="M78 65 L88 50 L100 55 L108 48 L130 48 L140 55 L155 50 L165 65" stroke="#C8647A" stroke-width="1.8" fill="none"/>
+        <line x1="78" y1="65" x2="78" y2="105" stroke="#C8647A" stroke-width="2"/>
+        <line x1="165" y1="65" x2="165" y2="105" stroke="#C8647A" stroke-width="2"/>
+        <line x1="78" y1="83" x2="165" y2="83" stroke="#C8647A" stroke-width="1.5"/>
+        <rect x="85" y="68" width="6" height="12" stroke="#C8647A" stroke-width="1" fill="none"/>
+        <rect x="95" y="68" width="6" height="12" stroke="#C8647A" stroke-width="1" fill="none"/>
+        <rect x="113" y="68" width="6" height="12" stroke="#C8647A" stroke-width="1" fill="none"/>
+        <rect x="123" y="68" width="6" height="12" stroke="#C8647A" stroke-width="1" fill="none"/>
+        <rect x="141" y="68" width="6" height="12" stroke="#C8647A" stroke-width="1" fill="none"/>
+        <rect x="151" y="68" width="6" height="12" stroke="#C8647A" stroke-width="1" fill="none"/>
+        <path d="M83 105 L83 95 Q83 88 89 88 Q95 88 95 95 L95 105" stroke="#C8647A" stroke-width="1.5" fill="none"/>
+        <path d="M100 105 L100 95 Q100 88 106 88 Q112 88 112 95 L112 105" stroke="#C8647A" stroke-width="1.5" fill="none"/>
+        <path d="M117 105 L117 95 Q117 88 123 88 Q129 88 129 95 L129 105" stroke="#C8647A" stroke-width="1.5" fill="none"/>
+        <path d="M134 105 L134 95 Q134 88 140 88 Q146 88 146 95 L146 105" stroke="#C8647A" stroke-width="1.5" fill="none"/>
+        <path d="M151 105 L151 95 Q151 88 157 88 Q163 88 163 95 L163 105" stroke="#C8647A" stroke-width="1.5" fill="none"/>
+        <line x1="76" y1="106" x2="167" y2="106" stroke="#C8647A" stroke-width="2"/>
+        <text x="100" y="138" text-anchor="middle" font-family="Playfair Display, serif" font-size="18" fill="#C8647A">The Pink House</text>
+        <text x="100" y="155" text-anchor="middle" font-family="Lato, sans-serif" font-size="6" fill="#C8647A" letter-spacing="2.5">COFFEE AND FOOD FOR THE HEART</text>
+      </svg>
       <div class="stars">★★★★★</div>
       <p class="rating-text">4.9 · 26 reseñas en Google</p>
       <div class="hero-tags">
@@ -231,7 +241,6 @@ footer a{color:#F2D5DA;text-decoration:none}
   <div class="info-item">💳 Mercado Pago · Apple Pay · Efectivo</div>
 </div>
 
-<!-- ROSA IA -->
 <section class="ai-section" id="rosa-ia">
   <div class="ai-header">
     <p class="ai-eyebrow">Inteligencia Artificial</p>
@@ -248,15 +257,14 @@ footer a{color:#F2D5DA;text-decoration:none}
     </div>
     <div class="chat-messages" id="chatMessages"></div>
     <div class="chat-input-area">
-      <input type="text" class="chat-input" id="chatInput" placeholder="Cuéntale a Rosa cómo te sientes hoy..." />
-      <button class="send-btn" onclick="sendMessage()">
+      <input type="text" class="chat-input" id="chatInput" placeholder="Cuéntale a Rosa cómo te sientes..." />
+      <button class="send-btn" onclick="Rosa.send()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
       </button>
     </div>
   </div>
 </section>
 
-<!-- MENU -->
 <section class="menu-section" id="menu">
   <div class="section-header">
     <p class="section-eyebrow">Lo que ofrecemos</p>
@@ -277,139 +285,126 @@ footer a{color:#F2D5DA;text-decoration:none}
     <button class="tab" onclick="showTab('bebidas',this)">🍷 Bebidas</button>
   </div>
 
-  <!-- CAFÉS -->
   <div class="menu-grid active" id="tab-cafes">
-    <div class="menu-card"><h4>Espresso</h4><p>Solo o cortado.</p><div class="menu-card-footer"><span class="price">$38<span class="size-badge">M</span> / $55<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Espresso')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Espresso Cortado</h4><p>Con un toque de leche vaporizada.</p><div class="menu-card-footer"><span class="price">$40<span class="size-badge">M</span> / $60<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Espresso Cortado')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Americano</h4><p>Espresso con agua caliente.</p><div class="menu-card-footer"><span class="price">$55<span class="size-badge">M</span> / $65<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Americano')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Latte</h4><p>Suave, cremoso y reconfortante.</p><div class="menu-card-footer"><span class="price">$55<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Latte')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Latte Matcha</h4><p>Matcha japonés con leche vaporizada.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Latte Matcha')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Latte Taro</h4><p>Morado, dulce y cremoso.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Latte Taro')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Capuchino</h4><p>Espresso doble con espuma de leche.</p><div class="menu-card-footer"><span class="price">$55<span class="size-badge">M</span> / $60<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Capuchino')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Chocolate Caliente</h4><p>Cremoso y muy chocolatoso.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Chocolate Caliente')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Cocoa Menta</h4><p>Chocolate con toque de menta fresca.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Cocoa Menta')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Moka</h4><p>Espresso con chocolate.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Moka')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Moka Blanco</h4><p>Con chocolate blanco y espresso.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Moka Blanco')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Capuchino Rompope</h4><p>Con toque especial de rompope.</p><div class="menu-card-footer"><span class="price">$75<span class="size-badge">M</span> / $80<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Capuchino Rompope')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Capuchino Baileys</h4><p>Con esencia de Baileys.</p><div class="menu-card-footer"><span class="price">$75<span class="size-badge">M</span> / $80<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Capuchino Baileys')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Capuchino Amareto</h4><p>Con esencia de amaretto artesanal.</p><div class="menu-card-footer"><span class="price">$75<span class="size-badge">M</span> / $80<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Capuchino Amareto')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Leche de Almendra</h4><p>Sustituto disponible en cualquier bebida.</p><div class="menu-card-footer"><span class="price">+$15</span><button class="add-btn" onclick="orderWA('Leche de almendra extra')">Agregar →</button></div></div>
+    <div class="menu-card"><h4>Espresso</h4><p>Solo o cortado. Intenso y aromático.</p><div class="menu-card-footer"><span class="price">$38<span class="size-badge">M</span> / $55<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Espresso')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Espresso Cortado</h4><p>Con un toque de leche vaporizada.</p><div class="menu-card-footer"><span class="price">$40<span class="size-badge">M</span> / $60<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Espresso Cortado')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Americano</h4><p>Espresso con agua caliente.</p><div class="menu-card-footer"><span class="price">$55<span class="size-badge">M</span> / $65<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Americano')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Latte</h4><p>Suave, cremoso y reconfortante.</p><div class="menu-card-footer"><span class="price">$55<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Latte')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Latte Matcha</h4><p>Matcha japonés con leche vaporizada.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Latte Matcha')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Latte Taro</h4><p>Morado, dulce y cremoso.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Latte Taro')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Capuchino</h4><p>Espresso doble con espuma de leche.</p><div class="menu-card-footer"><span class="price">$55<span class="size-badge">M</span> / $60<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Capuchino')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Chocolate Caliente</h4><p>Cremoso y muy chocolatoso.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Chocolate Caliente')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Cocoa Menta</h4><p>Chocolate con toque de menta fresca.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Cocoa Menta')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Moka</h4><p>Espresso con chocolate.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Moka')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Moka Blanco</h4><p>Con chocolate blanco y espresso.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Moka Blanco')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Capuchino Rompope</h4><p>Con toque especial de rompope.</p><div class="menu-card-footer"><span class="price">$75<span class="size-badge">M</span> / $80<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Capuchino Rompope')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Capuchino Baileys</h4><p>Con esencia de Baileys.</p><div class="menu-card-footer"><span class="price">$75<span class="size-badge">M</span> / $80<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Capuchino Baileys')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Capuchino Amareto</h4><p>Con esencia de amaretto.</p><div class="menu-card-footer"><span class="price">$75<span class="size-badge">M</span> / $80<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Capuchino Amareto')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Leche de Almendra</h4><p>Sustituto disponible.</p><div class="menu-card-footer"><span class="price">+$15</span><button class="add-btn" onclick="orderWA('Leche de almendra extra')">Agregar</button></div></div>
   </div>
 
-  <!-- TÉS -->
   <div class="menu-grid" id="tab-tes">
-    <div class="menu-card"><h4>Tisanas</h4><p>Frutas rojas, guayaba, manzana o arándano.</p><div class="menu-card-footer"><span class="price">$65</span><button class="add-btn" onclick="orderWA('Tisana')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Chef Latte</h4><p>Especialidad de la casa.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Chef Latte')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Té Nacional</h4><p>Té de la casa.</p><div class="menu-card-footer"><span class="price">$45<span class="size-badge">M</span> / $50<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Té Nacional')">Ordenar →</button></div></div>
+    <div class="menu-card"><h4>Tisanas</h4><p>Frutas rojas, guayaba, manzana o arándano.</p><div class="menu-card-footer"><span class="price">$65</span><button class="add-btn" onclick="orderWA('Tisana')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Chef Latte</h4><p>Especialidad de la casa.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Chef Latte')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Té Nacional</h4><p>Té de la casa.</p><div class="menu-card-footer"><span class="price">$45<span class="size-badge">M</span> / $50<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Té Nacional')">Ordenar</button></div></div>
   </div>
 
-  <!-- FRÍOS -->
   <div class="menu-grid" id="tab-frios">
-    <div class="menu-card"><h4>Frappé Capuchino</h4><p>Café frío blended al estilo clásico.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Frappé Capuchino $70')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Frappé Matcha</h4><p>Matcha frío y cremoso.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Frappé Matcha $70')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Frappé Moka</h4><p>Chocolate y café en perfecto balance.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Frappé Moka $70')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Frappé Moka Blanco</h4><p>Con chocolate blanco y café.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Frappé Moka Blanco $70')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Frappé Taro</h4><p>Morado, dulce y muy instagrameable.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Frappé Taro $70')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Frappé Cookies &amp; Cream</h4><p>Oreo y crema, irresistible.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Frappé Cookies and Cream $70')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Capucchino Frío</h4><p>Capuchino sobre hielo.</p><div class="menu-card-footer"><span class="price">$65</span><button class="add-btn" onclick="orderWA('Capucchino Frío $65')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Chocolate Frío</h4><p>Chocolate frío y cremoso.</p><div class="menu-card-footer"><span class="price">$65</span><button class="add-btn" onclick="orderWA('Chocolate Frío $65')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Smoothie Frutas Rojas</h4><p>Mezcla de frutas del bosque frescos.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Smoothie Frutas Rojas $70')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Limonada</h4><p>Natural, fresca, con o sin chía.</p><div class="menu-card-footer"><span class="price">$55</span><button class="add-btn" onclick="orderWA('Limonada $55')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Naranjada</h4><p>Jugo de naranja natural.</p><div class="menu-card-footer"><span class="price">$55</span><button class="add-btn" onclick="orderWA('Naranjada $55')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Soda Italiana</h4><p>Frutas rojas o guayaba con soda.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Soda Italiana $70')">Ordenar →</button></div></div>
+    <div class="menu-card"><h4>Frappé Capuchino</h4><p>Café frío blended.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Frappé Capuchino $70')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Frappé Matcha</h4><p>Matcha frío y cremoso.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Frappé Matcha $70')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Frappé Moka</h4><p>Chocolate y café.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Frappé Moka $70')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Frappé Moka Blanco</h4><p>Con chocolate blanco.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Frappé Moka Blanco $70')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Frappé Taro</h4><p>Morado, dulce y muy instagrameable.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Frappé Taro $70')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Frappé Cookies &amp; Cream</h4><p>Oreo y crema, irresistible.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Frappé Cookies $70')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Capucchino Frío</h4><p>Capuchino sobre hielo.</p><div class="menu-card-footer"><span class="price">$65</span><button class="add-btn" onclick="orderWA('Capucchino Frío')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Chocolate Frío</h4><p>Chocolate frío y cremoso.</p><div class="menu-card-footer"><span class="price">$65</span><button class="add-btn" onclick="orderWA('Chocolate Frío')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Smoothie Frutas Rojas</h4><p>Mezcla de frutas del bosque.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Smoothie $70')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Limonada</h4><p>Natural, fresca, con o sin chía.</p><div class="menu-card-footer"><span class="price">$55</span><button class="add-btn" onclick="orderWA('Limonada $55')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Naranjada</h4><p>Jugo de naranja natural.</p><div class="menu-card-footer"><span class="price">$55</span><button class="add-btn" onclick="orderWA('Naranjada $55')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Soda Italiana</h4><p>Frutas rojas o guayaba con soda.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Soda Italiana $70')">Ordenar</button></div></div>
   </div>
 
-  <!-- DESAYUNOS -->
   <div class="menu-grid" id="tab-desayunos">
-    <div class="menu-card"><h4>Huevos al Gusto</h4><p>Incluye café americano chico, jugo o fruta. Hasta 12pm.</p><div class="menu-card-footer"><span class="price">$110</span><button class="add-btn" onclick="orderWA('Huevos al Gusto $110')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Omelette al Gusto</h4><p>Incluye café americano chico, jugo o fruta.</p><div class="menu-card-footer"><span class="price">$110</span><button class="add-btn" onclick="orderWA('Omelette $110')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Chilaquiles Verdes o Rojos</h4><p>Con pollo o huevo. Incluye bebida.</p><div class="menu-card-footer"><span class="price">$110</span><button class="add-btn" onclick="orderWA('Chilaquiles $110')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Enchiladas Verdes o Rojas</h4><p>Con pollo o huevo. Crema y queso.</p><div class="menu-card-footer"><span class="price">$110</span><button class="add-btn" onclick="orderWA('Enchiladas $110')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Molletes Tradicionales</h4><p>Con frijoles y queso gratinado.</p><div class="menu-card-footer"><span class="price">$80</span><button class="add-btn" onclick="orderWA('Molletes Tradicionales $80')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Molletes Especiales</h4><p>Chorizo, jamón, tocino o champiñones.</p><div class="menu-card-footer"><span class="price">$80</span><button class="add-btn" onclick="orderWA('Molletes Especiales $80')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Sincronizadas</h4><p>Tortilla de harina, jamón y queso.</p><div class="menu-card-footer"><span class="price">$60</span><button class="add-btn" onclick="orderWA('Sincronizadas $60')">Ordenar →</button></div></div>
+    <div class="menu-card"><h4>Huevos al Gusto</h4><p>Incluye café americano chico, jugo o fruta. Hasta 12pm.</p><div class="menu-card-footer"><span class="price">$110</span><button class="add-btn" onclick="orderWA('Huevos al Gusto $110')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Omelette al Gusto</h4><p>Incluye café americano chico, jugo o fruta.</p><div class="menu-card-footer"><span class="price">$110</span><button class="add-btn" onclick="orderWA('Omelette $110')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Chilaquiles Verdes o Rojos</h4><p>Con pollo o huevo. Incluye bebida.</p><div class="menu-card-footer"><span class="price">$110</span><button class="add-btn" onclick="orderWA('Chilaquiles $110')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Enchiladas Verdes o Rojas</h4><p>Con pollo o huevo. Crema y queso.</p><div class="menu-card-footer"><span class="price">$110</span><button class="add-btn" onclick="orderWA('Enchiladas $110')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Molletes Tradicionales</h4><p>Con frijoles y queso gratinado.</p><div class="menu-card-footer"><span class="price">$80</span><button class="add-btn" onclick="orderWA('Molletes $80')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Molletes Especiales</h4><p>Chorizo, jamón, tocino o champiñones.</p><div class="menu-card-footer"><span class="price">$80</span><button class="add-btn" onclick="orderWA('Molletes Especiales $80')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Sincronizadas</h4><p>Tortilla de harina, jamón y queso.</p><div class="menu-card-footer"><span class="price">$60</span><button class="add-btn" onclick="orderWA('Sincronizadas $60')">Ordenar</button></div></div>
   </div>
 
-  <!-- ENSALADAS -->
   <div class="menu-grid" id="tab-ensaladas">
-    <div class="menu-card"><h4>Salad 323</h4><p>Ensalada especial de la casa.</p><div class="menu-card-footer"><span class="price">$120</span><button class="add-btn" onclick="orderWA('Salad 323 $120')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Chef Salad</h4><p>Jamón, queso manchego, panela, pollo, tocino y tomate.</p><div class="menu-card-footer"><span class="price">$120</span><button class="add-btn" onclick="orderWA('Chef Salad $120')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Spinach Salad</h4><p>Espinaca, queso de cabra y nuez.</p><div class="menu-card-footer"><span class="price">$120</span><button class="add-btn" onclick="orderWA('Spinach Salad $120')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Caesar Salad</h4><p>Lechuga, crutones, queso parmesano, aceite de ajo y aderezo caesar.</p><div class="menu-card-footer"><span class="price">$120</span><button class="add-btn" onclick="orderWA('Caesar Salad $120')">Ordenar →</button></div></div>
+    <div class="menu-card"><h4>Salad 323</h4><p>Ensalada especial de la casa.</p><div class="menu-card-footer"><span class="price">$120</span><button class="add-btn" onclick="orderWA('Salad 323 $120')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Chef Salad</h4><p>Jamón, manchego, panela, pollo, tocino y tomate.</p><div class="menu-card-footer"><span class="price">$120</span><button class="add-btn" onclick="orderWA('Chef Salad $120')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Spinach Salad</h4><p>Espinaca, queso de cabra y nuez.</p><div class="menu-card-footer"><span class="price">$120</span><button class="add-btn" onclick="orderWA('Spinach Salad $120')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Caesar Salad</h4><p>Lechuga, crutones, parmesano y aderezo caesar.</p><div class="menu-card-footer"><span class="price">$120</span><button class="add-btn" onclick="orderWA('Caesar Salad $120')">Ordenar</button></div></div>
   </div>
 
-  <!-- CIABATTAS -->
   <div class="menu-grid" id="tab-ciabattas">
-    <div class="menu-card"><h4>Ciabatta Mushrooms</h4><p>Queso gouda y aguacate.</p><div class="menu-card-footer"><span class="price">$120</span><button class="add-btn" onclick="orderWA('Ciabatta Mushrooms $120')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Ciabatta Chicken BBQ</h4><p>Pollo, queso gouda y tomate.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" onclick="orderWA('Ciabatta Chicken BBQ $130')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Ciabatta Original</h4><p>Queso gouda y manchego.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" onclick="orderWA('Ciabatta Original $130')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Club Sandwich</h4><p>Con queso manchego. Incluye papas.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" onclick="orderWA('Club Sandwich $130')">Ordenar →</button></div></div>
+    <div class="menu-card"><h4>Ciabatta Mushrooms</h4><p>Queso gouda y aguacate.</p><div class="menu-card-footer"><span class="price">$120</span><button class="add-btn" onclick="orderWA('Ciabatta Mushrooms $120')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Ciabatta Chicken BBQ</h4><p>Pollo, queso gouda y tomate.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" onclick="orderWA('Ciabatta Chicken BBQ $130')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Ciabatta Original</h4><p>Queso gouda y manchego.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" onclick="orderWA('Ciabatta Original $130')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Club Sandwich</h4><p>Con queso manchego. Incluye papas.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" onclick="orderWA('Club Sandwich $130')">Ordenar</button></div></div>
   </div>
 
-  <!-- CREPES -->
   <div class="menu-grid" id="tab-crepes">
-    <div class="menu-card"><h4>Apple Cinnamon Crepe</h4><p>Philadelphia, manzana y canela.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" onclick="orderWA('Apple Cinnamon Crepe $130')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Red Fruits Crepe</h4><p>Philadelphia, manzana y canela.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" onclick="orderWA('Red Fruits Crepe $130')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Nutella Crepe</h4><p>Nutella, philadelphia, fresa o plátano.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" onclick="orderWA('Nutella Crepe $130')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Blackberry Crepe</h4><p>Mermelada de zarzamora y philadelphia.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" onclick="orderWA('Blackberry Crepe $130')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Special Crepe</h4><p>Cajeta casera, philadelphia, nuez o fresa.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" onclick="orderWA('Special Crepe $130')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>The Pink House Crepe ⭐</h4><p>Philadelphia, lechera y fresa.</p><div class="menu-card-footer"><span class="price">$140</span><button class="add-btn" onclick="orderWA('The Pink House Crepe $140')">Ordenar →</button></div></div>
+    <div class="menu-card"><h4>Apple Cinnamon Crepe</h4><p>Philadelphia, manzana y canela.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" onclick="orderWA('Apple Cinnamon $130')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Red Fruits Crepe</h4><p>Philadelphia y frutas rojas.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" onclick="orderWA('Red Fruits $130')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Nutella Crepe</h4><p>Nutella, philadelphia, fresa o plátano.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" onclick="orderWA('Nutella Crepe $130')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Blackberry Crepe</h4><p>Mermelada de zarzamora y philadelphia.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" onclick="orderWA('Blackberry $130')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Special Crepe</h4><p>Cajeta casera, philadelphia, nuez o fresa.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" onclick="orderWA('Special Crepe $130')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>The Pink House Crepe ⭐</h4><p>Philadelphia, lechera y fresa.</p><div class="menu-card-footer"><span class="price">$140</span><button class="add-btn" onclick="orderWA('Pink House Crepe $140')">Ordenar</button></div></div>
   </div>
 
-  <!-- A LA CARTE -->
   <div class="menu-grid" id="tab-carnes">
-    <div class="menu-card"><h4>Breaded Chicken Breast</h4><p>Pechuga empanizada. Con ajo, arroz o ensalada.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" onclick="orderWA('Breaded Chicken Breast $150')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Roasted Chicken Breast</h4><p>Pechuga rostizada. Con guarnición.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" onclick="orderWA('Roasted Chicken Breast $150')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Flank Steak</h4><p>Corte de res con guarnición a elegir.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" onclick="orderWA('Flank Steak $150')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Fish Fillet</h4><p>Filete de pescado al gusto. Con ajo, empanizado, arroz o ensalada.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" onclick="orderWA('Fish Fillet $150')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Rib Eye</h4><p>Corte premium con guarnición a elegir.</p><div class="menu-card-footer"><span class="price">$230</span><button class="add-btn" onclick="orderWA('Rib Eye $230')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>French Fries</h4><p>Papas fritas crujientes.</p><div class="menu-card-footer"><span class="price">$50</span><button class="add-btn" onclick="orderWA('French Fries $50')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Azteca Soup</h4><p>Sopa azteca tradicional.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Azteca Soup $70')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Ceviche Toast (3)</h4><p>Tostadas de ceviche estilo casa.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" onclick="orderWA('Ceviche Toast $150')">Ordenar →</button></div></div>
+    <div class="menu-card"><h4>Breaded Chicken Breast</h4><p>Pechuga empanizada con guarnición.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" onclick="orderWA('Breaded Chicken $150')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Roasted Chicken Breast</h4><p>Pechuga rostizada.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" onclick="orderWA('Roasted Chicken $150')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Flank Steak</h4><p>Corte de res con guarnición.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" onclick="orderWA('Flank Steak $150')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Fish Fillet</h4><p>Filete de pescado al gusto.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" onclick="orderWA('Fish Fillet $150')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Rib Eye</h4><p>Corte premium con guarnición.</p><div class="menu-card-footer"><span class="price">$230</span><button class="add-btn" onclick="orderWA('Rib Eye $230')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>French Fries</h4><p>Papas fritas crujientes.</p><div class="menu-card-footer"><span class="price">$50</span><button class="add-btn" onclick="orderWA('French Fries $50')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Azteca Soup</h4><p>Sopa azteca tradicional.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Azteca Soup $70')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Ceviche Toast (3)</h4><p>Tostadas de ceviche estilo casa.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" onclick="orderWA('Ceviche Toast $150')">Ordenar</button></div></div>
   </div>
 
-  <!-- PIZZAS -->
   <div class="menu-grid" id="tab-pizzas">
-    <div class="menu-card"><h4>Pizza Margarita</h4><p>Salsa de tomate, mozzarella y albahaca.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" onclick="orderWA('Pizza Margarita $150')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Pizza Hawaiana</h4><p>Jamón y piña sobre queso mozzarella.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" onclick="orderWA('Pizza Hawaiana $150')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Pizza Peperoni</h4><p>Pepperoni y doble queso.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" onclick="orderWA('Pizza Peperoni $150')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Pizza Bacon</h4><p>Tocino ahumado y queso.</p><div class="menu-card-footer"><span class="price">$170</span><button class="add-btn" onclick="orderWA('Pizza Bacon $170')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Pizza Boloñesa</h4><p>Carne molida con salsa boloñesa.</p><div class="menu-card-footer"><span class="price">$170</span><button class="add-btn" onclick="orderWA('Pizza Boloñesa $170')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Pizza Pear &amp; Nut</h4><p>Pera, nuez y queso de cabra.</p><div class="menu-card-footer"><span class="price">$170</span><button class="add-btn" onclick="orderWA('Pizza Pear and Nut $170')">Ordenar →</button></div></div>
+    <div class="menu-card"><h4>Pizza Margarita</h4><p>Salsa de tomate, mozzarella y albahaca.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" onclick="orderWA('Pizza Margarita $150')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Pizza Hawaiana</h4><p>Jamón y piña con mozzarella.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" onclick="orderWA('Pizza Hawaiana $150')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Pizza Peperoni</h4><p>Pepperoni y doble queso.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" onclick="orderWA('Pizza Peperoni $150')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Pizza Bacon</h4><p>Tocino ahumado y queso.</p><div class="menu-card-footer"><span class="price">$170</span><button class="add-btn" onclick="orderWA('Pizza Bacon $170')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Pizza Boloñesa</h4><p>Carne molida con salsa boloñesa.</p><div class="menu-card-footer"><span class="price">$170</span><button class="add-btn" onclick="orderWA('Pizza Boloñesa $170')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Pizza Pear &amp; Nut</h4><p>Pera, nuez y queso de cabra.</p><div class="menu-card-footer"><span class="price">$170</span><button class="add-btn" onclick="orderWA('Pizza Pear and Nut $170')">Ordenar</button></div></div>
   </div>
 
-  <!-- PASTAS -->
   <div class="menu-grid" id="tab-pastas">
-    <div class="menu-card"><h4>Pasta Boloñesa</h4><p>Carne molida con salsa de tomate italiana.</p><div class="menu-card-footer"><span class="price">$190</span><button class="add-btn" onclick="orderWA('Pasta Boloñesa $190')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Pasta Diavola / Shrimp</h4><p>Salsa picante o con camarones.</p><div class="menu-card-footer"><span class="price">$190</span><button class="add-btn" onclick="orderWA('Pasta Diavola $190')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Pasta Alfredo</h4><p>Crema, ajo y parmesano.</p><div class="menu-card-footer"><span class="price">$190</span><button class="add-btn" onclick="orderWA('Pasta Alfredo $190')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Pasta All'arrabbiata</h4><p>Salsa picante estilo italiano.</p><div class="menu-card-footer"><span class="price">$190</span><button class="add-btn" onclick="orderWA('Pasta All Arrabbiata $190')">Ordenar →</button></div></div>
+    <div class="menu-card"><h4>Pasta Boloñesa</h4><p>Carne molida con salsa de tomate italiana.</p><div class="menu-card-footer"><span class="price">$190</span><button class="add-btn" onclick="orderWA('Pasta Boloñesa $190')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Pasta Diavola / Shrimp</h4><p>Salsa picante o con camarones.</p><div class="menu-card-footer"><span class="price">$190</span><button class="add-btn" onclick="orderWA('Pasta Diavola $190')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Pasta Alfredo</h4><p>Crema, ajo y parmesano.</p><div class="menu-card-footer"><span class="price">$190</span><button class="add-btn" onclick="orderWA('Pasta Alfredo $190')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Pasta All'arrabbiata</h4><p>Salsa picante estilo italiano.</p><div class="menu-card-footer"><span class="price">$190</span><button class="add-btn" onclick="orderWA('Pasta Arrabbiata $190')">Ordenar</button></div></div>
   </div>
 
-  <!-- POSTRES -->
   <div class="menu-grid" id="tab-postres">
-    <div class="menu-card"><h4>Neapolitan Flan</h4><p>Flan artesanal por rebanada. Hecho en casa.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Neapolitan Flan $70')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Baked Banana</h4><p>Plátano horneado artesanal.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Baked Banana $70')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Apple Strudel</h4><p>Strudel de manzana. Homemade pastry pie.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Apple Strudel $70')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Bartoloes</h4><p>Pay artesanal hecho en casa.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Bartoloes $70')">Ordenar →</button></div></div>
+    <div class="menu-card"><h4>Neapolitan Flan</h4><p>Flan artesanal por rebanada.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Flan $70')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Baked Banana</h4><p>Plátano horneado artesanal.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Baked Banana $70')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Apple Strudel</h4><p>Strudel de manzana hecho en casa.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Apple Strudel $70')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Bartoloes</h4><p>Pay artesanal hecho en casa.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Bartoloes $70')">Ordenar</button></div></div>
   </div>
 
-  <!-- BEBIDAS -->
   <div class="menu-grid" id="tab-bebidas">
-    <div class="menu-card"><h4>Cerveza</h4><p>Clásica fría.</p><div class="menu-card-footer"><span class="price">$55</span><button class="add-btn" onclick="orderWA('Cerveza $55')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Vaso Michelado</h4><p>Bien preparada con clamato y especias.</p><div class="menu-card-footer"><span class="price">$35</span><button class="add-btn" onclick="orderWA('Michelada $35')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Vaso Clamato</h4><p>Con clamato y especias.</p><div class="menu-card-footer"><span class="price">$40</span><button class="add-btn" onclick="orderWA('Clamato $40')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Clerloot</h4><p>Vino con fruta. Copa o jarra.</p><div class="menu-card-footer"><span class="price">$110 / $250</span><button class="add-btn" onclick="orderWA('Clerloot')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Vino Blanco</h4><p>Copa de vino blanco.</p><div class="menu-card-footer"><span class="price">$90</span><button class="add-btn" onclick="orderWA('Vino Blanco $90')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Vino Tinto</h4><p>Copa de vino tinto.</p><div class="menu-card-footer"><span class="price">$90</span><button class="add-btn" onclick="orderWA('Vino Tinto $90')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Rosita Limón</h4><p>Fresa, limón y menta. Muy refrescante.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Rosita Limón $70')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Refrescos</h4><p>Lata fría.</p><div class="menu-card-footer"><span class="price">$35</span><button class="add-btn" onclick="orderWA('Refresco $35')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Agua Mineral</h4><p>Natural o mineralizada.</p><div class="menu-card-footer"><span class="price">$50</span><button class="add-btn" onclick="orderWA('Agua Mineral $50')">Ordenar →</button></div></div>
-    <div class="menu-card"><h4>Agua Embotellada 600ml</h4><p>Agua fría.</p><div class="menu-card-footer"><span class="price">$35</span><button class="add-btn" onclick="orderWA('Agua Embotellada $35')">Ordenar →</button></div></div>
+    <div class="menu-card"><h4>Cerveza</h4><p>Clásica fría.</p><div class="menu-card-footer"><span class="price">$55</span><button class="add-btn" onclick="orderWA('Cerveza $55')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Vaso Michelado</h4><p>Bien preparada.</p><div class="menu-card-footer"><span class="price">$35</span><button class="add-btn" onclick="orderWA('Michelada $35')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Vaso Clamato</h4><p>Con clamato y especias.</p><div class="menu-card-footer"><span class="price">$40</span><button class="add-btn" onclick="orderWA('Clamato $40')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Clerloot</h4><p>Vino con fruta. Copa o jarra.</p><div class="menu-card-footer"><span class="price">$110 / $250</span><button class="add-btn" onclick="orderWA('Clerloot')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Vino Blanco</h4><p>Copa de vino blanco.</p><div class="menu-card-footer"><span class="price">$90</span><button class="add-btn" onclick="orderWA('Vino Blanco $90')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Vino Tinto</h4><p>Copa de vino tinto.</p><div class="menu-card-footer"><span class="price">$90</span><button class="add-btn" onclick="orderWA('Vino Tinto $90')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Rosita Limón</h4><p>Fresa, limón y menta.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Rosita Limón $70')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Refrescos</h4><p>Lata fría.</p><div class="menu-card-footer"><span class="price">$35</span><button class="add-btn" onclick="orderWA('Refresco $35')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Agua Mineral</h4><p>Natural o mineralizada.</p><div class="menu-card-footer"><span class="price">$50</span><button class="add-btn" onclick="orderWA('Agua Mineral $50')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Agua Embotellada 600ml</h4><p>Agua fría.</p><div class="menu-card-footer"><span class="price">$35</span><button class="add-btn" onclick="orderWA('Agua $35')">Ordenar</button></div></div>
   </div>
 </section>
 
-<!-- EVENTOS -->
 <section class="events-section" id="eventos">
   <div class="section-header">
     <p class="section-eyebrow">Celebra con nosotros</p>
@@ -447,7 +442,6 @@ footer a{color:#F2D5DA;text-decoration:none}
   </div>
 </section>
 
-<!-- QR -->
 <section class="qr-section" id="qr">
   <p class="section-eyebrow">Comparte la experiencia</p>
   <h2 class="section-title" style="font-family:'Playfair Display',serif;font-size:36px;color:var(--dark)">Código QR</h2>
@@ -459,7 +453,6 @@ footer a{color:#F2D5DA;text-decoration:none}
   </div>
 </section>
 
-<!-- LOCATION -->
 <section class="location-section" id="ubicacion">
   <div class="location-inner">
     <div class="location-text">
@@ -495,145 +488,386 @@ function orderWA(item){
 window.addEventListener('load',function(){
   new QRCode(document.getElementById("qrcode"),{
     text:"https://juanchapo.github.io/thepinkhouse/",
-    width:200,height:200,
-    colorDark:"#C8647A",colorLight:"#ffffff",
+    width:200,height:200,colorDark:"#C8647A",colorLight:"#ffffff",
     correctLevel:QRCode.CorrectLevel.H
   });
 });
 
-// ROSA AI
-const MENU_DATA={
-  cafes:[{n:"Espresso",p:"$38/$55"},{n:"Latte Matcha",p:"$65/$70"},{n:"Latte Taro",p:"$65/$70"},{n:"Capuchino Rompope",p:"$75/$80"},{n:"Capuchino Baileys",p:"$75/$80"},{n:"Chocolate Caliente",p:"$65/$70"},{n:"Moka",p:"$65/$70"},{n:"Cocoa Menta",p:"$65/$70"}],
-  frios:[{n:"Frappé Capuchino",p:"$70"},{n:"Frappé Matcha",p:"$70"},{n:"Frappé Taro",p:"$70"},{n:"Frappé Cookies & Cream",p:"$70"},{n:"Smoothie Frutas Rojas",p:"$70"},{n:"Soda Italiana",p:"$70"}],
-  desayunos:[{n:"Huevos al Gusto",p:"$110"},{n:"Chilaquiles",p:"$110"},{n:"Omelette",p:"$110"},{n:"Molletes",p:"$80"},{n:"Sincronizadas",p:"$60"}],
-  crepes:[{n:"The Pink House Crepe",p:"$140"},{n:"Nutella Crepe",p:"$130"},{n:"Red Fruits Crepe",p:"$130"},{n:"Special Crepe",p:"$130"},{n:"Blackberry Crepe",p:"$130"}],
-  ensaladas:[{n:"Caesar Salad",p:"$120"},{n:"Spinach Salad",p:"$120"},{n:"Chef Salad",p:"$120"},{n:"Salad 323",p:"$120"}],
-  comida:[{n:"Pizza Margarita",p:"$150"},{n:"Pizza Bacon",p:"$170"},{n:"Pasta Alfredo",p:"$190"},{n:"Pasta Boloñesa",p:"$190"},{n:"Rib Eye",p:"$230"},{n:"Flank Steak",p:"$150"}],
-  postres:[{n:"Neapolitan Flan",p:"$70"},{n:"Baked Banana",p:"$70"},{n:"Apple Strudel",p:"$70"},{n:"Bartoloes",p:"$70"}]
-};
-const conversationHistory=[];
-let isTyping=false;
-
-function addMessage(text,sender,extras=null){
-  const c=document.getElementById('chatMessages');
-  const msg=document.createElement('div');
-  msg.className=`msg ${sender}`;
-  const av=document.createElement('div');
-  av.className='msg-avatar';
-  av.textContent=sender==='rosa'?'🌸':'😊';
-  const bub=document.createElement('div');
-  bub.className='msg-bubble';
-  bub.innerHTML=text;
-  if(sender==='rosa'){msg.appendChild(av);msg.appendChild(bub);}
-  else{msg.appendChild(bub);msg.appendChild(av);}
-  c.appendChild(msg);
-  if(extras){
-    const ex=document.createElement('div');
-    ex.innerHTML=extras;
-    c.appendChild(ex);
-  }
-  c.scrollTop=c.scrollHeight;
-}
-function showTyping(){
-  const c=document.getElementById('chatMessages');
-  const t=document.createElement('div');
-  t.className='msg rosa';t.id='typing-indicator';
-  t.innerHTML='<div class="msg-avatar">🌸</div><div class="typing"><span></span><span></span><span></span></div>';
-  c.appendChild(t);c.scrollTop=c.scrollHeight;
-}
-function removeTyping(){const t=document.getElementById('typing-indicator');if(t)t.remove();}
-
-function buildRecCard(items,title){
-  let html=`<div class="rec-card"><h5>✨ ${title}</h5>`;
-  items.forEach(i=>{html+=`<div class="rec-item"><span>${i.n}</span><span class="rec-price">${i.p}</span></div>`;});
-  const wa=encodeURIComponent(`🌸 Hola! Rosa me recomendó: ${items.map(i=>i.n).join(', ')}. ¿Me pueden ayudar?`);
-  html+=`<a href="https://wa.me/525534745455?text=${wa}" target="_blank" class="rec-wa-btn">Pedir por WhatsApp →</a></div>`;
-  return html;
-}
-function buildQuickReplies(opts){
-  return '<div class="quick-replies">'+opts.map(o=>`<button class="qr-btn" onclick="handleQuickReply('${o}')">${o}</button>`).join('')+'</div>';
-}
-
-async function callRosaAI(userMessage){
-  const systemPrompt=`Eres Rosa, la anfitriona virtual y alma de The Pink House — un restaurante café encantador en Colima 323, Roma Norte, CDMX. Eres cálida, curiosa, un poco poética y genuinamente interesada en las personas. No eres un bot genérico.
-
-MENÚ COMPLETO:
-CAFÉS (M/G): Espresso $38/$55, Espresso Cortado $40/$60, Americano $55/$65, Latte $55/$70, Latte Matcha $65/$70, Latte Taro $65/$70, Capuchino $55/$60, Chocolate Caliente $65/$70, Cocoa Menta $65/$70, Moka $65/$70, Moka Blanco $65/$70, Capuchino Rompope $75/$80, Capuchino Baileys $75/$80, Capuchino Amareto $75/$80, Leche Almendra +$15.
-TÉS: Tisanas $65, Chef Latte $65/$70, Té Nacional $45/$50.
-FRÍOS: Frappés (Capuchino/Matcha/Moka/Moka Blanco/Taro/Cookies&Cream) $70, Capucchino Frío $65, Chocolate Frío $65, Smoothie Frutas Rojas $70, Limonada $55, Naranjada $55, Soda Italiana $70.
-DESAYUNOS (hasta 12pm): Huevos al Gusto $110, Omelette $110, Chilaquiles $110, Enchiladas $110, Molletes $80, Sincronizadas $60.
-ENSALADAS: Salad 323 $120, Chef Salad $120, Spinach Salad $120, Caesar Salad $120.
-CIABATTAS: Mushrooms $120, Chicken BBQ $130, Original $130, Club Sandwich $130.
-CREPES: Apple Cinnamon/Red Fruits/Nutella/Blackberry/Special $130, The Pink House Crepe $140.
-A LA CARTE: Chicken Breast $150, Flank Steak $150, Fish Fillet $150, Rib Eye $230, French Fries $50, Azteca Soup $70, Ceviche Toast(3) $150.
-PIZZAS: Margarita/Hawaiana/Peperoni $150, Bacon/Boloñesa/Pear&Nut $170.
-PASTAS: Boloñesa/Diavola/Alfredo/All'arrabbiata $190.
-POSTRES ARTESANALES: Neapolitan Flan/Baked Banana/Apple Strudel/Bartoloes $70.
-BEBIDAS: Cerveza $55, Michelado $35, Clamato $40, Clerloot $110/$250, Vino $90, Rosita Limón $70, Refrescos $35, Agua $35-50.
-EVENTOS: Renta para cumpleaños desde $3,500. Eventos especiales desde $5,000. Contacto por WhatsApp.
-
-COMPORTAMIENTO:
-1. Primero pregunta cómo se siente la persona HOY — no qué quiere comer.
-2. Haz 1-2 preguntas que demuestren interés real (¿viene solo? ¿mañana o tarde? ¿celebrando algo? ¿necesita cafeína o algo relajante?).
-3. Después de conocerla un poco, recomienda platillos específicos con precios.
-4. Cuando vayas a recomendar platillos escribe exactamente al final: [RECOMENDAR: cafes/frios/desayunos/crepes/ensaladas/comida/postres]
-5. Si preguntan por eventos, da info y manda a WhatsApp.
-6. Máximo 3-4 oraciones. Cálida, concisa, con personalidad.
-7. Español mexicano natural. Máximo 1-2 emojis.`;
-
-  try{
-    const messages=[...conversationHistory,{role:"user",content:userMessage}];
-    const response=await fetch("https://api.anthropic.com/v1/messages",{
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:1000,system:systemPrompt,messages})
+// ============ ROSA IA — Motor inteligente sin API ============
+const Rosa = {
+  step: 0,
+  context: { mood: null, taste: null, hunger: null, company: null, time: null },
+  typing: false,
+  
+  // MENÚ para recomendaciones
+  items: {
+    cafes_calientes: [
+      {n:"Latte", p:"$55–$70"}, {n:"Capuchino", p:"$55–$60"},
+      {n:"Capuchino Baileys", p:"$75–$80"}, {n:"Chocolate Caliente", p:"$65–$70"},
+      {n:"Moka", p:"$65–$70"}, {n:"Capuchino Rompope", p:"$75–$80"}
+    ],
+    cafes_intensos: [
+      {n:"Espresso", p:"$38–$55"}, {n:"Espresso Cortado", p:"$40–$60"},
+      {n:"Americano", p:"$55–$65"}
+    ],
+    cafes_dulces: [
+      {n:"Latte Taro", p:"$65–$70"}, {n:"Latte Matcha", p:"$65–$70"},
+      {n:"Moka Blanco", p:"$65–$70"}, {n:"Cocoa Menta", p:"$65–$70"}
+    ],
+    fríos: [
+      {n:"Frappé Cookies & Cream", p:"$70"}, {n:"Frappé Taro", p:"$70"},
+      {n:"Frappé Matcha", p:"$70"}, {n:"Smoothie Frutas Rojas", p:"$70"},
+      {n:"Soda Italiana", p:"$70"}
+    ],
+    desayunos: [
+      {n:"Huevos al Gusto", p:"$110"}, {n:"Chilaquiles V/R", p:"$110"},
+      {n:"Enchiladas V/R", p:"$110"}, {n:"Omelette al Gusto", p:"$110"},
+      {n:"Molletes Tradicionales", p:"$80"}
+    ],
+    dulce_postres: [
+      {n:"The Pink House Crepe ⭐", p:"$140"}, {n:"Nutella Crepe", p:"$130"},
+      {n:"Red Fruits Crepe", p:"$130"}, {n:"Apple Strudel", p:"$70"},
+      {n:"Neapolitan Flan", p:"$70"}
+    ],
+    salado_fuerte: [
+      {n:"Pasta Alfredo", p:"$190"}, {n:"Pasta Boloñesa", p:"$190"},
+      {n:"Pizza Boloñesa", p:"$170"}, {n:"Rib Eye", p:"$230"},
+      {n:"Flank Steak", p:"$150"}
+    ],
+    salado_ligero: [
+      {n:"Ciabatta Chicken BBQ", p:"$130"}, {n:"Club Sandwich", p:"$130"},
+      {n:"Caesar Salad", p:"$120"}, {n:"Salad 323", p:"$120"},
+      {n:"Pizza Margarita", p:"$150"}
+    ],
+    romantico: [
+      {n:"Vino Tinto", p:"$90"}, {n:"Clerloot", p:"$110"},
+      {n:"The Pink House Crepe ⭐", p:"$140"}, {n:"Pasta Alfredo", p:"$190"}
+    ],
+    relajante: [
+      {n:"Tisana de frutas rojas", p:"$65"}, {n:"Chef Latte", p:"$65–$70"},
+      {n:"Chocolate Caliente", p:"$65–$70"}, {n:"Té Nacional", p:"$45–$50"}
+    ]
+  },
+  
+  // ====== INICIO ======
+  init() {
+    setTimeout(() => {
+      this.addMsg(
+        '¡Hola! Soy Rosa 🌸 la anfitriona de esta casa tan especial. Me da mucho gusto que estés aquí. <strong>¿Cómo estás hoy? ¿Qué te trajo por aquí?</strong>',
+        'rosa',
+        this.quickReplies(['Necesito un café urgente ☕','Tengo mucha hambre 🍽️','Vine con mi pareja 💕','Estoy estresado 😮‍💨','Quiero rentar para mi cumple 🎂','Solo estoy explorando 🌸'])
+      );
+    }, 600);
+    document.getElementById('chatInput').addEventListener('keypress', e => {
+      if(e.key==='Enter') this.send();
     });
-    const data=await response.json();
-    const fullText=data.content[0].text;
-    conversationHistory.push({role:"user",content:userMessage});
-    conversationHistory.push({role:"assistant",content:fullText});
-    const recMatch=fullText.match(/\[RECOMENDAR:\s*([^\]]+)\]/);
-    const cleanText=fullText.replace(/\[RECOMENDAR:[^\]]+\]/,'').trim();
-    let extras=null;
-    if(recMatch){
-      const cats=recMatch[1].split(',').map(s=>s.trim());
-      let items=[];
-      cats.forEach(cat=>{if(MENU_DATA[cat])items=items.concat(MENU_DATA[cat].slice(0,3));});
-      if(items.length>0)extras=buildRecCard(items.slice(0,5),'Rosa te recomienda');
+  },
+  
+  // ====== ENVIAR MENSAJE ======
+  send() {
+    if(this.typing) return;
+    const input = document.getElementById('chatInput');
+    const text = input.value.trim();
+    if(!text) return;
+    input.value = '';
+    this.handle(text);
+  },
+  
+  quickReply(text) {
+    if(this.typing) return;
+    this.handle(text);
+  },
+  
+  handle(text) {
+    this.addMsg(text, 'user');
+    this.step++;
+    const msg = text.toLowerCase();
+    this.detectContext(msg);
+    this.typing = true;
+    this.showTyping();
+    setTimeout(() => {
+      this.removeTyping();
+      this.respond(msg);
+      this.typing = false;
+    }, 900 + Math.random() * 600);
+  },
+  
+  // ====== DETECCIÓN DE CONTEXTO ======
+  detectContext(msg) {
+    // Estado de ánimo
+    if(/tris|mal|deprim|down|llor|solo y mal|fatal|horrible|terrib/i.test(msg)) this.context.mood = 'triste';
+    else if(/estr[eé]s|agobi|ansie|nervios|preocup|abrumad|tens/i.test(msg)) this.context.mood = 'estresado';
+    else if(/cansad|agot|exhaust|sue[ñn]o|muerto|reventad|destruid/i.test(msg)) this.context.mood = 'cansado';
+    else if(/feliz|content|bien|genial|super|excelente|fenomenal|maravillos|increíble/i.test(msg)) this.context.mood = 'feliz';
+    else if(/celebr|cumple|aniversario|festeja|fiesta|logr|graduad|ascens/i.test(msg)) this.context.mood = 'celebrando';
+    else if(/cita|novi[ao]|pareja|romantic|amor|enamora|date/i.test(msg)) this.context.mood = 'romantico';
+    else if(/aburri|sin nada|normal|ahí|mas o menos|regular/i.test(msg)) this.context.mood = 'neutral';
+    
+    // Sabores/preferencias
+    if(/dulce|postre|chocolat|nutella|crepe|pay|flan|caramel|az[uú]car/i.test(msg)) this.context.taste = 'dulce';
+    if(/sala|carne|steak|pizza|pasta|sandwich|res|pollo/i.test(msg)) this.context.taste = 'salado';
+    if(/caf[eé]|cafe[ií]n|espresso|latte|capuchin|moka/i.test(msg)) this.context.taste = 'cafe';
+    if(/fr[íi]o|frapp|smoothie|helado|fresc/i.test(msg)) this.context.taste = 'frio';
+    if(/calient|sopita|abriguit|reconfort/i.test(msg)) this.context.taste = 'caliente';
+    if(/vino|cerveza|alcohol|copa|trago|chela/i.test(msg)) this.context.taste = 'alcohol';
+    
+    // Hambre
+    if(/hambre|hambri|me muero|much[ao] hambre|comer fuerte|antoj[oa]/i.test(msg)) this.context.hunger = 'fuerte';
+    else if(/algo lig|ligero|snack|botana|picar/i.test(msg)) this.context.hunger = 'ligero';
+    else if(/no tengo hambre|sin hambre|solo bebida/i.test(msg)) this.context.hunger = 'nada';
+    
+    // Compañía
+    if(/sol[oa]|solita|por mi cuenta|sin nadie/i.test(msg)) this.context.company = 'solo';
+    if(/pareja|novi[ao]|esposo|esposa|cita|date/i.test(msg)) this.context.company = 'pareja';
+    if(/amig[oa]s|familia|grupo|comp[ñn]er|nosotros/i.test(msg)) this.context.company = 'grupo';
+    
+    // Hora del día
+    if(/ma[ñn]ana|desayun|temprano|amanec/i.test(msg)) this.context.time = 'mañana';
+    if(/tarde|comida|mediod[íi]a/i.test(msg)) this.context.time = 'tarde';
+    if(/noche|cena|tard[ie]/i.test(msg)) this.context.time = 'noche';
+    
+    // Intención directa
+    if(/rent|cumple|cumplea[ñn]os|evento|fiesta|baby shower|grupo grande|reservar|reuni/i.test(msg)) this.context.eventIntent = true;
+  },
+  
+  // ====== RESPONDER ======
+  respond(msg) {
+    // Evento de cumpleaños/renta
+    if(this.context.eventIntent) {
+      this.respondEvent();
+      this.context.eventIntent = false;
+      return;
     }
-    return{text:cleanText,extras};
-  }catch(e){
-    return{text:"Ay, tuve un problemita de conexión 🌸 ¿Puedes intentarlo de nuevo?",extras:null};
+    
+    // Primera interacción: indagar más
+    if(this.step === 1) {
+      this.firstResponse();
+      return;
+    }
+    
+    // Segunda interacción o tercera: recomendar
+    if(this.step >= 2) {
+      this.recommendByContext();
+      return;
+    }
+  },
+  
+  // ====== EVENTOS / RENTA ======
+  respondEvent() {
+    const waMsg = encodeURIComponent("🌸 Hola The Pink House! Quiero información para rentar el espacio. Me interesa saber paquetes y disponibilidad.");
+    this.addMsg(
+      "¡Qué emoción! 🎉 The Pink House es un lugar mágico para celebrar. Manejamos paquetes desde <strong>$3,500</strong> para cumpleaños (hasta 30 personas) y desde <strong>$5,000</strong> para eventos especiales (hasta 60 personas). Incluye decoración, menú personalizado y el espacio más bonito de la Roma.<br><br>¿Te paso con el equipo para cotizar?",
+      'rosa',
+      `<div class="quick-replies"><button class="qr-btn" onclick="window.open('https://wa.me/525534745455?text=${waMsg}','_blank')">Cotizar por WhatsApp 📲</button><button class="qr-btn" onclick="Rosa.quickReply('Mejor recomiéndame algo del menú')">Ver menú primero</button></div>`
+    );
+  },
+  
+  // ====== PRIMERA RESPUESTA — indagar ======
+  firstResponse() {
+    const m = this.context.mood;
+    
+    if(m === 'triste') {
+      this.addMsg(
+        "Ay corazón... 🌸 escucharte así me parte un poquito. Aquí hay días así y está bien sentirlos. ¿Quieres algo que te abrace, como un chocolate calientito, o más bien necesitas algo que te suba el ánimo con un postre dulce?",
+        'rosa',
+        this.quickReplies(['Algo que me abrace 🤗','Algo dulce que me anime 🍫','Un café fuerte ☕'])
+      );
+    } else if(m === 'estresado') {
+      this.addMsg(
+        "Uff, te entiendo total 😮‍💨. La Roma con todo su movimiento no siempre ayuda. ¿Vienes a desconectarte un rato? Te puedo recomendar algo relajante como una tisana, o si más bien necesitas energía, un buen café.",
+        'rosa',
+        this.quickReplies(['Algo relajante 🍵','Necesito energía ☕','Vino para soltar 🍷'])
+      );
+    } else if(m === 'cansado') {
+      this.addMsg(
+        "Suena a que ya merecías sentarte 🌸. ¿Te late algo que te despierte tipo café fuerte, o prefieres algo reconfortante para reponer fuerzas?",
+        'rosa',
+        this.quickReplies(['Café fuerte ☕','Algo reconfortante 🍲','Necesito comer bien 🍽️'])
+      );
+    } else if(m === 'feliz' || m === 'celebrando') {
+      this.addMsg(
+        "¡Me encanta tu energía! ✨ ¿Estás celebrando algo en especial o es solo uno de esos días buenos? Tengo opciones desde un postre estrella hasta una copa de vino para brindar.",
+        'rosa',
+        this.quickReplies(['Algo para celebrar 🥂','Un postre rico 🍰','Sorpréndeme ✨'])
+      );
+    } else if(m === 'romantico') {
+      this.addMsg(
+        "Aaay qué lindo 💕 The Pink House es un lugar perfecto para una cita. ¿Quieren algo dulce para compartir tipo nuestro crepe estrella, o prefieren algo más formal con copa de vino?",
+        'rosa',
+        this.quickReplies(['Algo dulce para compartir 🥞','Cena con vino 🍷','Sorpréndeme ✨'])
+      );
+    } else if(this.context.taste === 'cafe') {
+      this.addMsg(
+        "¡Perfecto, llegaste al lugar correcto! ☕ ¿Buscas algo intenso para despertar bien, o más bien algo cremoso y dulce tipo latte o capuchino?",
+        'rosa',
+        this.quickReplies(['Algo intenso ⚡','Algo cremoso y dulce 🥛','Café frío mejor 🧊'])
+      );
+    } else if(this.context.hunger === 'fuerte') {
+      this.addMsg(
+        "¡Perfecto, llegaste con todo el hambre! 🍽️ ¿Te late algo italiano tipo pasta o pizza, una buena carne tipo Rib Eye, o algo más ligero como un sandwich/ensalada?",
+        'rosa',
+        this.quickReplies(['Pasta o pizza 🍕','Una buena carne 🥩','Algo más ligero 🥗','Desayuno completo 🍳'])
+      );
+    } else if(/explorando|curios|nada en especial|solo|ver/i.test(msg)) {
+      this.addMsg(
+        "¡Bienvenido! 🌸 Me alegra que estés conociendo el lugar. Para empezar bonito: ¿se te antoja más algo dulce o algo salado? ¿O directo un buen café?",
+        'rosa',
+        this.quickReplies(['Algo dulce 🍰','Algo salado 🍕','Solo un café ☕','Bebida fresca 🧊'])
+      );
+    } else {
+      // Caso general: indagar
+      this.addMsg(
+        "Cuéntame un poquito más 🌸 ¿Vienes a desayunar, comer, o solo a tomar algo? ¿Y vienes solo o acompañado?",
+        'rosa',
+        this.quickReplies(['Solo a tomar algo ☕','A desayunar 🍳','A comer fuerte 🍽️','Con mi pareja 💕','Con amigos 👯'])
+      );
+    }
+  },
+  
+  // ====== RECOMENDACIÓN FINAL ======
+  recommendByContext() {
+    let items = [];
+    let title = "Rosa te recomienda";
+    let intro = "";
+    
+    const m = this.context.mood;
+    const t = this.context.taste;
+    const h = this.context.hunger;
+    
+    // PRIORIDADES de recomendación
+    if(m === 'triste' || /abraz|reconfort/i.test(this.lastUserMsg())) {
+      items = this.items.relajante.concat(this.items.dulce_postres.slice(0,2));
+      intro = "Te preparé esta selección con muuucho cariño 🌸 Algo calientito y dulce siempre ayuda. Cualquiera de estos te va a abrazar el alma:";
+      title = "Para el alma";
+    }
+    else if(m === 'estresado' && /relaj|tranquil/i.test(this.lastUserMsg())) {
+      items = this.items.relajante;
+      intro = "Estos son perfectos para soltar el estrés 😌 Las tisanas son herbales y suavecitas. Pídete un momento para ti:";
+      title = "Para relajarte";
+    }
+    else if(m === 'cansado' || t === 'cafe' && /intens|fuerte|despert/i.test(this.lastUserMsg())) {
+      items = this.items.cafes_intensos.concat(this.items.cafes_calientes.slice(0,2));
+      intro = "Para despertarte bien y reactivar el motor ⚡ Estos son nuestros más fuertes:";
+      title = "Cafés para despertar";
+    }
+    else if(t === 'cafe' && /cremos|dulce|suave|latte/i.test(this.lastUserMsg())) {
+      items = this.items.cafes_dulces.concat(this.items.cafes_calientes.slice(0,2));
+      intro = "Mis favoritos cremosos y dulces 🥛 Súper reconfortantes:";
+      title = "Cafés cremosos";
+    }
+    else if(t === 'frio' || /helad|frapp|smooth/i.test(this.lastUserMsg())) {
+      items = this.items.fríos;
+      intro = "Para refrescarte y disfrutar 🧊 El Frappé Cookies & Cream es de mis favoritos:";
+      title = "Refrescantes";
+    }
+    else if(m === 'romantico' || /pareja|cita|compartir|romantic/i.test(this.lastUserMsg())) {
+      items = this.items.romantico;
+      intro = "Mis recomendaciones para una cita perfecta 💕 El Pink House Crepe es nuestro platillo estrella:";
+      title = "Para compartir";
+    }
+    else if(m === 'celebrando' || /celebr|brindar|copa|vino/i.test(this.lastUserMsg())) {
+      items = this.items.romantico.concat(this.items.dulce_postres.slice(0,2));
+      intro = "¡A celebrar! 🥂 Estos son para brindar bonito:";
+      title = "Para celebrar";
+    }
+    else if(t === 'dulce' || /postre|crepe|chocolat|nutella/i.test(this.lastUserMsg())) {
+      items = this.items.dulce_postres;
+      intro = "Nuestros dulces son la especialidad de la casa 🍰 Los crepes son artesanales:";
+      title = "Dulces de la casa";
+    }
+    else if(t === 'salado' && h === 'fuerte' || /carne|steak|pasta|pizza fuerte/i.test(this.lastUserMsg())) {
+      items = this.items.salado_fuerte;
+      intro = "Para quitar el hambre bien 🍽️ El Rib Eye y la Pasta Alfredo son los más pedidos:";
+      title = "Comida fuerte";
+    }
+    else if(t === 'salado' || /sandwich|ensalada|ligero|ligera/i.test(this.lastUserMsg())) {
+      items = this.items.salado_ligero;
+      intro = "Estos son perfectos: sabrosos pero sin que te pese 🥪";
+      title = "Salado ligero";
+    }
+    else if(this.context.time === 'mañana' || /desayun|huev|chilaqu/i.test(this.lastUserMsg())) {
+      items = this.items.desayunos;
+      intro = "Nuestros desayunos van hasta las 12pm e incluyen café y jugo o fruta 🍳";
+      title = "Desayunos";
+    }
+    else {
+      // Default: opciones variadas
+      items = [
+        {n:"Latte", p:"$55–$70"},
+        {n:"The Pink House Crepe ⭐", p:"$140"},
+        {n:"Pizza Margarita", p:"$150"},
+        {n:"Chocolate Caliente", p:"$65–$70"},
+        {n:"Frappé Taro", p:"$70"}
+      ];
+      intro = "Te dejo nuestras estrellas 🌸 Lo más pedido y lo más rico de la casa:";
+      title = "Las favoritas de Rosa";
+    }
+    
+    const recCard = this.buildRecCard(items, title, intro);
+    this.addMsg(intro, 'rosa', recCard);
+  },
+  
+  // ====== HELPERS ======
+  lastUserMsg() {
+    const userMsgs = document.querySelectorAll('.msg.user .msg-bubble');
+    if(userMsgs.length === 0) return '';
+    return userMsgs[userMsgs.length-1].textContent.toLowerCase();
+  },
+  
+  buildRecCard(items, title, intro) {
+    let html = `<div class="rec-card"><h5>✨ ${title}</h5>`;
+    items.forEach(i => {
+      html += `<div class="rec-item"><span>${i.n}</span><span class="rec-price">${i.p}</span></div>`;
+    });
+    const wa = encodeURIComponent(`🌸 Hola! Rosa me recomendó:\n${items.map(i=>`• ${i.n}`).join('\n')}\n\n¿Me pueden ayudar?`);
+    html += `<a href="https://wa.me/525534745455?text=${wa}" target="_blank" class="rec-wa-btn">Pedir por WhatsApp →</a></div>`;
+    return html;
+  },
+  
+  quickReplies(opts) {
+    return '<div class="quick-replies">' + 
+      opts.map(o => `<button class="qr-btn" onclick="Rosa.quickReply('${o.replace(/'/g,"\\'")}')">${o}</button>`).join('') + 
+      '</div>';
+  },
+  
+  addMsg(text, sender, extras = null) {
+    const c = document.getElementById('chatMessages');
+    const msg = document.createElement('div');
+    msg.className = `msg ${sender}`;
+    const av = document.createElement('div');
+    av.className = 'msg-avatar';
+    av.textContent = sender === 'rosa' ? '🌸' : '😊';
+    const bub = document.createElement('div');
+    bub.className = 'msg-bubble';
+    bub.innerHTML = text;
+    if(sender === 'rosa') { msg.appendChild(av); msg.appendChild(bub); }
+    else { msg.appendChild(bub); msg.appendChild(av); }
+    c.appendChild(msg);
+    if(extras) {
+      const ex = document.createElement('div');
+      ex.innerHTML = extras;
+      c.appendChild(ex);
+    }
+    c.scrollTop = c.scrollHeight;
+  },
+  
+  showTyping() {
+    const c = document.getElementById('chatMessages');
+    const t = document.createElement('div');
+    t.className = 'msg rosa';
+    t.id = 'typing-indicator';
+    t.innerHTML = '<div class="msg-avatar">🌸</div><div class="typing"><span></span><span></span><span></span></div>';
+    c.appendChild(t);
+    c.scrollTop = c.scrollHeight;
+  },
+  
+  removeTyping() {
+    const t = document.getElementById('typing-indicator');
+    if(t) t.remove();
   }
-}
+};
 
-async function sendMessage(){
-  if(isTyping)return;
-  const input=document.getElementById('chatInput');
-  const text=input.value.trim();
-  if(!text)return;
-  input.value='';
-  addMessage(text,'user');
-  isTyping=true;showTyping();
-  const result=await callRosaAI(text);
-  removeTyping();
-  addMessage(result.text,'rosa',result.extras);
-  isTyping=false;
-}
-async function handleQuickReply(text){
-  if(isTyping)return;
-  addMessage(text,'user');
-  isTyping=true;showTyping();
-  const result=await callRosaAI(text);
-  removeTyping();
-  addMessage(result.text,'rosa',result.extras);
-  isTyping=false;
-}
-document.getElementById('chatInput').addEventListener('keypress',function(e){if(e.key==='Enter')sendMessage();});
-setTimeout(()=>{
-  addMessage('¡Hola! Soy Rosa 🌸 la anfitriona de esta casa tan especial. Me da mucho gusto que estés aquí. ¿Cómo estás hoy? ¿Qué te trajo por aquí?','rosa',
-    buildQuickReplies(['Necesito un café urgente ☕','Tengo mucha hambre 🍽️','Estoy de celebración 🎉','Quiero rentar para un cumpleaños 🎂','Solo estoy explorando 🌸']));
-},600);
+Rosa.init();
 </script>
 </body>
 </html>
