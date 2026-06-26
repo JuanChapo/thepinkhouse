@@ -11,15 +11,38 @@
 :root{--pink:#C8647A;--pink-dark:#a8505f;--pink-light:#F2D5DA;--pink-pale:#FBF0F2;--cream:#FAF7F2;--dark:#1A1A1A;--gold:#B8926A;--gray:#6B6B6B}
 html{scroll-behavior:smooth}
 body{font-family:'Lato',sans-serif;background:#fff;color:var(--dark);overflow-x:hidden}
-nav{background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--pink-light);padding:14px 5%;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200}
-.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+
+/* SPLASH SCREEN */
+.splash{position:fixed;inset:0;background:linear-gradient(135deg,var(--pink-pale) 0%,#fff 100%);z-index:9999;display:flex;align-items:center;justify-content:center;animation:fadeInUp .6s ease;padding:20px}
+.splash.hidden{opacity:0;pointer-events:none;transition:opacity .5s ease}
+@keyframes fadeInUp{from{opacity:0}to{opacity:1}}
+.splash-content{text-align:center;max-width:500px}
+.splash-logo{width:200px;height:200px;margin:0 auto 24px;animation:gentle 3s ease infinite}
+@keyframes gentle{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.splash-welcome{font-family:'Playfair Display',serif;font-size:32px;color:var(--pink);margin-bottom:8px;font-style:italic}
+.splash-sub{font-size:13px;color:var(--gray);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:36px}
+.lang-options{display:flex;flex-direction:column;gap:12px;max-width:320px;margin:0 auto}
+.lang-option{background:#fff;border:2px solid var(--pink-light);border-radius:50px;padding:16px 24px;cursor:pointer;font-family:'Lato',sans-serif;font-size:15px;font-weight:700;color:var(--dark);transition:all .25s;display:flex;align-items:center;justify-content:center;gap:12px}
+.lang-option:hover{border-color:var(--pink);background:var(--pink-pale);transform:translateY(-2px);box-shadow:0 8px 25px rgba(200,100,122,.15)}
+.lang-flag{font-size:22px}
+
+/* LANG SWITCHER (en nav) */
+.lang-switcher{display:flex;gap:4px;background:var(--pink-pale);border-radius:50px;padding:3px;margin-left:8px}
+.lang-pill{background:transparent;border:none;padding:6px 12px;font-size:11px;font-weight:700;color:var(--gray);border-radius:50px;cursor:pointer;font-family:'Lato',sans-serif;transition:all .2s;letter-spacing:.5px}
+.lang-pill.active{background:var(--pink);color:#fff}
+.lang-pill:hover:not(.active){color:var(--pink)}
+
+nav{background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--pink-light);padding:14px 5%;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;gap:16px}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
 .nav-brand{font-family:'Playfair Display',serif;font-size:18px;color:var(--pink);line-height:1.1}
 .nav-brand small{display:block;font-family:'Lato',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);font-weight:300}
+.nav-right{display:flex;align-items:center;gap:16px}
 .nav-links{display:flex;gap:24px;list-style:none}
 .nav-links a{text-decoration:none;color:var(--dark);font-size:13px;letter-spacing:.5px;transition:color .2s}
 .nav-links a:hover{color:var(--pink)}
 .nav-cta{background:var(--pink);color:#fff!important;padding:10px 22px;border-radius:50px;font-size:13px;font-weight:700;transition:background .2s}
 .nav-cta:hover{background:var(--pink-dark)!important}
+
 .hero{background:linear-gradient(135deg,var(--pink-pale) 0%,#fff 60%);padding:90px 5% 80px;display:flex;align-items:center;justify-content:space-between;gap:40px;min-height:88vh}
 .hero-text{flex:1;max-width:540px}
 .hero-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--pink);margin-bottom:16px;font-weight:700}
@@ -41,6 +64,7 @@ nav{background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1
 .info-bar{background:var(--pink);padding:18px 5%;display:flex;gap:0;justify-content:center;flex-wrap:wrap}
 .info-item{display:flex;align-items:center;gap:10px;color:#fff;font-size:13px;padding:6px 28px;border-right:1px solid rgba(255,255,255,.3)}
 .info-item:last-child{border-right:none}
+
 .ai-section{padding:90px 5%;background:var(--dark);position:relative;overflow:hidden}
 .ai-section::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(200,100,122,.15) 0%,transparent 70%);pointer-events:none}
 .ai-header{text-align:center;margin-bottom:50px}
@@ -88,6 +112,7 @@ nav{background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1
 .rec-price{color:#F2D5DA;font-weight:700;font-size:13px;white-space:nowrap;margin-left:10px}
 .rec-wa-btn{display:block;background:var(--pink);color:#fff;text-align:center;padding:11px;border-radius:12px;text-decoration:none;font-size:13px;font-weight:700;margin-top:14px;transition:background .2s}
 .rec-wa-btn:hover{background:var(--pink-dark)}
+
 .menu-section{padding:90px 5%;background:var(--cream)}
 .section-header{text-align:center;margin-bottom:56px}
 .section-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--pink);font-weight:700;margin-bottom:10px}
@@ -144,10 +169,50 @@ footer a{color:#F2D5DA;text-decoration:none}
   .nav-links{display:none}
   .location-inner{flex-direction:column;gap:32px}
   .info-item{padding:4px 14px;font-size:12px}
+  .splash-welcome{font-size:24px}
 }
 </style>
 </head>
 <body>
+
+<!-- SPLASH SCREEN -->
+<div class="splash" id="splash">
+  <div class="splash-content">
+    <svg class="splash-logo" viewBox="0 0 200 200" fill="none">
+      <circle cx="100" cy="100" r="95" stroke="#C8647A" stroke-width="2"/>
+      <path d="M38 60 Q40 55 38 50 Q36 45 38 40" stroke="#C8647A" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      <path d="M46 62 Q48 57 46 52 Q44 47 46 42" stroke="#C8647A" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      <path d="M28 78 L28 95 Q28 103 36 103 L55 103 Q63 103 63 95 L63 78 Z" stroke="#C8647A" stroke-width="2" fill="none"/>
+      <path d="M63 82 Q72 82 72 90 Q72 98 63 98" stroke="#C8647A" stroke-width="2" fill="none"/>
+      <line x1="22" y1="107" x2="69" y2="107" stroke="#C8647A" stroke-width="2" stroke-linecap="round"/>
+      <path d="M78 65 L88 50 L100 55 L108 48 L130 48 L140 55 L155 50 L165 65" stroke="#C8647A" stroke-width="1.8" fill="none"/>
+      <line x1="78" y1="65" x2="78" y2="105" stroke="#C8647A" stroke-width="2"/>
+      <line x1="165" y1="65" x2="165" y2="105" stroke="#C8647A" stroke-width="2"/>
+      <line x1="78" y1="83" x2="165" y2="83" stroke="#C8647A" stroke-width="1.5"/>
+      <rect x="85" y="68" width="6" height="12" stroke="#C8647A" stroke-width="1" fill="none"/>
+      <rect x="95" y="68" width="6" height="12" stroke="#C8647A" stroke-width="1" fill="none"/>
+      <rect x="113" y="68" width="6" height="12" stroke="#C8647A" stroke-width="1" fill="none"/>
+      <rect x="123" y="68" width="6" height="12" stroke="#C8647A" stroke-width="1" fill="none"/>
+      <rect x="141" y="68" width="6" height="12" stroke="#C8647A" stroke-width="1" fill="none"/>
+      <rect x="151" y="68" width="6" height="12" stroke="#C8647A" stroke-width="1" fill="none"/>
+      <path d="M83 105 L83 95 Q83 88 89 88 Q95 88 95 95 L95 105" stroke="#C8647A" stroke-width="1.5" fill="none"/>
+      <path d="M100 105 L100 95 Q100 88 106 88 Q112 88 112 95 L112 105" stroke="#C8647A" stroke-width="1.5" fill="none"/>
+      <path d="M117 105 L117 95 Q117 88 123 88 Q129 88 129 95 L129 105" stroke="#C8647A" stroke-width="1.5" fill="none"/>
+      <path d="M134 105 L134 95 Q134 88 140 88 Q146 88 146 95 L146 105" stroke="#C8647A" stroke-width="1.5" fill="none"/>
+      <path d="M151 105 L151 95 Q151 88 157 88 Q163 88 163 95 L163 105" stroke="#C8647A" stroke-width="1.5" fill="none"/>
+      <line x1="76" y1="106" x2="167" y2="106" stroke="#C8647A" stroke-width="2"/>
+      <text x="100" y="138" text-anchor="middle" font-family="Playfair Display, serif" font-size="18" fill="#C8647A">The Pink House</text>
+      <text x="100" y="155" text-anchor="middle" font-family="Lato, sans-serif" font-size="6" fill="#C8647A" letter-spacing="2.5">COFFEE AND FOOD FOR THE HEART</text>
+    </svg>
+    <h1 class="splash-welcome">Bienvenido · Welcome · Bienvenue</h1>
+    <p class="splash-sub">Selecciona tu idioma · Select your language · Choisissez votre langue</p>
+    <div class="lang-options">
+      <button class="lang-option" onclick="setLang('es')"><span class="lang-flag">🇲🇽</span> Español</button>
+      <button class="lang-option" onclick="setLang('en')"><span class="lang-flag">🇺🇸</span> English</button>
+      <button class="lang-option" onclick="setLang('fr')"><span class="lang-flag">🇫🇷</span> Français</button>
+    </div>
+  </div>
+</div>
 
 <nav>
   <a href="#" class="nav-logo">
@@ -176,23 +241,30 @@ footer a{color:#F2D5DA;text-decoration:none}
     </svg>
     <div class="nav-brand">The Pink House<small>Coffee & Food for the Heart</small></div>
   </a>
-  <ul class="nav-links">
-    <li><a href="#rosa-ia">Rosa IA</a></li>
-    <li><a href="#menu">Menú</a></li>
-    <li><a href="#eventos">Eventos</a></li>
-    <li><a href="#ubicacion">Ubicación</a></li>
-    <li><a href="https://wa.me/525534745455" target="_blank" class="nav-cta">WhatsApp</a></li>
-  </ul>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#rosa-ia" data-i18n="nav_rosa">Alma Rosa</a></li>
+      <li><a href="#menu" data-i18n="nav_menu">Menú</a></li>
+      <li><a href="#eventos" data-i18n="nav_events">Eventos</a></li>
+      <li><a href="#ubicacion" data-i18n="nav_location">Ubicación</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <button class="lang-pill active" data-lang="es" onclick="setLang('es')">ES</button>
+      <button class="lang-pill" data-lang="en" onclick="setLang('en')">EN</button>
+      <button class="lang-pill" data-lang="fr" onclick="setLang('fr')">FR</button>
+    </div>
+    <a href="https://wa.me/525534745455" target="_blank" class="nav-cta">WhatsApp</a>
+  </div>
 </nav>
 
 <section class="hero">
   <div class="hero-text">
-    <p class="hero-eyebrow">Roma Norte · Ciudad de México</p>
-    <h1 class="hero-title">Coffee &amp; Food<br><em>for the Heart</em></h1>
-    <p class="hero-sub">Un lugar donde cada platillo cuenta una historia. Deja que Rosa te ayude a encontrar lo que tu corazón — y tu antojo — necesita hoy.</p>
+    <p class="hero-eyebrow" data-i18n="hero_eyebrow">Roma Norte · Ciudad de México</p>
+    <h1 class="hero-title"><span data-i18n="hero_title_1">Coffee &amp; Food</span><br><em data-i18n="hero_title_2">for the Heart</em></h1>
+    <p class="hero-sub" data-i18n="hero_sub">Un lugar donde cada platillo cuenta una historia. Deja que Alma Rosa te ayude a encontrar lo que tu corazón — y tu antojo — necesita hoy.</p>
     <div class="hero-btns">
-      <a href="#rosa-ia" class="btn-primary">Habla con Rosa ✨</a>
-      <a href="#menu" class="btn-outline">Ver menú completo</a>
+      <a href="#rosa-ia" class="btn-primary" data-i18n="hero_btn_chat">Habla con Alma Rosa ✨</a>
+      <a href="#menu" class="btn-outline" data-i18n="hero_btn_menu">Ver menú completo</a>
     </div>
   </div>
   <div class="hero-visual">
@@ -224,10 +296,10 @@ footer a{color:#F2D5DA;text-decoration:none}
         <text x="100" y="155" text-anchor="middle" font-family="Lato, sans-serif" font-size="6" fill="#C8647A" letter-spacing="2.5">COFFEE AND FOOD FOR THE HEART</text>
       </svg>
       <div class="stars">★★★★★</div>
-      <p class="rating-text">4.9 · 26 reseñas en Google</p>
+      <p class="rating-text" data-i18n="rating">4.9 · 26 reseñas en Google</p>
       <div class="hero-tags">
-        <span class="tag">Abierto hoy</span>
-        <span class="tag">Cierra 9pm</span>
+        <span class="tag" data-i18n="tag_open">Abierto hoy</span>
+        <span class="tag" data-i18n="tag_close">Cierra 9pm</span>
         <span class="tag">$150–$230</span>
       </div>
     </div>
@@ -235,29 +307,29 @@ footer a{color:#F2D5DA;text-decoration:none}
 </section>
 
 <div class="info-bar">
-  <div class="info-item">🕐 Lun–Dom · Hasta las 9pm</div>
-  <div class="info-item">📍 Colima 323, Roma Norte</div>
+  <div class="info-item" data-i18n="info_hours">🕐 Lun–Dom · Hasta las 9pm</div>
+  <div class="info-item" data-i18n="info_addr">📍 Colima 323, Roma Norte</div>
   <div class="info-item">📲 WA 5534-745455</div>
-  <div class="info-item">💳 Mercado Pago · Apple Pay · Efectivo</div>
+  <div class="info-item" data-i18n="info_pay">💳 Mercado Pago · Apple Pay · Efectivo</div>
 </div>
 
 <section class="ai-section" id="rosa-ia">
   <div class="ai-header">
-    <p class="ai-eyebrow">Inteligencia Artificial</p>
-    <h2 class="ai-title">Conoce a <em style="color:var(--pink);font-style:italic">Rosa</em></h2>
-    <p class="ai-sub">Nuestra anfitriona virtual. Cuéntale cómo te sientes hoy y te recomendará lo perfecto del menú. ¿Quieres rentar el espacio para celebrar? Ella también te ayuda.</p>
+    <p class="ai-eyebrow" data-i18n="ai_eyebrow">Inteligencia Artificial</p>
+    <h2 class="ai-title"><span data-i18n="ai_title_pre">Conoce a</span> <em style="color:var(--pink);font-style:italic">Alma Rosa</em></h2>
+    <p class="ai-sub" data-i18n="ai_sub">El almita de la casa. Cuéntale cómo te sientes hoy y te recomendará lo perfecto del menú. ¿Quieres rentar el espacio para celebrar? Ella también te ayuda.</p>
   </div>
   <div class="chat-container">
     <div class="chat-header">
       <div class="rosa-avatar">🌸</div>
       <div class="chat-header-info">
-        <h4>Rosa · The Pink House</h4>
-        <p><span class="online-dot"></span>En línea · Anfitriona virtual</p>
+        <h4>Alma Rosa · The Pink House</h4>
+        <p><span class="online-dot"></span><span data-i18n="ai_online">En línea · El almita de la casa</span></p>
       </div>
     </div>
     <div class="chat-messages" id="chatMessages"></div>
     <div class="chat-input-area">
-      <input type="text" class="chat-input" id="chatInput" placeholder="Cuéntale a Rosa cómo te sientes..." />
+      <input type="text" class="chat-input" id="chatInput" data-i18n-placeholder="ai_placeholder" placeholder="Cuéntame cómo te sientes..." />
       <button class="send-btn" onclick="Rosa.send()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
       </button>
@@ -267,188 +339,184 @@ footer a{color:#F2D5DA;text-decoration:none}
 
 <section class="menu-section" id="menu">
   <div class="section-header">
-    <p class="section-eyebrow">Lo que ofrecemos</p>
-    <h2 class="section-title">Nuestro Menú</h2>
+    <p class="section-eyebrow" data-i18n="menu_eyebrow">Lo que ofrecemos</p>
+    <h2 class="section-title" data-i18n="menu_title">Nuestro Menú</h2>
   </div>
   <div class="menu-tabs">
-    <button class="tab active" onclick="showTab('cafes',this)">☕ Cafés</button>
-    <button class="tab" onclick="showTab('tes',this)">🍵 Tés</button>
-    <button class="tab" onclick="showTab('frios',this)">🧊 Frappés</button>
-    <button class="tab" onclick="showTab('desayunos',this)">🍳 Desayunos</button>
-    <button class="tab" onclick="showTab('ensaladas',this)">🥗 Ensaladas</button>
-    <button class="tab" onclick="showTab('ciabattas',this)">🥪 Ciabattas</button>
-    <button class="tab" onclick="showTab('crepes',this)">🥞 Crepes</button>
-    <button class="tab" onclick="showTab('carnes',this)">🥩 A la Carte</button>
-    <button class="tab" onclick="showTab('pizzas',this)">🍕 Pizzas</button>
-    <button class="tab" onclick="showTab('pastas',this)">🍝 Pastas</button>
-    <button class="tab" onclick="showTab('postres',this)">🍮 Postres</button>
-    <button class="tab" onclick="showTab('bebidas',this)">🍷 Bebidas</button>
+    <button class="tab active" onclick="showTab('cafes',this)"><span>☕</span> <span data-i18n="cat_cafes">Cafés</span></button>
+    <button class="tab" onclick="showTab('tes',this)"><span>🍵</span> <span data-i18n="cat_tes">Tés</span></button>
+    <button class="tab" onclick="showTab('frios',this)"><span>🧊</span> <span data-i18n="cat_frios">Frappés</span></button>
+    <button class="tab" onclick="showTab('desayunos',this)"><span>🍳</span> <span data-i18n="cat_desayunos">Desayunos</span></button>
+    <button class="tab" onclick="showTab('ensaladas',this)"><span>🥗</span> <span data-i18n="cat_ensaladas">Ensaladas</span></button>
+    <button class="tab" onclick="showTab('ciabattas',this)"><span>🥪</span> <span data-i18n="cat_ciabattas">Ciabattas</span></button>
+    <button class="tab" onclick="showTab('crepes',this)"><span>🥞</span> <span data-i18n="cat_crepes">Crepes</span></button>
+    <button class="tab" onclick="showTab('carnes',this)"><span>🥩</span> <span data-i18n="cat_carnes">A la Carte</span></button>
+    <button class="tab" onclick="showTab('pizzas',this)"><span>🍕</span> <span data-i18n="cat_pizzas">Pizzas</span></button>
+    <button class="tab" onclick="showTab('pastas',this)"><span>🍝</span> <span data-i18n="cat_pastas">Pastas</span></button>
+    <button class="tab" onclick="showTab('postres',this)"><span>🍮</span> <span data-i18n="cat_postres">Postres</span></button>
+    <button class="tab" onclick="showTab('bebidas',this)"><span>🍷</span> <span data-i18n="cat_bebidas">Bebidas</span></button>
   </div>
 
   <div class="menu-grid active" id="tab-cafes">
-    <div class="menu-card"><h4>Espresso</h4><p>Solo o cortado. Intenso y aromático.</p><div class="menu-card-footer"><span class="price">$38<span class="size-badge">M</span> / $55<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Espresso')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Espresso Cortado</h4><p>Con un toque de leche vaporizada.</p><div class="menu-card-footer"><span class="price">$40<span class="size-badge">M</span> / $60<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Espresso Cortado')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Americano</h4><p>Espresso con agua caliente.</p><div class="menu-card-footer"><span class="price">$55<span class="size-badge">M</span> / $65<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Americano')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Latte</h4><p>Suave, cremoso y reconfortante.</p><div class="menu-card-footer"><span class="price">$55<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Latte')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Latte Matcha</h4><p>Matcha japonés con leche vaporizada.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Latte Matcha')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Latte Taro</h4><p>Morado, dulce y cremoso.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Latte Taro')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Capuchino</h4><p>Espresso doble con espuma de leche.</p><div class="menu-card-footer"><span class="price">$55<span class="size-badge">M</span> / $60<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Capuchino')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Chocolate Caliente</h4><p>Cremoso y muy chocolatoso.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Chocolate Caliente')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Cocoa Menta</h4><p>Chocolate con toque de menta fresca.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Cocoa Menta')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Moka</h4><p>Espresso con chocolate.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Moka')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Moka Blanco</h4><p>Con chocolate blanco y espresso.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Moka Blanco')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Capuchino Rompope</h4><p>Con toque especial de rompope.</p><div class="menu-card-footer"><span class="price">$75<span class="size-badge">M</span> / $80<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Capuchino Rompope')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Capuchino Baileys</h4><p>Con esencia de Baileys.</p><div class="menu-card-footer"><span class="price">$75<span class="size-badge">M</span> / $80<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Capuchino Baileys')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Capuchino Amareto</h4><p>Con esencia de amaretto.</p><div class="menu-card-footer"><span class="price">$75<span class="size-badge">M</span> / $80<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Capuchino Amareto')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Leche de Almendra</h4><p>Sustituto disponible.</p><div class="menu-card-footer"><span class="price">+$15</span><button class="add-btn" onclick="orderWA('Leche de almendra extra')">Agregar</button></div></div>
+    <div class="menu-card"><h4>Espresso</h4><p data-i18n="d_espresso">Solo o cortado. Intenso y aromático.</p><div class="menu-card-footer"><span class="price">$38<span class="size-badge">M</span> / $55<span class="size-badge">G</span></span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Espresso')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Espresso Cortado</h4><p data-i18n="d_cortado">Con un toque de leche vaporizada.</p><div class="menu-card-footer"><span class="price">$40<span class="size-badge">M</span> / $60<span class="size-badge">G</span></span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Espresso Cortado')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Americano</h4><p data-i18n="d_americano">Espresso con agua caliente.</p><div class="menu-card-footer"><span class="price">$55<span class="size-badge">M</span> / $65<span class="size-badge">G</span></span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Americano')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Latte</h4><p data-i18n="d_latte">Suave, cremoso y reconfortante.</p><div class="menu-card-footer"><span class="price">$55<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Latte')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Latte Matcha</h4><p data-i18n="d_matcha">Matcha japonés con leche vaporizada.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Latte Matcha')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Latte Taro</h4><p data-i18n="d_taro">Morado, dulce y cremoso.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Latte Taro')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Capuchino</h4><p data-i18n="d_capuchino">Espresso doble con espuma de leche.</p><div class="menu-card-footer"><span class="price">$55<span class="size-badge">M</span> / $60<span class="size-badge">G</span></span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Capuchino')">Ordenar</button></div></div>
+    <div class="menu-card"><h4 data-i18n="i_choc_caliente">Chocolate Caliente</h4><p data-i18n="d_choc_caliente">Cremoso y muy chocolatoso.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Chocolate Caliente')">Ordenar</button></div></div>
+    <div class="menu-card"><h4 data-i18n="i_cocoa">Cocoa Menta</h4><p data-i18n="d_cocoa">Chocolate con toque de menta fresca.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Cocoa Menta')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Moka</h4><p data-i18n="d_moka">Espresso con chocolate.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Moka')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Moka Blanco</h4><p data-i18n="d_moka_b">Con chocolate blanco y espresso.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Moka Blanco')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Capuchino Rompope</h4><p data-i18n="d_rompope">Con toque especial de rompope.</p><div class="menu-card-footer"><span class="price">$75<span class="size-badge">M</span> / $80<span class="size-badge">G</span></span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Capuchino Rompope')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Capuchino Baileys</h4><p data-i18n="d_baileys">Con esencia de Baileys.</p><div class="menu-card-footer"><span class="price">$75<span class="size-badge">M</span> / $80<span class="size-badge">G</span></span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Capuchino Baileys')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Capuchino Amareto</h4><p data-i18n="d_amareto">Con esencia de amaretto.</p><div class="menu-card-footer"><span class="price">$75<span class="size-badge">M</span> / $80<span class="size-badge">G</span></span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Capuchino Amareto')">Ordenar</button></div></div>
+    <div class="menu-card"><h4 data-i18n="i_almendra">Leche de Almendra</h4><p data-i18n="d_almendra">Sustituto disponible.</p><div class="menu-card-footer"><span class="price">+$15</span><button class="add-btn" data-i18n="btn_add" onclick="orderWA('Leche de almendra extra')">Agregar</button></div></div>
   </div>
 
   <div class="menu-grid" id="tab-tes">
-    <div class="menu-card"><h4>Tisanas</h4><p>Frutas rojas, guayaba, manzana o arándano.</p><div class="menu-card-footer"><span class="price">$65</span><button class="add-btn" onclick="orderWA('Tisana')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Chef Latte</h4><p>Especialidad de la casa.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Chef Latte')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Té Nacional</h4><p>Té de la casa.</p><div class="menu-card-footer"><span class="price">$45<span class="size-badge">M</span> / $50<span class="size-badge">G</span></span><button class="add-btn" onclick="orderWA('Té Nacional')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Tisanas</h4><p data-i18n="d_tisanas">Frutas rojas, guayaba, manzana o arándano.</p><div class="menu-card-footer"><span class="price">$65</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Tisana')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Chef Latte</h4><p data-i18n="d_chef_latte">Especialidad de la casa.</p><div class="menu-card-footer"><span class="price">$65<span class="size-badge">M</span> / $70<span class="size-badge">G</span></span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Chef Latte')">Ordenar</button></div></div>
+    <div class="menu-card"><h4 data-i18n="i_te_nac">Té Nacional</h4><p data-i18n="d_te_nac">Té de la casa.</p><div class="menu-card-footer"><span class="price">$45<span class="size-badge">M</span> / $50<span class="size-badge">G</span></span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Té Nacional')">Ordenar</button></div></div>
   </div>
 
   <div class="menu-grid" id="tab-frios">
-    <div class="menu-card"><h4>Frappé Capuchino</h4><p>Café frío blended.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Frappé Capuchino $70')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Frappé Matcha</h4><p>Matcha frío y cremoso.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Frappé Matcha $70')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Frappé Moka</h4><p>Chocolate y café.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Frappé Moka $70')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Frappé Moka Blanco</h4><p>Con chocolate blanco.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Frappé Moka Blanco $70')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Frappé Taro</h4><p>Morado, dulce y muy instagrameable.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Frappé Taro $70')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Frappé Cookies &amp; Cream</h4><p>Oreo y crema, irresistible.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Frappé Cookies $70')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Capucchino Frío</h4><p>Capuchino sobre hielo.</p><div class="menu-card-footer"><span class="price">$65</span><button class="add-btn" onclick="orderWA('Capucchino Frío')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Chocolate Frío</h4><p>Chocolate frío y cremoso.</p><div class="menu-card-footer"><span class="price">$65</span><button class="add-btn" onclick="orderWA('Chocolate Frío')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Smoothie Frutas Rojas</h4><p>Mezcla de frutas del bosque.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Smoothie $70')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Limonada</h4><p>Natural, fresca, con o sin chía.</p><div class="menu-card-footer"><span class="price">$55</span><button class="add-btn" onclick="orderWA('Limonada $55')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Naranjada</h4><p>Jugo de naranja natural.</p><div class="menu-card-footer"><span class="price">$55</span><button class="add-btn" onclick="orderWA('Naranjada $55')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Soda Italiana</h4><p>Frutas rojas o guayaba con soda.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Soda Italiana $70')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Frappé Capuchino</h4><p data-i18n="d_frap_cap">Café frío blended.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Frappé Capuchino $70')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Frappé Matcha</h4><p data-i18n="d_frap_mat">Matcha frío y cremoso.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Frappé Matcha $70')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Frappé Moka</h4><p data-i18n="d_frap_mok">Chocolate y café.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Frappé Moka $70')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Frappé Taro</h4><p data-i18n="d_frap_tar">Morado, dulce y muy instagrameable.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Frappé Taro $70')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Frappé Cookies &amp; Cream</h4><p data-i18n="d_frap_coo">Oreo y crema, irresistible.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Frappé Cookies $70')">Ordenar</button></div></div>
+    <div class="menu-card"><h4 data-i18n="i_smoothie">Smoothie Frutas Rojas</h4><p data-i18n="d_smoothie">Mezcla de frutas del bosque.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Smoothie $70')">Ordenar</button></div></div>
+    <div class="menu-card"><h4 data-i18n="i_limonada">Limonada</h4><p data-i18n="d_limonada">Natural, fresca, con o sin chía.</p><div class="menu-card-footer"><span class="price">$55</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Limonada $55')">Ordenar</button></div></div>
+    <div class="menu-card"><h4 data-i18n="i_soda_it">Soda Italiana</h4><p data-i18n="d_soda_it">Frutas rojas o guayaba con soda.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Soda Italiana $70')">Ordenar</button></div></div>
   </div>
 
   <div class="menu-grid" id="tab-desayunos">
-    <div class="menu-card"><h4>Huevos al Gusto</h4><p>Incluye café americano chico, jugo o fruta. Hasta 12pm.</p><div class="menu-card-footer"><span class="price">$110</span><button class="add-btn" onclick="orderWA('Huevos al Gusto $110')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Omelette al Gusto</h4><p>Incluye café americano chico, jugo o fruta.</p><div class="menu-card-footer"><span class="price">$110</span><button class="add-btn" onclick="orderWA('Omelette $110')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Chilaquiles Verdes o Rojos</h4><p>Con pollo o huevo. Incluye bebida.</p><div class="menu-card-footer"><span class="price">$110</span><button class="add-btn" onclick="orderWA('Chilaquiles $110')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Enchiladas Verdes o Rojas</h4><p>Con pollo o huevo. Crema y queso.</p><div class="menu-card-footer"><span class="price">$110</span><button class="add-btn" onclick="orderWA('Enchiladas $110')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Molletes Tradicionales</h4><p>Con frijoles y queso gratinado.</p><div class="menu-card-footer"><span class="price">$80</span><button class="add-btn" onclick="orderWA('Molletes $80')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Molletes Especiales</h4><p>Chorizo, jamón, tocino o champiñones.</p><div class="menu-card-footer"><span class="price">$80</span><button class="add-btn" onclick="orderWA('Molletes Especiales $80')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Sincronizadas</h4><p>Tortilla de harina, jamón y queso.</p><div class="menu-card-footer"><span class="price">$60</span><button class="add-btn" onclick="orderWA('Sincronizadas $60')">Ordenar</button></div></div>
+    <div class="menu-card"><h4 data-i18n="i_huevos">Huevos al Gusto</h4><p data-i18n="d_huevos">Incluye café americano chico, jugo o fruta. Hasta 12pm.</p><div class="menu-card-footer"><span class="price">$110</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Huevos al Gusto $110')">Ordenar</button></div></div>
+    <div class="menu-card"><h4 data-i18n="i_omelette">Omelette al Gusto</h4><p data-i18n="d_omelette">Incluye café americano chico, jugo o fruta.</p><div class="menu-card-footer"><span class="price">$110</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Omelette $110')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Chilaquiles Verdes/Rojos</h4><p data-i18n="d_chilaq">Con pollo o huevo. Incluye bebida.</p><div class="menu-card-footer"><span class="price">$110</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Chilaquiles $110')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Enchiladas Verdes/Rojas</h4><p data-i18n="d_enchil">Con pollo o huevo. Crema y queso.</p><div class="menu-card-footer"><span class="price">$110</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Enchiladas $110')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Molletes Tradicionales</h4><p data-i18n="d_molletes">Con frijoles y queso gratinado.</p><div class="menu-card-footer"><span class="price">$80</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Molletes $80')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Molletes Especiales</h4><p data-i18n="d_mol_esp">Chorizo, jamón, tocino o champiñones.</p><div class="menu-card-footer"><span class="price">$80</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Molletes Especiales $80')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Sincronizadas</h4><p data-i18n="d_sinc">Tortilla de harina, jamón y queso.</p><div class="menu-card-footer"><span class="price">$60</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Sincronizadas $60')">Ordenar</button></div></div>
   </div>
 
   <div class="menu-grid" id="tab-ensaladas">
-    <div class="menu-card"><h4>Salad 323</h4><p>Ensalada especial de la casa.</p><div class="menu-card-footer"><span class="price">$120</span><button class="add-btn" onclick="orderWA('Salad 323 $120')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Chef Salad</h4><p>Jamón, manchego, panela, pollo, tocino y tomate.</p><div class="menu-card-footer"><span class="price">$120</span><button class="add-btn" onclick="orderWA('Chef Salad $120')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Spinach Salad</h4><p>Espinaca, queso de cabra y nuez.</p><div class="menu-card-footer"><span class="price">$120</span><button class="add-btn" onclick="orderWA('Spinach Salad $120')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Caesar Salad</h4><p>Lechuga, crutones, parmesano y aderezo caesar.</p><div class="menu-card-footer"><span class="price">$120</span><button class="add-btn" onclick="orderWA('Caesar Salad $120')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Salad 323</h4><p data-i18n="d_salad323">Ensalada especial de la casa.</p><div class="menu-card-footer"><span class="price">$120</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Salad 323 $120')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Chef Salad</h4><p data-i18n="d_chef_sal">Jamón, manchego, panela, pollo, tocino y tomate.</p><div class="menu-card-footer"><span class="price">$120</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Chef Salad $120')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Spinach Salad</h4><p data-i18n="d_spinach">Espinaca, queso de cabra y nuez.</p><div class="menu-card-footer"><span class="price">$120</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Spinach Salad $120')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Caesar Salad</h4><p data-i18n="d_caesar">Lechuga, crutones, parmesano y aderezo caesar.</p><div class="menu-card-footer"><span class="price">$120</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Caesar Salad $120')">Ordenar</button></div></div>
   </div>
 
   <div class="menu-grid" id="tab-ciabattas">
-    <div class="menu-card"><h4>Ciabatta Mushrooms</h4><p>Queso gouda y aguacate.</p><div class="menu-card-footer"><span class="price">$120</span><button class="add-btn" onclick="orderWA('Ciabatta Mushrooms $120')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Ciabatta Chicken BBQ</h4><p>Pollo, queso gouda y tomate.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" onclick="orderWA('Ciabatta Chicken BBQ $130')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Ciabatta Original</h4><p>Queso gouda y manchego.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" onclick="orderWA('Ciabatta Original $130')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Club Sandwich</h4><p>Con queso manchego. Incluye papas.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" onclick="orderWA('Club Sandwich $130')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Ciabatta Mushrooms</h4><p data-i18n="d_cia_mush">Queso gouda y aguacate.</p><div class="menu-card-footer"><span class="price">$120</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Ciabatta Mushrooms $120')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Ciabatta Chicken BBQ</h4><p data-i18n="d_cia_bbq">Pollo, queso gouda y tomate.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Ciabatta Chicken BBQ $130')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Ciabatta Original</h4><p data-i18n="d_cia_orig">Queso gouda y manchego.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Ciabatta Original $130')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Club Sandwich</h4><p data-i18n="d_club">Con queso manchego. Incluye papas.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Club Sandwich $130')">Ordenar</button></div></div>
   </div>
 
   <div class="menu-grid" id="tab-crepes">
-    <div class="menu-card"><h4>Apple Cinnamon Crepe</h4><p>Philadelphia, manzana y canela.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" onclick="orderWA('Apple Cinnamon $130')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Red Fruits Crepe</h4><p>Philadelphia y frutas rojas.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" onclick="orderWA('Red Fruits $130')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Nutella Crepe</h4><p>Nutella, philadelphia, fresa o plátano.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" onclick="orderWA('Nutella Crepe $130')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Blackberry Crepe</h4><p>Mermelada de zarzamora y philadelphia.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" onclick="orderWA('Blackberry $130')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Special Crepe</h4><p>Cajeta casera, philadelphia, nuez o fresa.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" onclick="orderWA('Special Crepe $130')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>The Pink House Crepe ⭐</h4><p>Philadelphia, lechera y fresa.</p><div class="menu-card-footer"><span class="price">$140</span><button class="add-btn" onclick="orderWA('Pink House Crepe $140')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Apple Cinnamon Crepe</h4><p data-i18n="d_apple_cin">Philadelphia, manzana y canela.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Apple Cinnamon $130')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Red Fruits Crepe</h4><p data-i18n="d_red_fr">Philadelphia y frutas rojas.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Red Fruits $130')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Nutella Crepe</h4><p data-i18n="d_nutella">Nutella, philadelphia, fresa o plátano.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Nutella Crepe $130')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Blackberry Crepe</h4><p data-i18n="d_blackbr">Mermelada de zarzamora y philadelphia.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Blackberry $130')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Special Crepe</h4><p data-i18n="d_special">Cajeta casera, philadelphia, nuez o fresa.</p><div class="menu-card-footer"><span class="price">$130</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Special Crepe $130')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>The Pink House Crepe ⭐</h4><p data-i18n="d_pink_cr">Philadelphia, lechera y fresa.</p><div class="menu-card-footer"><span class="price">$140</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Pink House Crepe $140')">Ordenar</button></div></div>
   </div>
 
   <div class="menu-grid" id="tab-carnes">
-    <div class="menu-card"><h4>Breaded Chicken Breast</h4><p>Pechuga empanizada con guarnición.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" onclick="orderWA('Breaded Chicken $150')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Roasted Chicken Breast</h4><p>Pechuga rostizada.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" onclick="orderWA('Roasted Chicken $150')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Flank Steak</h4><p>Corte de res con guarnición.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" onclick="orderWA('Flank Steak $150')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Fish Fillet</h4><p>Filete de pescado al gusto.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" onclick="orderWA('Fish Fillet $150')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Rib Eye</h4><p>Corte premium con guarnición.</p><div class="menu-card-footer"><span class="price">$230</span><button class="add-btn" onclick="orderWA('Rib Eye $230')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>French Fries</h4><p>Papas fritas crujientes.</p><div class="menu-card-footer"><span class="price">$50</span><button class="add-btn" onclick="orderWA('French Fries $50')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Azteca Soup</h4><p>Sopa azteca tradicional.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Azteca Soup $70')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Ceviche Toast (3)</h4><p>Tostadas de ceviche estilo casa.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" onclick="orderWA('Ceviche Toast $150')">Ordenar</button></div></div>
+    <div class="menu-card"><h4 data-i18n="i_breaded">Breaded Chicken Breast</h4><p data-i18n="d_breaded">Pechuga empanizada con guarnición.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Breaded Chicken $150')">Ordenar</button></div></div>
+    <div class="menu-card"><h4 data-i18n="i_roasted">Roasted Chicken Breast</h4><p data-i18n="d_roasted">Pechuga rostizada.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Roasted Chicken $150')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Flank Steak</h4><p data-i18n="d_flank">Corte de res con guarnición.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Flank Steak $150')">Ordenar</button></div></div>
+    <div class="menu-card"><h4 data-i18n="i_fish">Fish Fillet</h4><p data-i18n="d_fish">Filete de pescado al gusto.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Fish Fillet $150')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Rib Eye</h4><p data-i18n="d_ribeye">Corte premium con guarnición.</p><div class="menu-card-footer"><span class="price">$230</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Rib Eye $230')">Ordenar</button></div></div>
+    <div class="menu-card"><h4 data-i18n="i_fries">French Fries</h4><p data-i18n="d_fries">Papas fritas crujientes.</p><div class="menu-card-footer"><span class="price">$50</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('French Fries $50')">Ordenar</button></div></div>
+    <div class="menu-card"><h4 data-i18n="i_azteca">Azteca Soup</h4><p data-i18n="d_azteca">Sopa azteca tradicional.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Azteca Soup $70')">Ordenar</button></div></div>
+    <div class="menu-card"><h4 data-i18n="i_ceviche">Ceviche Toast (3)</h4><p data-i18n="d_ceviche">Tostadas de ceviche estilo casa.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Ceviche Toast $150')">Ordenar</button></div></div>
   </div>
 
   <div class="menu-grid" id="tab-pizzas">
-    <div class="menu-card"><h4>Pizza Margarita</h4><p>Salsa de tomate, mozzarella y albahaca.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" onclick="orderWA('Pizza Margarita $150')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Pizza Hawaiana</h4><p>Jamón y piña con mozzarella.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" onclick="orderWA('Pizza Hawaiana $150')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Pizza Peperoni</h4><p>Pepperoni y doble queso.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" onclick="orderWA('Pizza Peperoni $150')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Pizza Bacon</h4><p>Tocino ahumado y queso.</p><div class="menu-card-footer"><span class="price">$170</span><button class="add-btn" onclick="orderWA('Pizza Bacon $170')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Pizza Boloñesa</h4><p>Carne molida con salsa boloñesa.</p><div class="menu-card-footer"><span class="price">$170</span><button class="add-btn" onclick="orderWA('Pizza Boloñesa $170')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Pizza Pear &amp; Nut</h4><p>Pera, nuez y queso de cabra.</p><div class="menu-card-footer"><span class="price">$170</span><button class="add-btn" onclick="orderWA('Pizza Pear and Nut $170')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Pizza Margarita</h4><p data-i18n="d_pz_marg">Salsa de tomate, mozzarella y albahaca.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Pizza Margarita $150')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Pizza Hawaiana</h4><p data-i18n="d_pz_haw">Jamón y piña con mozzarella.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Pizza Hawaiana $150')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Pizza Peperoni</h4><p data-i18n="d_pz_pep">Pepperoni y doble queso.</p><div class="menu-card-footer"><span class="price">$150</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Pizza Peperoni $150')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Pizza Bacon</h4><p data-i18n="d_pz_bac">Tocino ahumado y queso.</p><div class="menu-card-footer"><span class="price">$170</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Pizza Bacon $170')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Pizza Boloñesa</h4><p data-i18n="d_pz_bol">Carne molida con salsa boloñesa.</p><div class="menu-card-footer"><span class="price">$170</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Pizza Boloñesa $170')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Pizza Pear &amp; Nut</h4><p data-i18n="d_pz_pear">Pera, nuez y queso de cabra.</p><div class="menu-card-footer"><span class="price">$170</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Pizza Pear and Nut $170')">Ordenar</button></div></div>
   </div>
 
   <div class="menu-grid" id="tab-pastas">
-    <div class="menu-card"><h4>Pasta Boloñesa</h4><p>Carne molida con salsa de tomate italiana.</p><div class="menu-card-footer"><span class="price">$190</span><button class="add-btn" onclick="orderWA('Pasta Boloñesa $190')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Pasta Diavola / Shrimp</h4><p>Salsa picante o con camarones.</p><div class="menu-card-footer"><span class="price">$190</span><button class="add-btn" onclick="orderWA('Pasta Diavola $190')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Pasta Alfredo</h4><p>Crema, ajo y parmesano.</p><div class="menu-card-footer"><span class="price">$190</span><button class="add-btn" onclick="orderWA('Pasta Alfredo $190')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Pasta All'arrabbiata</h4><p>Salsa picante estilo italiano.</p><div class="menu-card-footer"><span class="price">$190</span><button class="add-btn" onclick="orderWA('Pasta Arrabbiata $190')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Pasta Boloñesa</h4><p data-i18n="d_pa_bol">Carne molida con salsa de tomate italiana.</p><div class="menu-card-footer"><span class="price">$190</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Pasta Boloñesa $190')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Pasta Diavola/Shrimp</h4><p data-i18n="d_pa_dia">Salsa picante o con camarones.</p><div class="menu-card-footer"><span class="price">$190</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Pasta Diavola $190')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Pasta Alfredo</h4><p data-i18n="d_pa_alf">Crema, ajo y parmesano.</p><div class="menu-card-footer"><span class="price">$190</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Pasta Alfredo $190')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Pasta All'arrabbiata</h4><p data-i18n="d_pa_arr">Salsa picante estilo italiano.</p><div class="menu-card-footer"><span class="price">$190</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Pasta Arrabbiata $190')">Ordenar</button></div></div>
   </div>
 
   <div class="menu-grid" id="tab-postres">
-    <div class="menu-card"><h4>Neapolitan Flan</h4><p>Flan artesanal por rebanada.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Flan $70')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Baked Banana</h4><p>Plátano horneado artesanal.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Baked Banana $70')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Apple Strudel</h4><p>Strudel de manzana hecho en casa.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Apple Strudel $70')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Bartoloes</h4><p>Pay artesanal hecho en casa.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Bartoloes $70')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Neapolitan Flan</h4><p data-i18n="d_flan">Flan artesanal por rebanada.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Flan $70')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Baked Banana</h4><p data-i18n="d_banana">Plátano horneado artesanal.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Baked Banana $70')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Apple Strudel</h4><p data-i18n="d_strudel">Strudel de manzana hecho en casa.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Apple Strudel $70')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Bartoloes</h4><p data-i18n="d_bartol">Pay artesanal hecho en casa.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Bartoloes $70')">Ordenar</button></div></div>
   </div>
 
   <div class="menu-grid" id="tab-bebidas">
-    <div class="menu-card"><h4>Cerveza</h4><p>Clásica fría.</p><div class="menu-card-footer"><span class="price">$55</span><button class="add-btn" onclick="orderWA('Cerveza $55')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Vaso Michelado</h4><p>Bien preparada.</p><div class="menu-card-footer"><span class="price">$35</span><button class="add-btn" onclick="orderWA('Michelada $35')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Vaso Clamato</h4><p>Con clamato y especias.</p><div class="menu-card-footer"><span class="price">$40</span><button class="add-btn" onclick="orderWA('Clamato $40')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Clerloot</h4><p>Vino con fruta. Copa o jarra.</p><div class="menu-card-footer"><span class="price">$110 / $250</span><button class="add-btn" onclick="orderWA('Clerloot')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Vino Blanco</h4><p>Copa de vino blanco.</p><div class="menu-card-footer"><span class="price">$90</span><button class="add-btn" onclick="orderWA('Vino Blanco $90')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Vino Tinto</h4><p>Copa de vino tinto.</p><div class="menu-card-footer"><span class="price">$90</span><button class="add-btn" onclick="orderWA('Vino Tinto $90')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Rosita Limón</h4><p>Fresa, limón y menta.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" onclick="orderWA('Rosita Limón $70')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Refrescos</h4><p>Lata fría.</p><div class="menu-card-footer"><span class="price">$35</span><button class="add-btn" onclick="orderWA('Refresco $35')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Agua Mineral</h4><p>Natural o mineralizada.</p><div class="menu-card-footer"><span class="price">$50</span><button class="add-btn" onclick="orderWA('Agua Mineral $50')">Ordenar</button></div></div>
-    <div class="menu-card"><h4>Agua Embotellada 600ml</h4><p>Agua fría.</p><div class="menu-card-footer"><span class="price">$35</span><button class="add-btn" onclick="orderWA('Agua $35')">Ordenar</button></div></div>
+    <div class="menu-card"><h4 data-i18n="i_cerveza">Cerveza</h4><p data-i18n="d_cerveza">Clásica fría.</p><div class="menu-card-footer"><span class="price">$55</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Cerveza $55')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Vaso Michelado</h4><p data-i18n="d_michel">Bien preparada.</p><div class="menu-card-footer"><span class="price">$35</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Michelada $35')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Vaso Clamato</h4><p data-i18n="d_clamato">Con clamato y especias.</p><div class="menu-card-footer"><span class="price">$40</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Clamato $40')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Clerloot</h4><p data-i18n="d_clerloot">Vino con fruta. Copa o jarra.</p><div class="menu-card-footer"><span class="price">$110 / $250</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Clerloot')">Ordenar</button></div></div>
+    <div class="menu-card"><h4 data-i18n="i_vino_b">Vino Blanco</h4><p data-i18n="d_vino_b">Copa de vino blanco.</p><div class="menu-card-footer"><span class="price">$90</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Vino Blanco $90')">Ordenar</button></div></div>
+    <div class="menu-card"><h4 data-i18n="i_vino_t">Vino Tinto</h4><p data-i18n="d_vino_t">Copa de vino tinto.</p><div class="menu-card-footer"><span class="price">$90</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Vino Tinto $90')">Ordenar</button></div></div>
+    <div class="menu-card"><h4>Rosita Limón</h4><p data-i18n="d_rosita">Fresa, limón y menta.</p><div class="menu-card-footer"><span class="price">$70</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Rosita Limón $70')">Ordenar</button></div></div>
+    <div class="menu-card"><h4 data-i18n="i_refresco">Refrescos</h4><p data-i18n="d_refresco">Lata fría.</p><div class="menu-card-footer"><span class="price">$35</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Refresco $35')">Ordenar</button></div></div>
+    <div class="menu-card"><h4 data-i18n="i_min">Agua Mineral</h4><p data-i18n="d_min">Natural o mineralizada.</p><div class="menu-card-footer"><span class="price">$50</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Agua Mineral $50')">Ordenar</button></div></div>
+    <div class="menu-card"><h4 data-i18n="i_bot">Agua Embotellada 600ml</h4><p data-i18n="d_bot">Agua fría.</p><div class="menu-card-footer"><span class="price">$35</span><button class="add-btn" data-i18n="btn_order" onclick="orderWA('Agua $35')">Ordenar</button></div></div>
   </div>
 </section>
 
 <section class="events-section" id="eventos">
   <div class="section-header">
-    <p class="section-eyebrow">Celebra con nosotros</p>
-    <h2 class="section-title">Renta el Espacio</h2>
+    <p class="section-eyebrow" data-i18n="ev_eyebrow">Celebra con nosotros</p>
+    <h2 class="section-title" data-i18n="ev_title">Renta el Espacio</h2>
   </div>
   <div class="events-grid">
     <div class="event-card">
       <span class="event-icon">🎂</span>
-      <h3>Cumpleaños</h3>
-      <p>Celebra tu día especial en la casa más bonita de Roma Norte. Te lo decoramos, preparamos tu menú favorito y lo hacemos inolvidable.</p>
+      <h3 data-i18n="ev_birth_t">Cumpleaños</h3>
+      <p data-i18n="ev_birth_d">Celebra tu día especial en la casa más bonita de Roma Norte. Te lo decoramos, preparamos tu menú favorito y lo hacemos inolvidable.</p>
       <ul class="event-features">
-        <li>Decoración temática incluida</li>
-        <li>Menú personalizado</li>
-        <li>Zona privada o semi-privada</li>
-        <li>Hasta 30 personas</li>
-        <li>Pastel de bienvenida</li>
+        <li data-i18n="ev_birth_f1">Decoración temática incluida</li>
+        <li data-i18n="ev_birth_f2">Menú personalizado</li>
+        <li data-i18n="ev_birth_f3">Zona privada o semi-privada</li>
+        <li data-i18n="ev_birth_f4">Hasta 30 personas</li>
+        <li data-i18n="ev_birth_f5">Pastel de bienvenida</li>
       </ul>
-      <p class="event-price">Desde <strong>$3,500 MXN</strong> · cotización personalizada</p>
-      <a href="https://wa.me/525534745455?text=Hola!%20Quiero%20cotizar%20una%20fiesta%20de%20cumplea%C3%B1os%20en%20The%20Pink%20House%20%F0%9F%8E%82" target="_blank" class="event-cta">Cotizar por WhatsApp →</a>
+      <p class="event-price"><span data-i18n="ev_from">Desde</span> <strong>$3,500 MXN</strong> · <span data-i18n="ev_custom">cotización personalizada</span></p>
+      <a href="https://wa.me/525534745455?text=Hola!%20Quiero%20cotizar%20una%20fiesta%20de%20cumpleaños%20en%20The%20Pink%20House%20%F0%9F%8E%82" target="_blank" class="event-cta" data-i18n="ev_cta">Cotizar por WhatsApp →</a>
     </div>
     <div class="event-card">
       <span class="event-icon">🥂</span>
-      <h3>Eventos Especiales</h3>
-      <p>Baby shower, graduación, reunión de trabajo, despedida... The Pink House es el espacio perfecto para cualquier celebración.</p>
+      <h3 data-i18n="ev_sp_t">Eventos Especiales</h3>
+      <p data-i18n="ev_sp_d">Baby shower, graduación, reunión de trabajo, despedida... The Pink House es el espacio perfecto para cualquier celebración.</p>
       <ul class="event-features">
-        <li>Espacio exclusivo o completo</li>
-        <li>Menú de grupos disponible</li>
-        <li>Decoración a tu gusto</li>
-        <li>Hasta 60 personas</li>
-        <li>Terraza y área interior</li>
+        <li data-i18n="ev_sp_f1">Espacio exclusivo o completo</li>
+        <li data-i18n="ev_sp_f2">Menú de grupos disponible</li>
+        <li data-i18n="ev_sp_f3">Decoración a tu gusto</li>
+        <li data-i18n="ev_sp_f4">Hasta 60 personas</li>
+        <li data-i18n="ev_sp_f5">Terraza y área interior</li>
       </ul>
-      <p class="event-price">Desde <strong>$5,000 MXN</strong> · depende del evento</p>
-      <a href="https://wa.me/525534745455?text=Hola!%20Quiero%20informaci%C3%B3n%20para%20rentar%20el%20espacio%20de%20The%20Pink%20House%20para%20un%20evento%20%F0%9F%A5%82" target="_blank" class="event-cta">Cotizar por WhatsApp →</a>
+      <p class="event-price"><span data-i18n="ev_from">Desde</span> <strong>$5,000 MXN</strong> · <span data-i18n="ev_depends">depende del evento</span></p>
+      <a href="https://wa.me/525534745455?text=Hola!%20Quiero%20información%20para%20rentar%20el%20espacio%20de%20The%20Pink%20House%20para%20un%20evento%20%F0%9F%A5%82" target="_blank" class="event-cta" data-i18n="ev_cta">Cotizar por WhatsApp →</a>
     </div>
   </div>
 </section>
 
 <section class="qr-section" id="qr">
-  <p class="section-eyebrow">Comparte la experiencia</p>
-  <h2 class="section-title" style="font-family:'Playfair Display',serif;font-size:36px;color:var(--dark)">Código QR</h2>
-  <p style="color:var(--gray);font-size:14px;margin-top:10px">Ponlo en tus mesas, en la entrada o en tus redes sociales</p>
+  <p class="section-eyebrow" data-i18n="qr_eyebrow">Comparte la experiencia</p>
+  <h2 class="section-title" style="font-family:'Playfair Display',serif;font-size:36px;color:var(--dark)" data-i18n="qr_title">Código QR</h2>
+  <p style="color:var(--gray);font-size:14px;margin-top:10px" data-i18n="qr_sub">Ponlo en tus mesas, en la entrada o en tus redes sociales</p>
   <div class="qr-box">
     <div id="qrcode"></div>
-    <p>Escanea para ver el menú completo</p>
+    <p data-i18n="qr_scan">Escanea para ver el menú completo</p>
     <p class="qr-url">juanchapo.github.io/thepinkhouse</p>
   </div>
 </section>
@@ -456,50 +524,522 @@ footer a{color:#F2D5DA;text-decoration:none}
 <section class="location-section" id="ubicacion">
   <div class="location-inner">
     <div class="location-text">
-      <h2>¿Cómo llegamos?</h2>
-      <p>Estamos en el corazón de la Colonia Roma Norte, una de las zonas más vibrantes de la Ciudad de México.</p>
-      <div class="loc-item">📍 Colima #323, Col. Roma Norte, Cuauhtémoc 06700, CDMX</div>
-      <div class="loc-item">🕐 Abierto todos los días · Cierra a las 9pm</div>
+      <h2 data-i18n="loc_title">¿Cómo llegamos?</h2>
+      <p data-i18n="loc_desc">Estamos en el corazón de la Colonia Roma Norte, una de las zonas más vibrantes de la Ciudad de México.</p>
+      <div class="loc-item" data-i18n="loc_addr">📍 Colima #323, Col. Roma Norte, Cuauhtémoc 06700, CDMX</div>
+      <div class="loc-item" data-i18n="loc_hours">🕐 Abierto todos los días · Cierra a las 9pm</div>
       <div class="loc-item">📲 WA 5534-745455 · @pinkhousemx</div>
-      <div class="loc-item">💳 Terminal Mercado Pago · Apple Pay · Efectivo</div>
+      <div class="loc-item" data-i18n="loc_pay">💳 Terminal Mercado Pago · Apple Pay · Efectivo</div>
     </div>
     <div>
-      <a href="https://maps.google.com/?q=Colima+323+Roma+Norte+CDMX" target="_blank" class="maps-btn">Ver en Google Maps →</a>
+      <a href="https://maps.google.com/?q=Colima+323+Roma+Norte+CDMX" target="_blank" class="maps-btn" data-i18n="loc_maps">Ver en Google Maps →</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 The Pink House · Coffee and Food for the Heart · Colima #323, Roma Norte, CDMX</p>
+  <p data-i18n="foot_1">© 2026 The Pink House · Coffee and Food for the Heart · Colima #323, Roma Norte, CDMX</p>
   <p style="margin-top:8px;opacity:.6;font-size:12px">Instagram: <a href="#">@pinkhousemx</a> · WhatsApp: <a href="https://wa.me/525534745455">5534-745455</a></p>
 </footer>
 
 <script>
+// ============ I18N — TRADUCCIONES ============
+const i18n = {
+es: {
+  nav_rosa:"Alma Rosa", nav_menu:"Menú", nav_events:"Eventos", nav_location:"Ubicación",
+  hero_eyebrow:"Roma Norte · Ciudad de México", hero_title_1:"Coffee & Food", hero_title_2:"for the Heart",
+  hero_sub:"Un lugar donde cada platillo cuenta una historia. Deja que Alma Rosa te ayude a encontrar lo que tu corazón — y tu antojo — necesita hoy.",
+  hero_btn_chat:"Habla con Alma Rosa ✨", hero_btn_menu:"Ver menú completo",
+  rating:"4.9 · 26 reseñas en Google", tag_open:"Abierto hoy", tag_close:"Cierra 9pm",
+  info_hours:"🕐 Lun–Dom · Hasta las 9pm", info_addr:"📍 Colima 323, Roma Norte",
+  info_pay:"💳 Mercado Pago · Apple Pay · Efectivo",
+  ai_eyebrow:"Inteligencia Artificial", ai_title_pre:"Conoce a",
+  ai_sub:"El almita de la casa. Cuéntale cómo te sientes hoy y te recomendará lo perfecto del menú. ¿Quieres rentar el espacio para celebrar? Ella también te ayuda.",
+  ai_online:"En línea · El almita de la casa", ai_placeholder:"Cuéntame cómo te sientes...",
+  menu_eyebrow:"Lo que ofrecemos", menu_title:"Nuestro Menú",
+  cat_cafes:"Cafés", cat_tes:"Tés", cat_frios:"Frappés", cat_desayunos:"Desayunos",
+  cat_ensaladas:"Ensaladas", cat_ciabattas:"Ciabattas", cat_crepes:"Crepes",
+  cat_carnes:"A la Carte", cat_pizzas:"Pizzas", cat_pastas:"Pastas",
+  cat_postres:"Postres", cat_bebidas:"Bebidas",
+  btn_order:"Ordenar", btn_add:"Agregar",
+  d_espresso:"Solo o cortado. Intenso y aromático.", d_cortado:"Con un toque de leche vaporizada.",
+  d_americano:"Espresso con agua caliente.", d_latte:"Suave, cremoso y reconfortante.",
+  d_matcha:"Matcha japonés con leche vaporizada.", d_taro:"Morado, dulce y cremoso.",
+  d_capuchino:"Espresso doble con espuma de leche.",
+  i_choc_caliente:"Chocolate Caliente", d_choc_caliente:"Cremoso y muy chocolatoso.",
+  i_cocoa:"Cocoa Menta", d_cocoa:"Chocolate con toque de menta fresca.",
+  d_moka:"Espresso con chocolate.", d_moka_b:"Con chocolate blanco y espresso.",
+  d_rompope:"Con toque especial de rompope.", d_baileys:"Con esencia de Baileys.",
+  d_amareto:"Con esencia de amaretto.",
+  i_almendra:"Leche de Almendra", d_almendra:"Sustituto disponible.",
+  d_tisanas:"Frutas rojas, guayaba, manzana o arándano.", d_chef_latte:"Especialidad de la casa.",
+  i_te_nac:"Té Nacional", d_te_nac:"Té de la casa.",
+  d_frap_cap:"Café frío blended.", d_frap_mat:"Matcha frío y cremoso.",
+  d_frap_mok:"Chocolate y café.", d_frap_tar:"Morado, dulce y muy instagrameable.",
+  d_frap_coo:"Oreo y crema, irresistible.",
+  i_smoothie:"Smoothie Frutas Rojas", d_smoothie:"Mezcla de frutas del bosque.",
+  i_limonada:"Limonada", d_limonada:"Natural, fresca, con o sin chía.",
+  i_soda_it:"Soda Italiana", d_soda_it:"Frutas rojas o guayaba con soda.",
+  i_huevos:"Huevos al Gusto", d_huevos:"Incluye café americano chico, jugo o fruta. Hasta 12pm.",
+  i_omelette:"Omelette al Gusto", d_omelette:"Incluye café americano chico, jugo o fruta.",
+  d_chilaq:"Con pollo o huevo. Incluye bebida.", d_enchil:"Con pollo o huevo. Crema y queso.",
+  d_molletes:"Con frijoles y queso gratinado.", d_mol_esp:"Chorizo, jamón, tocino o champiñones.",
+  d_sinc:"Tortilla de harina, jamón y queso.",
+  d_salad323:"Ensalada especial de la casa.",
+  d_chef_sal:"Jamón, manchego, panela, pollo, tocino y tomate.",
+  d_spinach:"Espinaca, queso de cabra y nuez.",
+  d_caesar:"Lechuga, crutones, parmesano y aderezo caesar.",
+  d_cia_mush:"Queso gouda y aguacate.", d_cia_bbq:"Pollo, queso gouda y tomate.",
+  d_cia_orig:"Queso gouda y manchego.", d_club:"Con queso manchego. Incluye papas.",
+  d_apple_cin:"Philadelphia, manzana y canela.", d_red_fr:"Philadelphia y frutas rojas.",
+  d_nutella:"Nutella, philadelphia, fresa o plátano.", d_blackbr:"Mermelada de zarzamora y philadelphia.",
+  d_special:"Cajeta casera, philadelphia, nuez o fresa.", d_pink_cr:"Philadelphia, lechera y fresa.",
+  i_breaded:"Pechuga Empanizada", d_breaded:"Pechuga empanizada con guarnición.",
+  i_roasted:"Pechuga Rostizada", d_roasted:"Pechuga rostizada.",
+  d_flank:"Corte de res con guarnición.",
+  i_fish:"Filete de Pescado", d_fish:"Filete de pescado al gusto.",
+  d_ribeye:"Corte premium con guarnición.",
+  i_fries:"Papas Fritas", d_fries:"Papas fritas crujientes.",
+  i_azteca:"Sopa Azteca", d_azteca:"Sopa azteca tradicional.",
+  i_ceviche:"Tostadas de Ceviche (3)", d_ceviche:"Tostadas de ceviche estilo casa.",
+  d_pz_marg:"Salsa de tomate, mozzarella y albahaca.", d_pz_haw:"Jamón y piña con mozzarella.",
+  d_pz_pep:"Pepperoni y doble queso.", d_pz_bac:"Tocino ahumado y queso.",
+  d_pz_bol:"Carne molida con salsa boloñesa.", d_pz_pear:"Pera, nuez y queso de cabra.",
+  d_pa_bol:"Carne molida con salsa de tomate italiana.", d_pa_dia:"Salsa picante o con camarones.",
+  d_pa_alf:"Crema, ajo y parmesano.", d_pa_arr:"Salsa picante estilo italiano.",
+  d_flan:"Flan artesanal por rebanada.", d_banana:"Plátano horneado artesanal.",
+  d_strudel:"Strudel de manzana hecho en casa.", d_bartol:"Pay artesanal hecho en casa.",
+  i_cerveza:"Cerveza", d_cerveza:"Clásica fría.", d_michel:"Bien preparada.",
+  d_clamato:"Con clamato y especias.", d_clerloot:"Vino con fruta. Copa o jarra.",
+  i_vino_b:"Vino Blanco", d_vino_b:"Copa de vino blanco.",
+  i_vino_t:"Vino Tinto", d_vino_t:"Copa de vino tinto.",
+  d_rosita:"Fresa, limón y menta.",
+  i_refresco:"Refrescos", d_refresco:"Lata fría.",
+  i_min:"Agua Mineral", d_min:"Natural o mineralizada.",
+  i_bot:"Agua Embotellada 600ml", d_bot:"Agua fría.",
+  ev_eyebrow:"Celebra con nosotros", ev_title:"Renta el Espacio",
+  ev_birth_t:"Cumpleaños", ev_birth_d:"Celebra tu día especial en la casa más bonita de Roma Norte. Te lo decoramos, preparamos tu menú favorito y lo hacemos inolvidable.",
+  ev_birth_f1:"Decoración temática incluida", ev_birth_f2:"Menú personalizado",
+  ev_birth_f3:"Zona privada o semi-privada", ev_birth_f4:"Hasta 30 personas",
+  ev_birth_f5:"Pastel de bienvenida",
+  ev_sp_t:"Eventos Especiales", ev_sp_d:"Baby shower, graduación, reunión de trabajo, despedida... The Pink House es el espacio perfecto para cualquier celebración.",
+  ev_sp_f1:"Espacio exclusivo o completo", ev_sp_f2:"Menú de grupos disponible",
+  ev_sp_f3:"Decoración a tu gusto", ev_sp_f4:"Hasta 60 personas",
+  ev_sp_f5:"Terraza y área interior",
+  ev_from:"Desde", ev_custom:"cotización personalizada", ev_depends:"depende del evento",
+  ev_cta:"Cotizar por WhatsApp →",
+  qr_eyebrow:"Comparte la experiencia", qr_title:"Código QR",
+  qr_sub:"Ponlo en tus mesas, en la entrada o en tus redes sociales",
+  qr_scan:"Escanea para ver el menú completo",
+  loc_title:"¿Cómo llegamos?",
+  loc_desc:"Estamos en el corazón de la Colonia Roma Norte, una de las zonas más vibrantes de la Ciudad de México.",
+  loc_addr:"📍 Colima #323, Col. Roma Norte, Cuauhtémoc 06700, CDMX",
+  loc_hours:"🕐 Abierto todos los días · Cierra a las 9pm",
+  loc_pay:"💳 Terminal Mercado Pago · Apple Pay · Efectivo",
+  loc_maps:"Ver en Google Maps →",
+  foot_1:"© 2026 The Pink House · Coffee and Food for the Heart · Colima #323, Roma Norte, CDMX"
+},
+en: {
+  nav_rosa:"Alma Rosa", nav_menu:"Menu", nav_events:"Events", nav_location:"Location",
+  hero_eyebrow:"Roma Norte · Mexico City", hero_title_1:"Coffee & Food", hero_title_2:"for the Heart",
+  hero_sub:"A place where every dish tells a story. Let Alma Rosa help you find what your heart — and your cravings — need today.",
+  hero_btn_chat:"Talk to Alma Rosa ✨", hero_btn_menu:"View full menu",
+  rating:"4.9 · 26 Google reviews", tag_open:"Open today", tag_close:"Closes 9pm",
+  info_hours:"🕐 Mon–Sun · Until 9pm", info_addr:"📍 Colima 323, Roma Norte",
+  info_pay:"💳 Mercado Pago · Apple Pay · Cash",
+  ai_eyebrow:"Artificial Intelligence", ai_title_pre:"Meet",
+  ai_sub:"The soul of the house. Tell her how you feel today and she'll recommend the perfect items from our menu. Want to rent the space to celebrate? She can help with that too.",
+  ai_online:"Online · The soul of the house", ai_placeholder:"Tell me how you feel...",
+  menu_eyebrow:"What we offer", menu_title:"Our Menu",
+  cat_cafes:"Coffee", cat_tes:"Tea", cat_frios:"Frappés", cat_desayunos:"Breakfast",
+  cat_ensaladas:"Salads", cat_ciabattas:"Sandwiches", cat_crepes:"Crepes",
+  cat_carnes:"À la carte", cat_pizzas:"Pizza", cat_pastas:"Pasta",
+  cat_postres:"Desserts", cat_bebidas:"Drinks",
+  btn_order:"Order", btn_add:"Add",
+  d_espresso:"Plain or cortado. Bold and aromatic.", d_cortado:"With a touch of steamed milk.",
+  d_americano:"Espresso with hot water.", d_latte:"Smooth, creamy and comforting.",
+  d_matcha:"Japanese matcha with steamed milk.", d_taro:"Purple, sweet and creamy.",
+  d_capuchino:"Double espresso with milk foam.",
+  i_choc_caliente:"Hot Chocolate", d_choc_caliente:"Creamy and very chocolatey.",
+  i_cocoa:"Cocoa Mint", d_cocoa:"Chocolate with a fresh mint touch.",
+  d_moka:"Espresso with chocolate.", d_moka_b:"With white chocolate and espresso.",
+  d_rompope:"With special rompope touch.", d_baileys:"With Baileys essence.",
+  d_amareto:"With amaretto essence.",
+  i_almendra:"Almond Milk", d_almendra:"Substitute available.",
+  d_tisanas:"Red berries, guava, apple or cranberry.", d_chef_latte:"House specialty.",
+  i_te_nac:"National Tea", d_te_nac:"House tea.",
+  d_frap_cap:"Cold blended coffee.", d_frap_mat:"Cold and creamy matcha.",
+  d_frap_mok:"Chocolate and coffee.", d_frap_tar:"Purple, sweet and very instagrammable.",
+  d_frap_coo:"Oreo and cream, irresistible.",
+  i_smoothie:"Red Berries Smoothie", d_smoothie:"Forest fruit blend.",
+  i_limonada:"Lemonade", d_limonada:"Fresh, natural, with or without chia.",
+  i_soda_it:"Italian Soda", d_soda_it:"Red berries or guava with soda.",
+  i_huevos:"Eggs to Taste", d_huevos:"Includes small Americano, juice or fruit. Until 12pm.",
+  i_omelette:"Omelette to Taste", d_omelette:"Includes small Americano, juice or fruit.",
+  d_chilaq:"With chicken or egg. Drink included.", d_enchil:"With chicken or egg. Cream and cheese.",
+  d_molletes:"With beans and melted cheese.", d_mol_esp:"Chorizo, ham, bacon or mushrooms.",
+  d_sinc:"Flour tortilla, ham and cheese.",
+  d_salad323:"House special salad.",
+  d_chef_sal:"Ham, manchego, panela, chicken, bacon and tomato.",
+  d_spinach:"Spinach, goat cheese and walnuts.",
+  d_caesar:"Lettuce, croutons, parmesan and caesar dressing.",
+  d_cia_mush:"Gouda cheese and avocado.", d_cia_bbq:"Chicken, gouda cheese and tomato.",
+  d_cia_orig:"Gouda and manchego cheese.", d_club:"With manchego cheese. Fries included.",
+  d_apple_cin:"Philadelphia, apple and cinnamon.", d_red_fr:"Philadelphia and red berries.",
+  d_nutella:"Nutella, philadelphia, strawberry or banana.", d_blackbr:"Blackberry jam and philadelphia.",
+  d_special:"Homemade cajeta, philadelphia, nuts or strawberry.", d_pink_cr:"Philadelphia, condensed milk and strawberry.",
+  i_breaded:"Breaded Chicken Breast", d_breaded:"Breaded chicken with side.",
+  i_roasted:"Roasted Chicken Breast", d_roasted:"Roasted chicken breast.",
+  d_flank:"Beef cut with side.",
+  i_fish:"Fish Fillet", d_fish:"Fish fillet to taste.",
+  d_ribeye:"Premium cut with side.",
+  i_fries:"French Fries", d_fries:"Crispy french fries.",
+  i_azteca:"Aztec Soup", d_azteca:"Traditional Aztec soup.",
+  i_ceviche:"Ceviche Toast (3)", d_ceviche:"House-style ceviche toasts.",
+  d_pz_marg:"Tomato sauce, mozzarella and basil.", d_pz_haw:"Ham and pineapple with mozzarella.",
+  d_pz_pep:"Pepperoni and double cheese.", d_pz_bac:"Smoked bacon and cheese.",
+  d_pz_bol:"Ground beef with bolognese sauce.", d_pz_pear:"Pear, walnut and goat cheese.",
+  d_pa_bol:"Ground beef with Italian tomato sauce.", d_pa_dia:"Spicy sauce or with shrimp.",
+  d_pa_alf:"Cream, garlic and parmesan.", d_pa_arr:"Italian-style spicy sauce.",
+  d_flan:"Artisanal flan slice.", d_banana:"Artisanal baked banana.",
+  d_strudel:"Homemade apple strudel.", d_bartol:"Homemade artisanal pie.",
+  i_cerveza:"Beer", d_cerveza:"Classic cold.", d_michel:"Well prepared.",
+  d_clamato:"With clamato and spices.", d_clerloot:"Wine with fruit. Glass or pitcher.",
+  i_vino_b:"White Wine", d_vino_b:"Glass of white wine.",
+  i_vino_t:"Red Wine", d_vino_t:"Glass of red wine.",
+  d_rosita:"Strawberry, lemon and mint.",
+  i_refresco:"Soft Drinks", d_refresco:"Cold can.",
+  i_min:"Sparkling Water", d_min:"Natural or sparkling.",
+  i_bot:"Bottled Water 600ml", d_bot:"Cold water.",
+  ev_eyebrow:"Celebrate with us", ev_title:"Rent the Space",
+  ev_birth_t:"Birthdays", ev_birth_d:"Celebrate your special day in the most beautiful house in Roma Norte. We decorate, prepare your favorite menu, and make it unforgettable.",
+  ev_birth_f1:"Themed decoration included", ev_birth_f2:"Personalized menu",
+  ev_birth_f3:"Private or semi-private zone", ev_birth_f4:"Up to 30 people",
+  ev_birth_f5:"Welcome cake",
+  ev_sp_t:"Special Events", ev_sp_d:"Baby shower, graduation, business meeting, farewell... The Pink House is the perfect space for any celebration.",
+  ev_sp_f1:"Exclusive or full venue", ev_sp_f2:"Group menu available",
+  ev_sp_f3:"Decoration to your liking", ev_sp_f4:"Up to 60 people",
+  ev_sp_f5:"Terrace and indoor area",
+  ev_from:"From", ev_custom:"personalized quote", ev_depends:"depends on the event",
+  ev_cta:"Quote on WhatsApp →",
+  qr_eyebrow:"Share the experience", qr_title:"QR Code",
+  qr_sub:"Put it on your tables, at the entrance, or on social media",
+  qr_scan:"Scan to view the full menu",
+  loc_title:"How to find us",
+  loc_desc:"We are in the heart of Colonia Roma Norte, one of the most vibrant areas of Mexico City.",
+  loc_addr:"📍 Colima #323, Col. Roma Norte, Cuauhtémoc 06700, Mexico City",
+  loc_hours:"🕐 Open every day · Closes at 9pm",
+  loc_pay:"💳 Mercado Pago terminal · Apple Pay · Cash",
+  loc_maps:"View on Google Maps →",
+  foot_1:"© 2026 The Pink House · Coffee and Food for the Heart · Colima #323, Roma Norte, Mexico City"
+},
+fr: {
+  nav_rosa:"Alma Rosa", nav_menu:"Menu", nav_events:"Événements", nav_location:"Adresse",
+  hero_eyebrow:"Roma Norte · Mexico", hero_title_1:"Coffee & Food", hero_title_2:"for the Heart",
+  hero_sub:"Un endroit où chaque plat raconte une histoire. Laissez Alma Rosa vous aider à trouver ce dont votre cœur — et vos envies — ont besoin aujourd'hui.",
+  hero_btn_chat:"Parler à Alma Rosa ✨", hero_btn_menu:"Voir le menu complet",
+  rating:"4.9 · 26 avis Google", tag_open:"Ouvert aujourd'hui", tag_close:"Ferme à 21h",
+  info_hours:"🕐 Lun–Dim · Jusqu'à 21h", info_addr:"📍 Colima 323, Roma Norte",
+  info_pay:"💳 Mercado Pago · Apple Pay · Espèces",
+  ai_eyebrow:"Intelligence Artificielle", ai_title_pre:"Rencontrez",
+  ai_sub:"L'âme de la maison. Dites-lui comment vous vous sentez aujourd'hui et elle vous recommandera ce qui vous convient parfaitement. Vous voulez louer l'espace pour célébrer? Elle peut aussi vous aider.",
+  ai_online:"En ligne · L'âme de la maison", ai_placeholder:"Dites-moi comment vous vous sentez...",
+  menu_eyebrow:"Ce que nous offrons", menu_title:"Notre Menu",
+  cat_cafes:"Cafés", cat_tes:"Thés", cat_frios:"Frappés", cat_desayunos:"Petit-Déjeuner",
+  cat_ensaladas:"Salades", cat_ciabattas:"Sandwichs", cat_crepes:"Crêpes",
+  cat_carnes:"À la carte", cat_pizzas:"Pizzas", cat_pastas:"Pâtes",
+  cat_postres:"Desserts", cat_bebidas:"Boissons",
+  btn_order:"Commander", btn_add:"Ajouter",
+  d_espresso:"Pur ou cortado. Intense et aromatique.", d_cortado:"Avec une touche de lait vaporisé.",
+  d_americano:"Espresso avec eau chaude.", d_latte:"Doux, crémeux et réconfortant.",
+  d_matcha:"Matcha japonais avec lait vaporisé.", d_taro:"Violet, doux et crémeux.",
+  d_capuchino:"Double espresso avec mousse de lait.",
+  i_choc_caliente:"Chocolat Chaud", d_choc_caliente:"Crémeux et très chocolaté.",
+  i_cocoa:"Cacao Menthe", d_cocoa:"Chocolat avec une touche de menthe fraîche.",
+  d_moka:"Espresso avec chocolat.", d_moka_b:"Avec chocolat blanc et espresso.",
+  d_rompope:"Avec une touche spéciale de rompope.", d_baileys:"Avec essence de Baileys.",
+  d_amareto:"Avec essence d'amaretto.",
+  i_almendra:"Lait d'Amande", d_almendra:"Substitut disponible.",
+  d_tisanas:"Fruits rouges, goyave, pomme ou canneberge.", d_chef_latte:"Spécialité de la maison.",
+  i_te_nac:"Thé National", d_te_nac:"Thé maison.",
+  d_frap_cap:"Café froid mixé.", d_frap_mat:"Matcha froid et crémeux.",
+  d_frap_mok:"Chocolat et café.", d_frap_tar:"Violet, doux et très instagrammable.",
+  d_frap_coo:"Oreo et crème, irrésistible.",
+  i_smoothie:"Smoothie Fruits Rouges", d_smoothie:"Mélange de fruits des bois.",
+  i_limonada:"Limonade", d_limonada:"Naturelle, fraîche, avec ou sans chia.",
+  i_soda_it:"Soda Italien", d_soda_it:"Fruits rouges ou goyave avec soda.",
+  i_huevos:"Œufs au Goût", d_huevos:"Inclut un Americano, jus ou fruit. Jusqu'à 12h.",
+  i_omelette:"Omelette au Goût", d_omelette:"Inclut un Americano, jus ou fruit.",
+  d_chilaq:"Au poulet ou œuf. Boisson incluse.", d_enchil:"Au poulet ou œuf. Crème et fromage.",
+  d_molletes:"Avec haricots et fromage gratiné.", d_mol_esp:"Chorizo, jambon, bacon ou champignons.",
+  d_sinc:"Tortilla de farine, jambon et fromage.",
+  d_salad323:"Salade spéciale de la maison.",
+  d_chef_sal:"Jambon, manchego, panela, poulet, bacon et tomate.",
+  d_spinach:"Épinards, fromage de chèvre et noix.",
+  d_caesar:"Laitue, croûtons, parmesan et sauce césar.",
+  d_cia_mush:"Fromage gouda et avocat.", d_cia_bbq:"Poulet, fromage gouda et tomate.",
+  d_cia_orig:"Fromage gouda et manchego.", d_club:"Avec fromage manchego. Frites incluses.",
+  d_apple_cin:"Philadelphia, pomme et cannelle.", d_red_fr:"Philadelphia et fruits rouges.",
+  d_nutella:"Nutella, philadelphia, fraise ou banane.", d_blackbr:"Confiture de mûres et philadelphia.",
+  d_special:"Cajeta maison, philadelphia, noix ou fraise.", d_pink_cr:"Philadelphia, lait concentré et fraise.",
+  i_breaded:"Poitrine de Poulet Panée", d_breaded:"Poulet pané avec accompagnement.",
+  i_roasted:"Poitrine de Poulet Rôtie", d_roasted:"Poitrine de poulet rôtie.",
+  d_flank:"Coupe de bœuf avec accompagnement.",
+  i_fish:"Filet de Poisson", d_fish:"Filet de poisson au goût.",
+  d_ribeye:"Coupe premium avec accompagnement.",
+  i_fries:"Frites", d_fries:"Frites croustillantes.",
+  i_azteca:"Soupe Aztèque", d_azteca:"Soupe aztèque traditionnelle.",
+  i_ceviche:"Tostadas de Ceviche (3)", d_ceviche:"Tostadas de ceviche maison.",
+  d_pz_marg:"Sauce tomate, mozzarella et basilic.", d_pz_haw:"Jambon et ananas avec mozzarella.",
+  d_pz_pep:"Pepperoni et double fromage.", d_pz_bac:"Bacon fumé et fromage.",
+  d_pz_bol:"Bœuf haché avec sauce bolognaise.", d_pz_pear:"Poire, noix et fromage de chèvre.",
+  d_pa_bol:"Bœuf haché avec sauce tomate italienne.", d_pa_dia:"Sauce piquante ou aux crevettes.",
+  d_pa_alf:"Crème, ail et parmesan.", d_pa_arr:"Sauce piquante à l'italienne.",
+  d_flan:"Tranche de flan artisanal.", d_banana:"Banane cuite artisanale.",
+  d_strudel:"Strudel aux pommes maison.", d_bartol:"Tarte artisanale maison.",
+  i_cerveza:"Bière", d_cerveza:"Classique froide.", d_michel:"Bien préparée.",
+  d_clamato:"Avec clamato et épices.", d_clerloot:"Vin aux fruits. Verre ou pichet.",
+  i_vino_b:"Vin Blanc", d_vino_b:"Verre de vin blanc.",
+  i_vino_t:"Vin Rouge", d_vino_t:"Verre de vin rouge.",
+  d_rosita:"Fraise, citron et menthe.",
+  i_refresco:"Sodas", d_refresco:"Canette froide.",
+  i_min:"Eau Gazeuse", d_min:"Naturelle ou gazeuse.",
+  i_bot:"Eau en Bouteille 600ml", d_bot:"Eau froide.",
+  ev_eyebrow:"Célébrez avec nous", ev_title:"Louer l'Espace",
+  ev_birth_t:"Anniversaires", ev_birth_d:"Célébrez votre journée spéciale dans la plus belle maison de Roma Norte. Nous décorons, préparons votre menu favori et le rendons inoubliable.",
+  ev_birth_f1:"Décoration thématique incluse", ev_birth_f2:"Menu personnalisé",
+  ev_birth_f3:"Zone privée ou semi-privée", ev_birth_f4:"Jusqu'à 30 personnes",
+  ev_birth_f5:"Gâteau de bienvenue",
+  ev_sp_t:"Événements Spéciaux", ev_sp_d:"Baby shower, remise de diplôme, réunion de travail, départ... The Pink House est l'espace parfait pour toute célébration.",
+  ev_sp_f1:"Espace exclusif ou complet", ev_sp_f2:"Menu de groupe disponible",
+  ev_sp_f3:"Décoration à votre goût", ev_sp_f4:"Jusqu'à 60 personnes",
+  ev_sp_f5:"Terrasse et espace intérieur",
+  ev_from:"À partir de", ev_custom:"devis personnalisé", ev_depends:"selon l'événement",
+  ev_cta:"Devis par WhatsApp →",
+  qr_eyebrow:"Partagez l'expérience", qr_title:"Code QR",
+  qr_sub:"Mettez-le sur vos tables, à l'entrée ou sur vos réseaux sociaux",
+  qr_scan:"Scannez pour voir le menu complet",
+  loc_title:"Comment nous trouver",
+  loc_desc:"Nous sommes au cœur de la Colonia Roma Norte, l'un des quartiers les plus vibrants de Mexico.",
+  loc_addr:"📍 Colima #323, Col. Roma Norte, Cuauhtémoc 06700, Mexico",
+  loc_hours:"🕐 Ouvert tous les jours · Ferme à 21h",
+  loc_pay:"💳 Terminal Mercado Pago · Apple Pay · Espèces",
+  loc_maps:"Voir sur Google Maps →",
+  foot_1:"© 2026 The Pink House · Coffee and Food for the Heart · Colima #323, Roma Norte, Mexico"
+}
+};
+
+let currentLang = localStorage.getItem('phLang') || null;
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('phLang', lang);
+  document.documentElement.lang = lang;
+  
+  // Aplicar traducciones
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if(i18n[lang][key]) el.textContent = i18n[lang][key];
+  });
+  
+  // Placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if(i18n[lang][key]) el.placeholder = i18n[lang][key];
+  });
+  
+  // Pills activos
+  document.querySelectorAll('.lang-pill').forEach(p => {
+    p.classList.toggle('active', p.getAttribute('data-lang') === lang);
+  });
+  
+  // Ocultar splash si está visible
+  const splash = document.getElementById('splash');
+  if(splash && !splash.classList.contains('hidden')) {
+    splash.classList.add('hidden');
+    setTimeout(()=>splash.style.display='none', 500);
+  }
+  
+  // Reiniciar Alma Rosa con el nuevo idioma
+  if(window.Rosa) Rosa.restart();
+}
+
 function showTab(name,el){
   document.querySelectorAll('.menu-grid').forEach(g=>g.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('tab-'+name).classList.add('active');
   el.classList.add('active');
 }
+
 function orderWA(item){
-  const msg=encodeURIComponent(`🌸 Hola The Pink House! Me interesa: *${item}*\n\n¿Pueden ayudarme?`);
+  const t = i18n[currentLang||'es'];
+  const greeting = currentLang==='en'?"Hi The Pink House! I'm interested in":currentLang==='fr'?"Bonjour The Pink House! Je suis intéressé(e) par":"Hola The Pink House! Me interesa";
+  const help = currentLang==='en'?"Can you help me?":currentLang==='fr'?"Pouvez-vous m'aider?":"¿Pueden ayudarme?";
+  const msg=encodeURIComponent(`🌸 ${greeting}: *${item}*\n\n${help}`);
   window.open('https://wa.me/525534745455?text='+msg,'_blank');
 }
+
 window.addEventListener('load',function(){
   new QRCode(document.getElementById("qrcode"),{
     text:"https://juanchapo.github.io/thepinkhouse/",
     width:200,height:200,colorDark:"#C8647A",colorLight:"#ffffff",
     correctLevel:QRCode.CorrectLevel.H
   });
+  
+  // Si ya hay idioma guardado, omitir splash
+  if(currentLang) {
+    setLang(currentLang);
+    Rosa.init();
+  }
 });
+</script>
 
-// ============ ROSA IA — Motor inteligente sin API ============
+<script>
+// ============ ALMA ROSA — IA TRILINGÜE ============
+const RosaTexts = {
+es: {
+  initial: '¡Hola! Soy <strong>Alma Rosa</strong> 🌸 el almita de esta casa tan especial. Me da mucho gusto que estés aquí. <strong>¿Cómo te sientes hoy? ¿Qué te trajo?</strong>',
+  qr_initial: ['Necesito un café urgente ☕','Tengo mucha hambre 🍽️','Vine con mi pareja 💕','Estoy estresado 😮‍💨','Quiero rentar para mi cumple 🎂','Solo estoy explorando 🌸'],
+  event_response: "¡Qué emoción! 🎉 The Pink House es un lugar mágico para celebrar. Manejamos paquetes desde <strong>$3,500</strong> para cumpleaños (hasta 30 personas) y desde <strong>$5,000</strong> para eventos especiales (hasta 60 personas). Incluye decoración, menú personalizado y el espacio más bonito de la Roma.<br><br>¿Te paso con el equipo para cotizar?",
+  event_wa: "🌸 Hola The Pink House! Quiero información para rentar el espacio. Me interesa saber paquetes y disponibilidad.",
+  event_btn_wa: "Cotizar por WhatsApp 📲", event_btn_menu: "Ver menú primero",
+  triste: "Ay corazón... 🌸 escucharte así me parte un poquito. Aquí hay días así y está bien sentirlos. ¿Quieres algo que te abrace, como un chocolate calientito, o más bien necesitas algo que te suba el ánimo con un postre dulce?",
+  triste_qr: ['Algo que me abrace 🤗','Algo dulce que me anime 🍫','Un café fuerte ☕'],
+  estresado: "Uff, te entiendo total 😮‍💨. La Roma con todo su movimiento no siempre ayuda. ¿Vienes a desconectarte un rato? Te puedo recomendar algo relajante como una tisana, o si necesitas energía, un buen café.",
+  estresado_qr: ['Algo relajante 🍵','Necesito energía ☕','Vino para soltar 🍷'],
+  cansado: "Suena a que ya merecías sentarte 🌸. ¿Te late algo que te despierte tipo café fuerte, o prefieres algo reconfortante para reponer fuerzas?",
+  cansado_qr: ['Café fuerte ☕','Algo reconfortante 🍲','Necesito comer bien 🍽️'],
+  feliz: "¡Me encanta tu energía! ✨ ¿Estás celebrando algo en especial o es solo uno de esos días buenos? Tengo opciones desde un postre estrella hasta una copa de vino para brindar.",
+  feliz_qr: ['Algo para celebrar 🥂','Un postre rico 🍰','Sorpréndeme ✨'],
+  romantico: "Aaay qué lindo 💕 The Pink House es un lugar perfecto para una cita. ¿Quieren algo dulce para compartir tipo nuestro crepe estrella, o prefieren algo más formal con copa de vino?",
+  romantico_qr: ['Algo dulce para compartir 🥞','Cena con vino 🍷','Sorpréndeme ✨'],
+  cafe: "¡Perfecto, llegaste al lugar correcto! ☕ ¿Buscas algo intenso para despertar bien, o más bien algo cremoso y dulce tipo latte o capuchino?",
+  cafe_qr: ['Algo intenso ⚡','Cremoso y dulce 🥛','Café frío mejor 🧊'],
+  hungry: "¡Perfecto, llegaste con todo el hambre! 🍽️ ¿Te late algo italiano tipo pasta o pizza, una buena carne tipo Rib Eye, o algo más ligero como un sandwich/ensalada?",
+  hungry_qr: ['Pasta o pizza 🍕','Una buena carne 🥩','Algo más ligero 🥗','Desayuno completo 🍳'],
+  general: "Cuéntame un poquito más 🌸 ¿Vienes a desayunar, comer, o solo a tomar algo? ¿Y vienes solo o acompañado?",
+  general_qr: ['Solo a tomar algo ☕','A desayunar 🍳','A comer fuerte 🍽️','Con mi pareja 💕','Con amigos 👯'],
+  explore: "¡Bienvenido! 🌸 Me alegra que estés conociendo el lugar. Para empezar bonito: ¿se te antoja más algo dulce o algo salado? ¿O directo un buen café?",
+  explore_qr: ['Algo dulce 🍰','Algo salado 🍕','Solo un café ☕','Bebida fresca 🧊'],
+  rec_alma: "Te preparé esta selección con muuucho cariño 🌸 Algo calientito y dulce siempre ayuda. Cualquiera de estos te va a abrazar el alma:",
+  rec_relax: "Estos son perfectos para soltar el estrés 😌 Las tisanas son herbales y suavecitas:",
+  rec_intense: "Para despertarte bien y reactivar el motor ⚡ Estos son nuestros más fuertes:",
+  rec_creamy: "Mis favoritos cremosos y dulces 🥛 Súper reconfortantes:",
+  rec_cold: "Para refrescarte y disfrutar 🧊 El Frappé Cookies & Cream es de mis favoritos:",
+  rec_share: "Mis recomendaciones para una cita perfecta 💕 El Pink House Crepe es nuestro platillo estrella:",
+  rec_celebrate: "¡A celebrar! 🥂 Estos son para brindar bonito:",
+  rec_sweet: "Nuestros dulces son la especialidad de la casa 🍰 Los crepes son artesanales:",
+  rec_hearty: "Para quitar el hambre bien 🍽️ El Rib Eye y la Pasta Alfredo son los más pedidos:",
+  rec_light: "Estos son perfectos: sabrosos pero sin que te pese 🥪",
+  rec_breakfast: "Nuestros desayunos van hasta las 12pm e incluyen café y jugo o fruta 🍳",
+  rec_default: "Te dejo nuestras estrellas 🌸 Lo más pedido y lo más rico de la casa:",
+  rec_title_alma: "Para el alma", rec_title_relax: "Para relajarte", rec_title_intense: "Cafés para despertar",
+  rec_title_creamy: "Cafés cremosos", rec_title_cold: "Refrescantes", rec_title_share: "Para compartir",
+  rec_title_celebrate: "Para celebrar", rec_title_sweet: "Dulces de la casa",
+  rec_title_hearty: "Comida fuerte", rec_title_light: "Salado ligero",
+  rec_title_breakfast: "Desayunos", rec_title_default: "Las favoritas de Alma Rosa",
+  rec_wa_msg: "🌸 Hola! Alma Rosa me recomendó:",
+  rec_wa_help: "¿Me pueden ayudar?",
+  rec_wa_btn: "Pedir por WhatsApp →"
+},
+en: {
+  initial: 'Hi! I am <strong>Alma Rosa</strong> 🌸 the soul of this very special house. So glad to have you here. <strong>How are you feeling today? What brought you?</strong>',
+  qr_initial: ['I need coffee urgently ☕','I am really hungry 🍽️','I am with my partner 💕','I am stressed 😮‍💨','I want to rent for a birthday 🎂','Just exploring 🌸'],
+  event_response: "How exciting! 🎉 The Pink House is a magical place to celebrate. We have packages from <strong>$3,500</strong> for birthdays (up to 30 people) and from <strong>$5,000</strong> for special events (up to 60 people). Includes decoration, personalized menu, and the most beautiful space in Roma.<br><br>Shall I connect you with the team for a quote?",
+  event_wa: "🌸 Hi The Pink House! I want info to rent the space. Interested in packages and availability.",
+  event_btn_wa: "Get a quote on WhatsApp 📲", event_btn_menu: "See menu first",
+  triste: "Oh dear... 🌸 hearing you like that breaks my heart a little. Some days are like that and it's okay to feel them. Would you like something warm and comforting like a hot chocolate, or something sweet to lift your spirits?",
+  triste_qr: ['Something comforting 🤗','Something sweet 🍫','A strong coffee ☕'],
+  estresado: "Oof, I totally get it 😮‍💨. Roma with all its movement isn't always helpful. Are you here to disconnect a bit? I can recommend something relaxing like a tisane, or if you need energy, a good coffee.",
+  estresado_qr: ['Something relaxing 🍵','I need energy ☕','Wine to unwind 🍷'],
+  cansado: "Sounds like you really needed to sit down 🌸. Would you like something to wake you up like a strong coffee, or do you prefer something comforting to recharge?",
+  cansado_qr: ['Strong coffee ☕','Something comforting 🍲','I need a real meal 🍽️'],
+  feliz: "I love your energy! ✨ Are you celebrating something special or is it just one of those good days? I have options from a star dessert to a glass of wine to toast.",
+  feliz_qr: ['Something to celebrate 🥂','A nice dessert 🍰','Surprise me ✨'],
+  romantico: "Aww how lovely 💕 The Pink House is the perfect place for a date. Would you like something sweet to share like our star crepe, or something more formal with a glass of wine?",
+  romantico_qr: ['Something sweet to share 🥞','Dinner with wine 🍷','Surprise me ✨'],
+  cafe: "Perfect, you came to the right place! ☕ Are you looking for something intense to wake up well, or something creamy and sweet like a latte or capuchino?",
+  cafe_qr: ['Something intense ⚡','Creamy and sweet 🥛','Cold coffee instead 🧊'],
+  hungry: "Perfect, you came with all the hunger! 🍽️ Would you like something Italian like pasta or pizza, a good cut like Rib Eye, or something lighter like a sandwich/salad?",
+  hungry_qr: ['Pasta or pizza 🍕','A good cut of meat 🥩','Something lighter 🥗','Full breakfast 🍳'],
+  general: "Tell me a bit more 🌸 Are you here for breakfast, lunch, or just a drink? And are you alone or with someone?",
+  general_qr: ['Just a drink ☕','Breakfast 🍳','Real meal 🍽️','With my partner 💕','With friends 👯'],
+  explore: "Welcome! 🌸 Glad you're exploring. To start nicely: are you in the mood for something sweet or savory? Or straight to a good coffee?",
+  explore_qr: ['Something sweet 🍰','Something savory 🍕','Just a coffee ☕','Fresh drink 🧊'],
+  rec_alma: "I prepared this selection with looots of love 🌸 Something warm and sweet always helps. Any of these will hug your soul:",
+  rec_relax: "These are perfect to release stress 😌 The tisanes are herbal and soft:",
+  rec_intense: "To wake you up and restart the engine ⚡ These are our strongest:",
+  rec_creamy: "My creamy and sweet favorites 🥛 Super comforting:",
+  rec_cold: "To refresh and enjoy 🧊 The Cookies & Cream Frappé is one of my favorites:",
+  rec_share: "My recommendations for a perfect date 💕 The Pink House Crepe is our star dish:",
+  rec_celebrate: "Let's celebrate! 🥂 These are for a beautiful toast:",
+  rec_sweet: "Our sweets are the house specialty 🍰 The crepes are handmade:",
+  rec_hearty: "To kill your hunger well 🍽️ The Rib Eye and Pasta Alfredo are the most ordered:",
+  rec_light: "These are perfect: tasty but not heavy 🥪",
+  rec_breakfast: "Our breakfasts go until 12pm and include coffee and juice or fruit 🍳",
+  rec_default: "Here are our stars 🌸 The most ordered and tastiest of the house:",
+  rec_title_alma: "For the soul", rec_title_relax: "To relax", rec_title_intense: "Wake-up coffees",
+  rec_title_creamy: "Creamy coffees", rec_title_cold: "Refreshing", rec_title_share: "To share",
+  rec_title_celebrate: "To celebrate", rec_title_sweet: "House sweets",
+  rec_title_hearty: "Hearty food", rec_title_light: "Savory & light",
+  rec_title_breakfast: "Breakfast", rec_title_default: "Alma Rosa's favorites",
+  rec_wa_msg: "🌸 Hi! Alma Rosa recommended:",
+  rec_wa_help: "Can you help me?",
+  rec_wa_btn: "Order on WhatsApp →"
+},
+fr: {
+  initial: 'Bonjour! Je suis <strong>Alma Rosa</strong> 🌸 l\'âme de cette maison si spéciale. Heureuse de vous voir ici. <strong>Comment vous sentez-vous aujourd\'hui? Qu\'est-ce qui vous amène?</strong>',
+  qr_initial: ['J\'ai besoin de café urgent ☕','J\'ai très faim 🍽️','Je viens avec mon partenaire 💕','Je suis stressé(e) 😮‍💨','Je veux louer pour un anniversaire 🎂','J\'explore juste 🌸'],
+  event_response: "Quelle joie! 🎉 The Pink House est un endroit magique pour célébrer. Nous avons des forfaits à partir de <strong>$3,500</strong> pour les anniversaires (jusqu'à 30 personnes) et à partir de <strong>$5,000</strong> pour les événements spéciaux (jusqu'à 60 personnes). Inclut décoration, menu personnalisé, et le plus bel espace de la Roma.<br><br>Je vous mets en contact avec l'équipe pour un devis?",
+  event_wa: "🌸 Bonjour The Pink House! Je veux des infos pour louer l'espace. Intéressé(e) par les forfaits et disponibilités.",
+  event_btn_wa: "Devis par WhatsApp 📲", event_btn_menu: "Voir le menu d'abord",
+  triste: "Oh mon cœur... 🌸 vous entendre comme ça me touche. Certains jours sont comme ça et c'est normal. Voulez-vous quelque chose de chaleureux comme un chocolat chaud, ou plutôt quelque chose de sucré pour remonter le moral?",
+  triste_qr: ['Quelque chose de chaleureux 🤗','Quelque chose de sucré 🍫','Un café fort ☕'],
+  estresado: "Pff, je comprends totalement 😮‍💨. Roma avec son agitation n'aide pas toujours. Vous voulez vous déconnecter? Je peux recommander quelque chose de relaxant comme une tisane, ou si vous avez besoin d'énergie, un bon café.",
+  estresado_qr: ['Quelque chose de relaxant 🍵','J\'ai besoin d\'énergie ☕','Du vin pour décompresser 🍷'],
+  cansado: "On dirait que vous aviez vraiment besoin de vous asseoir 🌸. Voulez-vous quelque chose pour vous réveiller comme un café fort, ou préférez-vous quelque chose de réconfortant?",
+  cansado_qr: ['Café fort ☕','Quelque chose de réconfortant 🍲','J\'ai besoin de bien manger 🍽️'],
+  feliz: "J'adore votre énergie! ✨ Vous célébrez quelque chose de spécial ou c'est juste une bonne journée? J'ai des options du dessert star au verre de vin pour trinquer.",
+  feliz_qr: ['Quelque chose à célébrer 🥂','Un beau dessert 🍰','Surprenez-moi ✨'],
+  romantico: "Oh comme c'est mignon 💕 The Pink House est l'endroit parfait pour un rendez-vous. Quelque chose de sucré à partager comme notre crêpe star, ou plutôt formel avec un verre de vin?",
+  romantico_qr: ['Sucré à partager 🥞','Dîner avec du vin 🍷','Surprenez-moi ✨'],
+  cafe: "Parfait, vous êtes au bon endroit! ☕ Vous cherchez quelque chose d'intense pour bien vous réveiller, ou quelque chose de crémeux et sucré comme un latte ou capuchino?",
+  cafe_qr: ['Quelque chose d\'intense ⚡','Crémeux et sucré 🥛','Café froid plutôt 🧊'],
+  hungry: "Parfait, vous arrivez avec toute la faim! 🍽️ Vous voulez quelque chose d'italien comme des pâtes ou pizza, une belle viande comme le Rib Eye, ou plus léger comme un sandwich/salade?",
+  hungry_qr: ['Pâtes ou pizza 🍕','Une belle viande 🥩','Plus léger 🥗','Petit-déj complet 🍳'],
+  general: "Dites-m'en un peu plus 🌸 Vous venez pour le petit-déj, déjeuner, ou juste boire? Et seul ou accompagné?",
+  general_qr: ['Juste boire ☕','Petit-déjeuner 🍳','Repas complet 🍽️','Avec mon partenaire 💕','Avec des amis 👯'],
+  explore: "Bienvenue! 🌸 Heureuse que vous exploriez. Pour bien commencer: vous avez envie de sucré ou salé? Ou directement un bon café?",
+  explore_qr: ['Quelque chose de sucré 🍰','Quelque chose de salé 🍕','Juste un café ☕','Boisson fraîche 🧊'],
+  rec_alma: "Je vous ai préparé cette sélection avec plein d'amour 🌸 Quelque chose de chaud et sucré aide toujours:",
+  rec_relax: "Parfaits pour libérer le stress 😌 Les tisanes sont herbales et douces:",
+  rec_intense: "Pour vous réveiller et redémarrer le moteur ⚡ Nos plus forts:",
+  rec_creamy: "Mes favoris crémeux et sucrés 🥛 Super réconfortants:",
+  rec_cold: "Pour vous rafraîchir 🧊 Le Frappé Cookies & Cream est un de mes favoris:",
+  rec_share: "Mes recommandations pour un rendez-vous parfait 💕 Le Pink House Crepe est notre plat star:",
+  rec_celebrate: "Célébrons! 🥂 Pour un beau toast:",
+  rec_sweet: "Nos douceurs sont la spécialité de la maison 🍰 Les crêpes sont artisanales:",
+  rec_hearty: "Pour bien tuer la faim 🍽️ Le Rib Eye et la Pasta Alfredo sont les plus demandés:",
+  rec_light: "Parfaits: savoureux mais légers 🥪",
+  rec_breakfast: "Nos petits-déjeuners vont jusqu'à 12h et incluent café et jus ou fruit 🍳",
+  rec_default: "Voici nos stars 🌸 Les plus demandés et savoureux:",
+  rec_title_alma: "Pour l'âme", rec_title_relax: "Pour se détendre", rec_title_intense: "Cafés réveil",
+  rec_title_creamy: "Cafés crémeux", rec_title_cold: "Rafraîchissants", rec_title_share: "À partager",
+  rec_title_celebrate: "Pour célébrer", rec_title_sweet: "Douceurs maison",
+  rec_title_hearty: "Plats copieux", rec_title_light: "Salé & léger",
+  rec_title_breakfast: "Petit-déjeuner", rec_title_default: "Favoris d'Alma Rosa",
+  rec_wa_msg: "🌸 Bonjour! Alma Rosa m'a recommandé:",
+  rec_wa_help: "Pouvez-vous m'aider?",
+  rec_wa_btn: "Commander par WhatsApp →"
+}
+};
+
 const Rosa = {
   step: 0,
-  context: { mood: null, taste: null, hunger: null, company: null, time: null },
+  context: { mood: null, taste: null, hunger: null },
   typing: false,
+  initialized: false,
   
-  // MENÚ para recomendaciones
   items: {
     cafes_calientes: [
       {n:"Latte", p:"$55–$70"}, {n:"Capuchino", p:"$55–$60"},
@@ -514,14 +1054,14 @@ const Rosa = {
       {n:"Latte Taro", p:"$65–$70"}, {n:"Latte Matcha", p:"$65–$70"},
       {n:"Moka Blanco", p:"$65–$70"}, {n:"Cocoa Menta", p:"$65–$70"}
     ],
-    fríos: [
+    frios: [
       {n:"Frappé Cookies & Cream", p:"$70"}, {n:"Frappé Taro", p:"$70"},
       {n:"Frappé Matcha", p:"$70"}, {n:"Smoothie Frutas Rojas", p:"$70"},
       {n:"Soda Italiana", p:"$70"}
     ],
     desayunos: [
       {n:"Huevos al Gusto", p:"$110"}, {n:"Chilaquiles V/R", p:"$110"},
-      {n:"Enchiladas V/R", p:"$110"}, {n:"Omelette al Gusto", p:"$110"},
+      {n:"Enchiladas V/R", p:"$110"}, {n:"Omelette", p:"$110"},
       {n:"Molletes Tradicionales", p:"$80"}
     ],
     dulce_postres: [
@@ -549,21 +1089,28 @@ const Rosa = {
     ]
   },
   
-  // ====== INICIO ======
+  t() { return RosaTexts[currentLang||'es']; },
+  
   init() {
-    setTimeout(() => {
-      this.addMsg(
-        '¡Hola! Soy Rosa 🌸 la anfitriona de esta casa tan especial. Me da mucho gusto que estés aquí. <strong>¿Cómo estás hoy? ¿Qué te trajo por aquí?</strong>',
-        'rosa',
-        this.quickReplies(['Necesito un café urgente ☕','Tengo mucha hambre 🍽️','Vine con mi pareja 💕','Estoy estresado 😮‍💨','Quiero rentar para mi cumple 🎂','Solo estoy explorando 🌸'])
-      );
-    }, 600);
+    if(this.initialized) return;
+    this.initialized = true;
     document.getElementById('chatInput').addEventListener('keypress', e => {
       if(e.key==='Enter') this.send();
     });
+    this.restart();
   },
   
-  // ====== ENVIAR MENSAJE ======
+  restart() {
+    this.step = 0;
+    this.context = { mood: null, taste: null, hunger: null };
+    const c = document.getElementById('chatMessages');
+    if(c) c.innerHTML = '';
+    setTimeout(() => {
+      const t = this.t();
+      this.addMsg(t.initial, 'rosa', this.quickReplies(t.qr_initial));
+    }, 400);
+  },
+  
   send() {
     if(this.typing) return;
     const input = document.getElementById('chatInput');
@@ -581,217 +1128,126 @@ const Rosa = {
   handle(text) {
     this.addMsg(text, 'user');
     this.step++;
-    const msg = text.toLowerCase();
-    this.detectContext(msg);
+    this.detectContext(text.toLowerCase());
     this.typing = true;
     this.showTyping();
     setTimeout(() => {
       this.removeTyping();
-      this.respond(msg);
+      this.respond(text.toLowerCase());
       this.typing = false;
-    }, 900 + Math.random() * 600);
+    }, 900 + Math.random() * 500);
   },
   
-  // ====== DETECCIÓN DE CONTEXTO ======
   detectContext(msg) {
-    // Estado de ánimo
-    if(/tris|mal|deprim|down|llor|solo y mal|fatal|horrible|terrib/i.test(msg)) this.context.mood = 'triste';
-    else if(/estr[eé]s|agobi|ansie|nervios|preocup|abrumad|tens/i.test(msg)) this.context.mood = 'estresado';
-    else if(/cansad|agot|exhaust|sue[ñn]o|muerto|reventad|destruid/i.test(msg)) this.context.mood = 'cansado';
-    else if(/feliz|content|bien|genial|super|excelente|fenomenal|maravillos|increíble/i.test(msg)) this.context.mood = 'feliz';
-    else if(/celebr|cumple|aniversario|festeja|fiesta|logr|graduad|ascens/i.test(msg)) this.context.mood = 'celebrando';
-    else if(/cita|novi[ao]|pareja|romantic|amor|enamora|date/i.test(msg)) this.context.mood = 'romantico';
-    else if(/aburri|sin nada|normal|ahí|mas o menos|regular/i.test(msg)) this.context.mood = 'neutral';
+    // Detección trilingüe: ES + EN + FR
+    if(/tris|sad|mal|deprim|down|llor|terrib|horrib|fatal|cri|cry/i.test(msg)) this.context.mood = 'triste';
+    else if(/estr[eé]s|stress|agobi|ansie|nervios|anxi|preocup|worried|stressé/i.test(msg)) this.context.mood = 'estresado';
+    else if(/cansad|tired|agot|exhaust|sue[ñn]o|muerto|fatigué|épuisé/i.test(msg)) this.context.mood = 'cansado';
+    else if(/feliz|happy|content|bien|good|genial|great|super|excelent|joyeux|ravi/i.test(msg)) this.context.mood = 'feliz';
+    else if(/celebr|cumple|birthday|anniversary|aniversario|fiesta|party|fête|anniv/i.test(msg)) this.context.mood = 'celebrando';
+    else if(/cita|date|novi[ao]|pareja|partner|amor|romant|amour|petit ami/i.test(msg)) this.context.mood = 'romantico';
     
-    // Sabores/preferencias
-    if(/dulce|postre|chocolat|nutella|crepe|pay|flan|caramel|az[uú]car/i.test(msg)) this.context.taste = 'dulce';
-    if(/sala|carne|steak|pizza|pasta|sandwich|res|pollo/i.test(msg)) this.context.taste = 'salado';
-    if(/caf[eé]|cafe[ií]n|espresso|latte|capuchin|moka/i.test(msg)) this.context.taste = 'cafe';
-    if(/fr[íi]o|frapp|smoothie|helado|fresc/i.test(msg)) this.context.taste = 'frio';
-    if(/calient|sopita|abriguit|reconfort/i.test(msg)) this.context.taste = 'caliente';
-    if(/vino|cerveza|alcohol|copa|trago|chela/i.test(msg)) this.context.taste = 'alcohol';
+    if(/dulce|sweet|sucré|postre|dessert|chocolat|nutella|crepe|crêpe|flan|az[uú]car/i.test(msg)) this.context.taste = 'dulce';
+    if(/sala|savory|salé|carne|meat|viande|steak|pizza|pasta|p[âa]tes|sandwich|pollo|chicken|poulet/i.test(msg)) this.context.taste = 'salado';
+    if(/caf[eé]|coffee|caf[eé]in|caffeine|espresso|latte|capuchin|cappuccino|moka/i.test(msg)) this.context.taste = 'cafe';
+    if(/fr[íi]o|cold|froid|frapp|smoothie|helado|fresc|ice/i.test(msg)) this.context.taste = 'frio';
+    if(/calient|hot|chaud|sopita|abriguit|reconfort|comfort/i.test(msg)) this.context.taste = 'caliente';
+    if(/vino|wine|vin|cerveza|beer|bière|alcohol|copa|verre|trago|chela/i.test(msg)) this.context.taste = 'alcohol';
     
-    // Hambre
-    if(/hambre|hambri|me muero|much[ao] hambre|comer fuerte|antoj[oa]/i.test(msg)) this.context.hunger = 'fuerte';
-    else if(/algo lig|ligero|snack|botana|picar/i.test(msg)) this.context.hunger = 'ligero';
-    else if(/no tengo hambre|sin hambre|solo bebida/i.test(msg)) this.context.hunger = 'nada';
+    if(/hambre|hungry|faim|hambri|me muero|antoj|craving/i.test(msg)) this.context.hunger = 'fuerte';
+    else if(/ligero|light|léger|snack|botana|picar/i.test(msg)) this.context.hunger = 'ligero';
     
-    // Compañía
-    if(/sol[oa]|solita|por mi cuenta|sin nadie/i.test(msg)) this.context.company = 'solo';
-    if(/pareja|novi[ao]|esposo|esposa|cita|date/i.test(msg)) this.context.company = 'pareja';
-    if(/amig[oa]s|familia|grupo|comp[ñn]er|nosotros/i.test(msg)) this.context.company = 'grupo';
+    if(/rent|cumple|birthday|cumplea[ñn]os|evento|event|fiesta|party|baby shower|reservar|reuni|réserv|fête|grupo grande/i.test(msg)) this.context.eventIntent = true;
     
-    // Hora del día
-    if(/ma[ñn]ana|desayun|temprano|amanec/i.test(msg)) this.context.time = 'mañana';
-    if(/tarde|comida|mediod[íi]a/i.test(msg)) this.context.time = 'tarde';
-    if(/noche|cena|tard[ie]/i.test(msg)) this.context.time = 'noche';
-    
-    // Intención directa
-    if(/rent|cumple|cumplea[ñn]os|evento|fiesta|baby shower|grupo grande|reservar|reuni/i.test(msg)) this.context.eventIntent = true;
+    if(/explor|curios|nada en especial|just|solo ver|ver|see|exploring/i.test(msg)) this.context.explore = true;
   },
   
-  // ====== RESPONDER ======
   respond(msg) {
-    // Evento de cumpleaños/renta
+    const t = this.t();
+    
     if(this.context.eventIntent) {
-      this.respondEvent();
+      const waMsg = encodeURIComponent(t.event_wa);
+      const event_qr = `<div class="quick-replies"><button class="qr-btn" onclick="window.open('https://wa.me/525534745455?text=${waMsg}','_blank')">${t.event_btn_wa}</button><button class="qr-btn" onclick="Rosa.quickReply('menu')">${t.event_btn_menu}</button></div>`;
+      this.addMsg(t.event_response, 'rosa', event_qr);
       this.context.eventIntent = false;
       return;
     }
     
-    // Primera interacción: indagar más
     if(this.step === 1) {
-      this.firstResponse();
+      this.firstResponse(msg);
       return;
     }
     
-    // Segunda interacción o tercera: recomendar
-    if(this.step >= 2) {
-      this.recommendByContext();
-      return;
-    }
+    this.recommendByContext(msg);
   },
   
-  // ====== EVENTOS / RENTA ======
-  respondEvent() {
-    const waMsg = encodeURIComponent("🌸 Hola The Pink House! Quiero información para rentar el espacio. Me interesa saber paquetes y disponibilidad.");
-    this.addMsg(
-      "¡Qué emoción! 🎉 The Pink House es un lugar mágico para celebrar. Manejamos paquetes desde <strong>$3,500</strong> para cumpleaños (hasta 30 personas) y desde <strong>$5,000</strong> para eventos especiales (hasta 60 personas). Incluye decoración, menú personalizado y el espacio más bonito de la Roma.<br><br>¿Te paso con el equipo para cotizar?",
-      'rosa',
-      `<div class="quick-replies"><button class="qr-btn" onclick="window.open('https://wa.me/525534745455?text=${waMsg}','_blank')">Cotizar por WhatsApp 📲</button><button class="qr-btn" onclick="Rosa.quickReply('Mejor recomiéndame algo del menú')">Ver menú primero</button></div>`
-    );
-  },
-  
-  // ====== PRIMERA RESPUESTA — indagar ======
-  firstResponse() {
+  firstResponse(msg) {
+    const t = this.t();
     const m = this.context.mood;
     
-    if(m === 'triste') {
-      this.addMsg(
-        "Ay corazón... 🌸 escucharte así me parte un poquito. Aquí hay días así y está bien sentirlos. ¿Quieres algo que te abrace, como un chocolate calientito, o más bien necesitas algo que te suba el ánimo con un postre dulce?",
-        'rosa',
-        this.quickReplies(['Algo que me abrace 🤗','Algo dulce que me anime 🍫','Un café fuerte ☕'])
-      );
-    } else if(m === 'estresado') {
-      this.addMsg(
-        "Uff, te entiendo total 😮‍💨. La Roma con todo su movimiento no siempre ayuda. ¿Vienes a desconectarte un rato? Te puedo recomendar algo relajante como una tisana, o si más bien necesitas energía, un buen café.",
-        'rosa',
-        this.quickReplies(['Algo relajante 🍵','Necesito energía ☕','Vino para soltar 🍷'])
-      );
-    } else if(m === 'cansado') {
-      this.addMsg(
-        "Suena a que ya merecías sentarte 🌸. ¿Te late algo que te despierte tipo café fuerte, o prefieres algo reconfortante para reponer fuerzas?",
-        'rosa',
-        this.quickReplies(['Café fuerte ☕','Algo reconfortante 🍲','Necesito comer bien 🍽️'])
-      );
-    } else if(m === 'feliz' || m === 'celebrando') {
-      this.addMsg(
-        "¡Me encanta tu energía! ✨ ¿Estás celebrando algo en especial o es solo uno de esos días buenos? Tengo opciones desde un postre estrella hasta una copa de vino para brindar.",
-        'rosa',
-        this.quickReplies(['Algo para celebrar 🥂','Un postre rico 🍰','Sorpréndeme ✨'])
-      );
-    } else if(m === 'romantico') {
-      this.addMsg(
-        "Aaay qué lindo 💕 The Pink House es un lugar perfecto para una cita. ¿Quieren algo dulce para compartir tipo nuestro crepe estrella, o prefieren algo más formal con copa de vino?",
-        'rosa',
-        this.quickReplies(['Algo dulce para compartir 🥞','Cena con vino 🍷','Sorpréndeme ✨'])
-      );
-    } else if(this.context.taste === 'cafe') {
-      this.addMsg(
-        "¡Perfecto, llegaste al lugar correcto! ☕ ¿Buscas algo intenso para despertar bien, o más bien algo cremoso y dulce tipo latte o capuchino?",
-        'rosa',
-        this.quickReplies(['Algo intenso ⚡','Algo cremoso y dulce 🥛','Café frío mejor 🧊'])
-      );
-    } else if(this.context.hunger === 'fuerte') {
-      this.addMsg(
-        "¡Perfecto, llegaste con todo el hambre! 🍽️ ¿Te late algo italiano tipo pasta o pizza, una buena carne tipo Rib Eye, o algo más ligero como un sandwich/ensalada?",
-        'rosa',
-        this.quickReplies(['Pasta o pizza 🍕','Una buena carne 🥩','Algo más ligero 🥗','Desayuno completo 🍳'])
-      );
-    } else if(/explorando|curios|nada en especial|solo|ver/i.test(msg)) {
-      this.addMsg(
-        "¡Bienvenido! 🌸 Me alegra que estés conociendo el lugar. Para empezar bonito: ¿se te antoja más algo dulce o algo salado? ¿O directo un buen café?",
-        'rosa',
-        this.quickReplies(['Algo dulce 🍰','Algo salado 🍕','Solo un café ☕','Bebida fresca 🧊'])
-      );
-    } else {
-      // Caso general: indagar
-      this.addMsg(
-        "Cuéntame un poquito más 🌸 ¿Vienes a desayunar, comer, o solo a tomar algo? ¿Y vienes solo o acompañado?",
-        'rosa',
-        this.quickReplies(['Solo a tomar algo ☕','A desayunar 🍳','A comer fuerte 🍽️','Con mi pareja 💕','Con amigos 👯'])
-      );
-    }
+    if(m === 'triste') this.addMsg(t.triste, 'rosa', this.quickReplies(t.triste_qr));
+    else if(m === 'estresado') this.addMsg(t.estresado, 'rosa', this.quickReplies(t.estresado_qr));
+    else if(m === 'cansado') this.addMsg(t.cansado, 'rosa', this.quickReplies(t.cansado_qr));
+    else if(m === 'feliz' || m === 'celebrando') this.addMsg(t.feliz, 'rosa', this.quickReplies(t.feliz_qr));
+    else if(m === 'romantico') this.addMsg(t.romantico, 'rosa', this.quickReplies(t.romantico_qr));
+    else if(this.context.taste === 'cafe') this.addMsg(t.cafe, 'rosa', this.quickReplies(t.cafe_qr));
+    else if(this.context.hunger === 'fuerte') this.addMsg(t.hungry, 'rosa', this.quickReplies(t.hungry_qr));
+    else if(this.context.explore) this.addMsg(t.explore, 'rosa', this.quickReplies(t.explore_qr));
+    else this.addMsg(t.general, 'rosa', this.quickReplies(t.general_qr));
   },
   
-  // ====== RECOMENDACIÓN FINAL ======
-  recommendByContext() {
-    let items = [];
-    let title = "Rosa te recomienda";
-    let intro = "";
-    
+  recommendByContext(msg) {
+    const t = this.t();
+    let items = [], intro = "", title = "";
     const m = this.context.mood;
-    const t = this.context.taste;
-    const h = this.context.hunger;
+    const taste = this.context.taste;
+    const hung = this.context.hunger;
     
-    // PRIORIDADES de recomendación
-    if(m === 'triste' || /abraz|reconfort/i.test(this.lastUserMsg())) {
+    if(m === 'triste' || /abraz|comfort|hug|chaleur|reconfort/i.test(msg)) {
       items = this.items.relajante.concat(this.items.dulce_postres.slice(0,2));
-      intro = "Te preparé esta selección con muuucho cariño 🌸 Algo calientito y dulce siempre ayuda. Cualquiera de estos te va a abrazar el alma:";
-      title = "Para el alma";
+      intro = t.rec_alma; title = t.rec_title_alma;
     }
-    else if(m === 'estresado' && /relaj|tranquil/i.test(this.lastUserMsg())) {
+    else if(m === 'estresado' && /relax|tranquil|calm|détend/i.test(msg)) {
       items = this.items.relajante;
-      intro = "Estos son perfectos para soltar el estrés 😌 Las tisanas son herbales y suavecitas. Pídete un momento para ti:";
-      title = "Para relajarte";
+      intro = t.rec_relax; title = t.rec_title_relax;
     }
-    else if(m === 'cansado' || t === 'cafe' && /intens|fuerte|despert/i.test(this.lastUserMsg())) {
+    else if(m === 'cansado' || /intens|strong|fort|fuerte|despert|wake|réveil/i.test(msg)) {
       items = this.items.cafes_intensos.concat(this.items.cafes_calientes.slice(0,2));
-      intro = "Para despertarte bien y reactivar el motor ⚡ Estos son nuestros más fuertes:";
-      title = "Cafés para despertar";
+      intro = t.rec_intense; title = t.rec_title_intense;
     }
-    else if(t === 'cafe' && /cremos|dulce|suave|latte/i.test(this.lastUserMsg())) {
+    else if(taste === 'cafe' && /crem|creamy|sweet|dulce|sucré|suave|latte/i.test(msg)) {
       items = this.items.cafes_dulces.concat(this.items.cafes_calientes.slice(0,2));
-      intro = "Mis favoritos cremosos y dulces 🥛 Súper reconfortantes:";
-      title = "Cafés cremosos";
+      intro = t.rec_creamy; title = t.rec_title_creamy;
     }
-    else if(t === 'frio' || /helad|frapp|smooth/i.test(this.lastUserMsg())) {
-      items = this.items.fríos;
-      intro = "Para refrescarte y disfrutar 🧊 El Frappé Cookies & Cream es de mis favoritos:";
-      title = "Refrescantes";
+    else if(taste === 'frio' || /helad|frapp|ice|cold|smooth|froid/i.test(msg)) {
+      items = this.items.frios;
+      intro = t.rec_cold; title = t.rec_title_cold;
     }
-    else if(m === 'romantico' || /pareja|cita|compartir|romantic/i.test(this.lastUserMsg())) {
+    else if(m === 'romantico' || /pareja|cita|share|partag|compartir|date|romant/i.test(msg)) {
       items = this.items.romantico;
-      intro = "Mis recomendaciones para una cita perfecta 💕 El Pink House Crepe es nuestro platillo estrella:";
-      title = "Para compartir";
+      intro = t.rec_share; title = t.rec_title_share;
     }
-    else if(m === 'celebrando' || /celebr|brindar|copa|vino/i.test(this.lastUserMsg())) {
+    else if(m === 'celebrando' || /celebr|toast|brindar|copa|wine|vino|vin/i.test(msg)) {
       items = this.items.romantico.concat(this.items.dulce_postres.slice(0,2));
-      intro = "¡A celebrar! 🥂 Estos son para brindar bonito:";
-      title = "Para celebrar";
+      intro = t.rec_celebrate; title = t.rec_title_celebrate;
     }
-    else if(t === 'dulce' || /postre|crepe|chocolat|nutella/i.test(this.lastUserMsg())) {
+    else if(taste === 'dulce' || /postre|dessert|crepe|crêpe|chocolat|nutella|sweet|sucré/i.test(msg)) {
       items = this.items.dulce_postres;
-      intro = "Nuestros dulces son la especialidad de la casa 🍰 Los crepes son artesanales:";
-      title = "Dulces de la casa";
+      intro = t.rec_sweet; title = t.rec_title_sweet;
     }
-    else if(t === 'salado' && h === 'fuerte' || /carne|steak|pasta|pizza fuerte/i.test(this.lastUserMsg())) {
+    else if(taste === 'salado' && hung === 'fuerte' || /carne|meat|steak|p[âa]tes|pasta|pizza fuerte|cut/i.test(msg)) {
       items = this.items.salado_fuerte;
-      intro = "Para quitar el hambre bien 🍽️ El Rib Eye y la Pasta Alfredo son los más pedidos:";
-      title = "Comida fuerte";
+      intro = t.rec_hearty; title = t.rec_title_hearty;
     }
-    else if(t === 'salado' || /sandwich|ensalada|ligero|ligera/i.test(this.lastUserMsg())) {
+    else if(taste === 'salado' || /sandwich|ensalada|salad|salade|light|ligero|léger/i.test(msg)) {
       items = this.items.salado_ligero;
-      intro = "Estos son perfectos: sabrosos pero sin que te pese 🥪";
-      title = "Salado ligero";
+      intro = t.rec_light; title = t.rec_title_light;
     }
-    else if(this.context.time === 'mañana' || /desayun|huev|chilaqu/i.test(this.lastUserMsg())) {
+    else if(/desayun|breakfast|petit.déj|huev|egg|œuf|chilaqu/i.test(msg)) {
       items = this.items.desayunos;
-      intro = "Nuestros desayunos van hasta las 12pm e incluyen café y jugo o fruta 🍳";
-      title = "Desayunos";
+      intro = t.rec_breakfast; title = t.rec_title_breakfast;
     }
     else {
-      // Default: opciones variadas
       items = [
         {n:"Latte", p:"$55–$70"},
         {n:"The Pink House Crepe ⭐", p:"$140"},
@@ -799,28 +1255,20 @@ const Rosa = {
         {n:"Chocolate Caliente", p:"$65–$70"},
         {n:"Frappé Taro", p:"$70"}
       ];
-      intro = "Te dejo nuestras estrellas 🌸 Lo más pedido y lo más rico de la casa:";
-      title = "Las favoritas de Rosa";
+      intro = t.rec_default; title = t.rec_title_default;
     }
     
-    const recCard = this.buildRecCard(items, title, intro);
-    this.addMsg(intro, 'rosa', recCard);
+    this.addMsg(intro, 'rosa', this.buildRecCard(items, title));
   },
   
-  // ====== HELPERS ======
-  lastUserMsg() {
-    const userMsgs = document.querySelectorAll('.msg.user .msg-bubble');
-    if(userMsgs.length === 0) return '';
-    return userMsgs[userMsgs.length-1].textContent.toLowerCase();
-  },
-  
-  buildRecCard(items, title, intro) {
+  buildRecCard(items, title) {
+    const t = this.t();
     let html = `<div class="rec-card"><h5>✨ ${title}</h5>`;
     items.forEach(i => {
       html += `<div class="rec-item"><span>${i.n}</span><span class="rec-price">${i.p}</span></div>`;
     });
-    const wa = encodeURIComponent(`🌸 Hola! Rosa me recomendó:\n${items.map(i=>`• ${i.n}`).join('\n')}\n\n¿Me pueden ayudar?`);
-    html += `<a href="https://wa.me/525534745455?text=${wa}" target="_blank" class="rec-wa-btn">Pedir por WhatsApp →</a></div>`;
+    const wa = encodeURIComponent(`${t.rec_wa_msg}\n${items.map(i=>`• ${i.n}`).join('\n')}\n\n${t.rec_wa_help}`);
+    html += `<a href="https://wa.me/525534745455?text=${wa}" target="_blank" class="rec-wa-btn">${t.rec_wa_btn}</a></div>`;
     return html;
   },
   
@@ -867,7 +1315,8 @@ const Rosa = {
   }
 };
 
-Rosa.init();
+// Inicializar Rosa después del splash
+window.RosaInit = () => Rosa.init();
 </script>
 </body>
 </html>
