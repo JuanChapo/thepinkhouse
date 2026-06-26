@@ -323,7 +323,7 @@ footer a{color:#F2D5DA;text-decoration:none}
     <div class="chat-header">
       <div class="rosa-avatar">🌸</div>
       <div class="chat-header-info">
-        <h4>Alma Rosa · The Pink House</h4>
+        <h4>Alma · The Pink House</h4>
         <p><span class="online-dot"></span><span data-i18n="ai_online">En línea · El almita de la casa</span></p>
       </div>
     </div>
@@ -898,8 +898,25 @@ window.addEventListener('load',function(){
 // ============ ALMA ROSA — IA TRILINGÜE ============
 const RosaTexts = {
 es: {
-  initial: '¡Hola! Soy <strong>Alma Rosa</strong> 🌸 el almita de esta casa tan especial. Me da mucho gusto que estés aquí. <strong>¿Cómo te sientes hoy? ¿Qué te trajo?</strong>',
-  qr_initial: ['Necesito un café urgente ☕','Tengo mucha hambre 🍽️','Vine con mi pareja 💕','Estoy estresado 😮‍💨','Quiero rentar para mi cumple 🎂','Solo estoy explorando 🌸'],
+  initial: '¡Hola! 🌸 Yo soy <strong>Alma Rosa</strong> — pero puedes decirme <strong>Alma</strong> nomás. Soy el almita de esta casa rosa que tanto queremos.<br><br>Estoy aquí para platicar contigo, recomendarte algo rico, o si <strong>no te decides, déjame escoger por ti</strong> 💕<br><br>¿En qué andas hoy?',
+  qr_initial: ['Necesito un café ☕','Tengo hambre 🍽️','Sorpréndeme — elige tú 💕','Quiero platicar contigo 🌸','Quiero rentar el lugar 🎂'],
+  free_greet: '¡Hola corazón! 🌸 Qué bueno que estás aquí. ¿Te ayudo a encontrar algo rico o prefieres platicar un rato?',
+  free_greet_qr: ['Recomiéndame algo 🍰','Solo platicar 🌸','Sorpréndeme 💕'],
+  free_thanks: '¡De nada, mi vida! 💕 Para eso estoy. ¿Te ayudo con algo más?',
+  free_thanks_qr: ['Otra recomendación 🌸','Cuéntame del lugar 🏡','Estoy bien, gracias'],
+  free_compliment: '¡Aaay qué lindo eres! 🌸 Me sacas una sonrisa virtual. ¿Te recomiendo algo rico para celebrar ese ánimo tan bonito?',
+  free_compliment_qr: ['Sí, recomiéndame 🍰','Sorpréndeme 💕','Sigamos platicando'],
+  free_whoami: 'Yo soy <strong>Alma</strong> 🌸 — el almita de The Pink House. Estoy aquí como anfitriona virtual: te ayudo a escoger del menú, te cuento del lugar, o solo platico contigo. Vivo en esta página, pero el cariño es real 💕<br><br>¿En qué te ayudo?',
+  free_whoami_qr: ['Cuéntame del lugar 🏡','Recomiéndame algo 🍰','Sorpréndeme 💕'],
+  free_about: 'The Pink House es una cafetería-restaurante en Colima 323, Roma Norte 🌸 Tenemos café de especialidad, desayunos hasta las 12pm, comida fuerte, postres caseros, y un espacio precioso para rentar para tus eventos. Abrimos todos los días hasta las 9pm. ¿Te recomiendo algo?',
+  free_about_qr: ['Sí, recomiéndame ✨','Quiero rentar el lugar 🎂','¿Cómo llego? 📍'],
+  free_chat: 'Mmm, me gusta platicar contigo 🌸 Pero la verdad mi fuerte es recomendarte cosas ricas del menú. ¿De qué tienes ganas hoy: dulce, salado, café, algo fresco?',
+  free_chat_qr: ['Algo dulce 🍰','Algo salado 🍕','Un café ☕','Sorpréndeme 💕'],
+  more_options: '¡Va, te enseño otra cosa! 🌸 Aquí van más opciones diferentes:',
+  choose_intro_1: '¡Va, yo decido! 💕 Mi corazón me dice que hoy necesitas esto:',
+  choose_intro_2: 'Confía en mí 🌸 — escogí esto especialmente para ti:',
+  choose_intro_3: '¡Lo tengo! 💕 Yo te llevo de la mano. Te recomiendo:',
+  choose_intro_4: 'Cierra los ojos... ahora ábrelos 🌸 Esto es lo que vas a probar hoy:',
   event_response: "¡Qué emoción! 🎉 The Pink House es un lugar mágico para celebrar. Manejamos paquetes desde <strong>$3,500</strong> para cumpleaños (hasta 30 personas) y desde <strong>$5,000</strong> para eventos especiales (hasta 60 personas). Incluye decoración, menú personalizado y el espacio más bonito de la Roma.<br><br>¿Te paso con el equipo para cotizar?",
   event_wa: "🌸 Hola The Pink House! Quiero información para rentar el espacio. Me interesa saber paquetes y disponibilidad.",
   event_btn_wa: "Cotizar por WhatsApp 📲", event_btn_menu: "Ver menú primero",
@@ -943,8 +960,25 @@ es: {
   rec_wa_btn: "Pedir por WhatsApp →"
 },
 en: {
-  initial: 'Hi! I am <strong>Alma Rosa</strong> 🌸 the soul of this very special house. So glad to have you here. <strong>How are you feeling today? What brought you?</strong>',
-  qr_initial: ['I need coffee urgently ☕','I am really hungry 🍽️','I am with my partner 💕','I am stressed 😮‍💨','I want to rent for a birthday 🎂','Just exploring 🌸'],
+  initial: 'Hi! 🌸 I am <strong>Alma Rosa</strong> — but you can call me just <strong>Alma</strong>. I am the little soul of this pink house we love so much.<br><br>I am here to chat with you, recommend something delicious, or if <strong>you can\'t decide, let me choose for you</strong> 💕<br><br>What are you up to today?',
+  qr_initial: ['I need coffee ☕','I am hungry 🍽️','Surprise me — you choose 💕','I just want to chat 🌸','I want to rent the place 🎂'],
+  free_greet: 'Hi sweetie! 🌸 So glad you are here. Want me to help you find something delicious, or would you rather chat for a bit?',
+  free_greet_qr: ['Recommend me something 🍰','Just chat 🌸','Surprise me 💕'],
+  free_thanks: 'You are welcome, dear! 💕 That is what I am here for. Anything else?',
+  free_thanks_qr: ['Another recommendation 🌸','Tell me about this place 🏡','I am good, thanks'],
+  free_compliment: 'Aww, you are so sweet! 🌸 You made me smile virtually. Should I recommend something tasty to celebrate that good mood?',
+  free_compliment_qr: ['Yes, recommend 🍰','Surprise me 💕','Let us keep chatting'],
+  free_whoami: 'I am <strong>Alma</strong> 🌸 — the little soul of The Pink House. I am here as your virtual hostess: I help you choose from the menu, tell you about the place, or just chat. I live on this page, but the affection is real 💕<br><br>How can I help?',
+  free_whoami_qr: ['Tell me about the place 🏡','Recommend me something 🍰','Surprise me 💕'],
+  free_about: 'The Pink House is a café-restaurant at Colima 323, Roma Norte 🌸 We have specialty coffee, breakfast until 12pm, hearty meals, homemade desserts, and a gorgeous space to rent for events. Open every day until 9pm. Want me to recommend something?',
+  free_about_qr: ['Yes, recommend ✨','I want to rent the place 🎂','How do I get there? 📍'],
+  free_chat: 'Mmm, I like chatting with you 🌸 But my real strength is recommending tasty things from the menu. What are you in the mood for today: sweet, savory, coffee, something fresh?',
+  free_chat_qr: ['Something sweet 🍰','Something savory 🍕','A coffee ☕','Surprise me 💕'],
+  more_options: 'Here, let me show you something else! 🌸 Different options for you:',
+  choose_intro_1: 'Got it, I decide! 💕 My heart tells me you need this today:',
+  choose_intro_2: 'Trust me 🌸 — I picked this especially for you:',
+  choose_intro_3: 'I got it! 💕 Let me guide you. I recommend:',
+  choose_intro_4: 'Close your eyes... now open them 🌸 This is what you are trying today:',
   event_response: "How exciting! 🎉 The Pink House is a magical place to celebrate. We have packages from <strong>$3,500</strong> for birthdays (up to 30 people) and from <strong>$5,000</strong> for special events (up to 60 people). Includes decoration, personalized menu, and the most beautiful space in Roma.<br><br>Shall I connect you with the team for a quote?",
   event_wa: "🌸 Hi The Pink House! I want info to rent the space. Interested in packages and availability.",
   event_btn_wa: "Get a quote on WhatsApp 📲", event_btn_menu: "See menu first",
@@ -988,8 +1022,25 @@ en: {
   rec_wa_btn: "Order on WhatsApp →"
 },
 fr: {
-  initial: 'Bonjour! Je suis <strong>Alma Rosa</strong> 🌸 l\'âme de cette maison si spéciale. Heureuse de vous voir ici. <strong>Comment vous sentez-vous aujourd\'hui? Qu\'est-ce qui vous amène?</strong>',
-  qr_initial: ['J\'ai besoin de café urgent ☕','J\'ai très faim 🍽️','Je viens avec mon partenaire 💕','Je suis stressé(e) 😮‍💨','Je veux louer pour un anniversaire 🎂','J\'explore juste 🌸'],
+  initial: 'Bonjour! 🌸 Je suis <strong>Alma Rosa</strong> — mais vous pouvez m\'appeler juste <strong>Alma</strong>. Je suis la petite âme de cette maison rose que nous aimons tant.<br><br>Je suis ici pour discuter, recommander quelque chose de délicieux, ou si <strong>vous ne savez pas, laissez-moi choisir pour vous</strong> 💕<br><br>Que faites-vous aujourd\'hui?',
+  qr_initial: ['Je veux un café ☕','J\'ai faim 🍽️','Surprenez-moi — choisissez 💕','Je veux discuter 🌸','Je veux louer l\'endroit 🎂'],
+  free_greet: 'Bonjour mon cher! 🌸 Heureuse que vous soyez là. Je vous aide à trouver quelque chose ou préférez-vous discuter?',
+  free_greet_qr: ['Recommandez-moi 🍰','Juste discuter 🌸','Surprenez-moi 💕'],
+  free_thanks: 'De rien, mon chéri! 💕 C\'est pour ça que je suis là. Autre chose?',
+  free_thanks_qr: ['Une autre recommandation 🌸','Parlez-moi de l\'endroit 🏡','Ça va, merci'],
+  free_compliment: 'Aww, comme vous êtes gentil! 🌸 Vous m\'avez fait sourire. Je vous recommande quelque chose pour célébrer cette belle humeur?',
+  free_compliment_qr: ['Oui, recommandez 🍰','Surprenez-moi 💕','Continuons à discuter'],
+  free_whoami: 'Je suis <strong>Alma</strong> 🌸 — la petite âme de The Pink House. Je suis votre hôtesse virtuelle: je vous aide à choisir, je vous parle de l\'endroit, ou nous discutons. Je vis sur cette page, mais l\'affection est réelle 💕<br><br>Comment puis-je vous aider?',
+  free_whoami_qr: ['Parlez-moi de l\'endroit 🏡','Recommandez-moi 🍰','Surprenez-moi 💕'],
+  free_about: 'The Pink House est un café-restaurant au Colima 323, Roma Norte 🌸 Nous avons café de spécialité, petit-déj jusqu\'à 12h, plats copieux, desserts maison, et un espace magnifique à louer. Ouvert tous les jours jusqu\'à 21h. Je recommande quelque chose?',
+  free_about_qr: ['Oui, recommandez ✨','Je veux louer 🎂','Comment y aller? 📍'],
+  free_chat: 'Mmm, j\'aime discuter avec vous 🌸 Mais mon fort c\'est de recommander des choses délicieuses. Envie de quoi: sucré, salé, café, frais?',
+  free_chat_qr: ['Sucré 🍰','Salé 🍕','Un café ☕','Surprenez-moi 💕'],
+  more_options: 'Tenez, je vous montre autre chose! 🌸 Différentes options:',
+  choose_intro_1: 'D\'accord, je décide! 💕 Mon cœur me dit que vous avez besoin de ça:',
+  choose_intro_2: 'Faites-moi confiance 🌸 — j\'ai choisi spécialement pour vous:',
+  choose_intro_3: 'J\'ai trouvé! 💕 Je vous guide. Je recommande:',
+  choose_intro_4: 'Fermez les yeux... ouvrez-les 🌸 Voici ce que vous goûterez:',
   event_response: "Quelle joie! 🎉 The Pink House est un endroit magique pour célébrer. Nous avons des forfaits à partir de <strong>$3,500</strong> pour les anniversaires (jusqu'à 30 personnes) et à partir de <strong>$5,000</strong> pour les événements spéciaux (jusqu'à 60 personnes). Inclut décoration, menu personnalisé, et le plus bel espace de la Roma.<br><br>Je vous mets en contact avec l'équipe pour un devis?",
   event_wa: "🌸 Bonjour The Pink House! Je veux des infos pour louer l'espace. Intéressé(e) par les forfaits et disponibilités.",
   event_btn_wa: "Devis par WhatsApp 📲", event_btn_menu: "Voir le menu d'abord",
@@ -1128,14 +1179,85 @@ const Rosa = {
   handle(text) {
     this.addMsg(text, 'user');
     this.step++;
-    this.detectContext(text.toLowerCase());
+    const msg = text.toLowerCase();
+    
+    // Detectar plática casual primero
+    const freeType = this.detectFreeChat(msg);
+    
+    this.detectContext(msg);
     this.typing = true;
     this.showTyping();
     setTimeout(() => {
       this.removeTyping();
-      this.respond(text.toLowerCase());
+      if(freeType) {
+        this.respondFreeChat(freeType, msg);
+      } else {
+        this.respond(msg);
+      }
       this.typing = false;
     }, 900 + Math.random() * 500);
+  },
+  
+  detectFreeChat(msg) {
+    // "Elige tú / sorpréndeme / choose for me"
+    if(/sorpr[eé]nd|surprise|surprenez|elige t[uú]|escoge t[uú]|choose for me|tú escoges|tu choisis|choisis pour moi|yo no s[eé]|i don.t know|je ne sais pas|whatever|lo que sea|n.importe quoi|t[uú] decide|you decide|décide/i.test(msg)) return 'choose';
+    // "Más / otra cosa / encore / another"
+    if(/^(otra|m[aá]s|more|another|encore|différent|diferente|otras opciones|other options|d.autres)/i.test(msg.trim())) return 'more';
+    // Saludos
+    if(/^(hola|hi|hello|hey|bonjour|salut|qué onda|que tal|good morning|buenas|buenos d[ií]as|good evening)$/i.test(msg.trim()) || /^(hola|hi|hello|hey|bonjour|salut)[\s!.,]/i.test(msg)) return 'greeting';
+    // Gracias
+    if(/(gracias|thanks|thank you|merci|thx|ty)/i.test(msg)) return 'thanks';
+    // Cumplidos
+    if(/(eres linda|te quiero|love you|je t.aime|qué linda|how cute|cute|lovely|amable|sweet|adorable|gentille|qué amable)/i.test(msg)) return 'compliment';
+    // Quién eres
+    if(/(qui[eé]n eres|who are you|qui es.tu|tu nombre|your name|ton nom|c[oó]mo te llamas|what.s your name|comment t.appelles|eres una ia|are you ai|es-tu une ia|eres real|are you real|qué eres)/i.test(msg)) return 'whoami';
+    // Sobre el lugar
+    if(/(d[oó]nde est[aá]n|where are you|où êtes|horario|hours|heures|abren|cierran|open|close|d[ií]as|cu[eé]nta?me del lugar|tell me about|parle.moi|qué es este|what is this|c.est quoi)/i.test(msg)) return 'about';
+    // Solo platicar
+    if(/(platic|chat|discut|cuent|tell me|parle|c[uú]éntame|just talking|just chat|seguir platicando|seguimos)/i.test(msg)) return 'chat';
+    return null;
+  },
+  
+  respondFreeChat(type, msg) {
+    const t = this.t();
+    if(type === 'choose') return this.chooseForMe();
+    if(type === 'more') return this.recommendDifferent();
+    if(type === 'greeting') return this.addMsg(t.free_greet, 'rosa', this.quickReplies(t.free_greet_qr));
+    if(type === 'thanks') return this.addMsg(t.free_thanks, 'rosa', this.quickReplies(t.free_thanks_qr));
+    if(type === 'compliment') return this.addMsg(t.free_compliment, 'rosa', this.quickReplies(t.free_compliment_qr));
+    if(type === 'whoami') return this.addMsg(t.free_whoami, 'rosa', this.quickReplies(t.free_whoami_qr));
+    if(type === 'about') return this.addMsg(t.free_about, 'rosa', this.quickReplies(t.free_about_qr));
+    if(type === 'chat') return this.addMsg(t.free_chat, 'rosa', this.quickReplies(t.free_chat_qr));
+  },
+  
+  chooseForMe() {
+    const t = this.t();
+    // Categorías aleatorias temáticas
+    const themes = [
+      {cat: 'cafes_dulces', titleKey: 'rec_title_creamy'},
+      {cat: 'dulce_postres', titleKey: 'rec_title_sweet'},
+      {cat: 'frios', titleKey: 'rec_title_cold'},
+      {cat: 'salado_ligero', titleKey: 'rec_title_light'},
+      {cat: 'romantico', titleKey: 'rec_title_share'},
+      {cat: 'cafes_calientes', titleKey: 'rec_title_creamy'},
+      {cat: 'relajante', titleKey: 'rec_title_relax'}
+    ];
+    const choice = themes[Math.floor(Math.random() * themes.length)];
+    const intros = [t.choose_intro_1, t.choose_intro_2, t.choose_intro_3, t.choose_intro_4];
+    const intro = intros[Math.floor(Math.random() * intros.length)];
+    this.context.lastCategory = choice.cat;
+    this.addMsg(intro, 'rosa', this.buildRecCard(this.items[choice.cat], t[choice.titleKey]));
+  },
+  
+  recommendDifferent() {
+    const t = this.t();
+    // Mostrar una categoría diferente a la última
+    const allCats = ['cafes_dulces','dulce_postres','frios','salado_ligero','salado_fuerte','romantico','cafes_calientes','relajante','desayunos','cafes_intensos'];
+    const titles = {cafes_dulces:'rec_title_creamy',dulce_postres:'rec_title_sweet',frios:'rec_title_cold',salado_ligero:'rec_title_light',salado_fuerte:'rec_title_hearty',romantico:'rec_title_share',cafes_calientes:'rec_title_creamy',relajante:'rec_title_relax',desayunos:'rec_title_breakfast',cafes_intensos:'rec_title_intense'};
+    let cat;
+    do { cat = allCats[Math.floor(Math.random() * allCats.length)]; } while(cat === this.context.lastCategory);
+    this.context.lastCategory = cat;
+    this.addMsg(t.more_options, 'rosa', this.buildRecCard(this.items[cat], t[titles[cat]]));
   },
   
   detectContext(msg) {
